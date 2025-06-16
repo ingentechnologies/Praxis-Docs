@@ -45,11 +45,11 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Set the base path for docs
-          docItemComponent: "@theme/ApiItem",
+          docItemComponent: "@theme/ApiItem"
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -144,7 +144,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} InGen Technologies Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Praxis AI`,
     },
     prism: {
       theme: prismThemes.github,
