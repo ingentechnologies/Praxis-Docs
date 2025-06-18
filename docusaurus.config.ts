@@ -72,7 +72,7 @@ const config: Config = {
         config: {
           petstore: {
             specPath: "./examples/openapi-example.yaml", // Path to your OpenAPI spec file
-            outputDir: "docs/api",
+            outputDir: "docs/API",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
