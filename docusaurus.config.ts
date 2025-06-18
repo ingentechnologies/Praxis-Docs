@@ -90,7 +90,7 @@ const config: Config = {
       title: 'Praxis Documentation',
       logo: {
         alt: 'Praxis Logo',
-        src: 'img/logo.svg',
+        src: 'img/praxispwrd-white.png',
       },
       items: [
         {
