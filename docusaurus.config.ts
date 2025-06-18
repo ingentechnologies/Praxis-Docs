@@ -85,6 +85,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
+    defaultMode: 'dark',
     navbar: {
       title: 'Praxis Documentation',
       logo: {
@@ -99,8 +100,8 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://praxispowered.com/contact/',
+          label: 'Request a Demo',
           position: 'right',
         },
       ],
