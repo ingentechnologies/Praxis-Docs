@@ -1,4 +1,4 @@
 ---
-sidebar_position: 1
-slug: /
+sidebar_position: 2
+slug: /setup
 ---
