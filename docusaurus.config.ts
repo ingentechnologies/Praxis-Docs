@@ -100,7 +100,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-  to: '/docs/intro', // URL path
+  to: '/docs/Setup', // URL path
   label: 'SDK',
   position: 'left',
                     sidebarId: 'sdkSidebar',
