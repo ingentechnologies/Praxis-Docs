@@ -100,12 +100,6 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-  to: '/docs/Setup', // URL path
-  label: 'SDK',
-  position: 'left',
-                    sidebarId: 'sdkSidebar',
-},
-        {
           href: 'https://praxispowered.com/contact/',
           label: 'Request a Demo',
           position: 'right',
