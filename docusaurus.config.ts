@@ -64,7 +64,7 @@ const config: Config = {
         config: {
           petstore: {
             specPath: "./examples/praxis.yaml", // Path to your OpenAPI spec file
-            outputDir: "docs/API",
+            outputDir: "api-docs/API",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
