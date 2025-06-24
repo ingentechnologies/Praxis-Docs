@@ -63,7 +63,7 @@ const config: Config = {
         docsPluginId: "classic", // configured for preset-classic
         config: {
           petstore: {
-            specPath: "./examples/openapi-example.yaml", // Path to your OpenAPI spec file
+            specPath: "./examples/praxis.yaml", // Path to your OpenAPI spec file
             outputDir: "docs/API",
             sidebarOptions: {
               groupPathsBy: "tag",
