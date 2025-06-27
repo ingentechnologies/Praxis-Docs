@@ -1,0 +1,63 @@
+---
+id: health-check-endpoint-to-verify-service-status
+title: "Health check endpoint to verify service status"
+description: "Returns the current health status of the service including uptime, memory usage, and dependency status"
+sidebar_label: "Health check endpoint to verify service status"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VVFv4zYM/isCnzac28RJ0yQG9pBdt10LHFY0PdxDkQdGZmpdbUmT5CC5IP99oOw0zvWw9Gl5iSFSHz+RH8kd5OSlUzYooyGDBwq1016EgoSsnSMdREFYhkL4gKH2wqyi0ZNbK0lCaVnWudLPorZBVZSIiirjtqL2+EyJQJ2LnCzpnLTctiCQgCNvjfbkIdvBoN/nv1Mq80ME3zLYRjBjySG7YAkJSKMD6cC30dpSyWjqffMMsQMvC6qQv8LWEmRglt9IBkjAOgYKqiHQ0jr6+eCUfobkB05/r8lhWZ6mBBKgDVa2jAFeYJ9Ak4sOnq6rJbk3ePxGcm3qhNLCkzQ694zBRz5gZc/DfGwr9XqFoSpVlqqD19TlfC6c9+cjPpBXOYecUxBz9Z3EhQgmYHkoP5alkRgoFyvjomKsM5J8pFIQ2kf2Ph8ounG+7RvkA9IXT/l5oE8diFbZ5ZbzVHtiJNoEcvo9lD4fBE65WG7Fxw8fRJNKL5am1rkIRtzhGufxzsHGMdA53P5er1bk3pHjzz/L5KwDEfthXqCjvHsM+6ieEPXYgNzqlWECr53Y1vq/lZBjwCX6d+j4pvUU0mhNkk8P8+KXVPx2OKb81xNyN106XcOn2F8P7YxoytN22LFZudeOrZamg8vh9SQdTk5aJx2P+qPhVTrqj6ejbhNEmaeDSb8/SaeDE02OB2l/NJ1cdeV1Pb66GgxHg65QBsPr6XB01f+xsOl0Mhmk4+ufJPyY0nQffwkEfPaQPcEj+cAzZ8EsQ2FyyOCZYlUwFJBBD63qBfKh14wfSMDH+cHXd1C7EjIoQrA+6/WsU3hpHW6ULzf2UprqTdHunULxUOs4e2b3t6KZRrBfMLCsnQrbOQ/QhvqS0JGb1czlVQ8cjnlEN8haJ0jajz+NqzBABndfH9/Ev/v6KIJ5IS0sem4mpcXmAiVPiYvGUBDmzGifgGIJc+BWIpH97P4WEuAUNJDpZf+yf/6hN0bWFekQlwWryxofKowrQ2N1VKCQBckXQTq3RvGANWJNTq22r/vvdQWchNwdF9P/t1LbkgTahJ4tUcWXRVXsWgk9AVrFnuRZV62MFgkUxgc273Yszi+u3O/5+J+auFmeFgms0SlccuafFs3c5cKw7l5oCxnMpCTLoGssa6bxZh3vu8L+649H2O//BTb08Es=
+sidebar_class_name: "get api-method"
+info_path: docs/API/pria-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Health check endpoint to verify service status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/test/health"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the current health status of the service including uptime, memory usage, and dependency status
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Service is healthy and operational","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","description":"Overall health status","example":"ok"},"uptime":{"type":"number","description":"Server uptime in seconds"},"timestamp":{"type":"number","description":"Current timestamp in milliseconds"},"memory":{"type":"object","properties":{"rss":{"type":"number","description":"Resident Set Size - total memory allocated for the process"},"heapTotal":{"type":"number","description":"Total heap memory allocated"},"heapUsed":{"type":"number","description":"Heap memory currently in use"},"external":{"type":"number","description":"Memory used by C++ objects bound to JavaScript objects"},"arrayBuffers":{"type":"number","description":"Memory allocated for ArrayBuffers and SharedArrayBuffers"}},"title":"MemoryInfo"},"dependencies":{"type":"object","properties":{"database":{"type":"number","description":"Database connection status (1 = connected)"}},"title":"Dependencies"}},"title":"HealthResponse"},"example":{"status":"ok","uptime":112.368138,"timestamp":1750534150795,"memory":{"rss":128008192,"heapTotal":72105984,"heapUsed":67442352,"external":23693540,"arrayBuffers":19882176},"dependencies":{"database":1}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -41,9 +41,17 @@ const config: Config = {
   presets: [
     [
       'classic',
-      {
+      { docs: {
+          sidebarPath: './sidebars.ts',
+          routeBasePath: '/', // Set the base path for docs
+          docItemComponent: "@theme/ApiItem",
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
 
-        blog: false,
+        blog: {},
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -64,7 +72,7 @@ const config: Config = {
         config: {
           petstore: {
             specPath: "./examples/praxis.yaml", // Path to your OpenAPI spec file
-            outputDir: "api-docs/API",
+            outputDir: "docs/API",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -79,18 +87,25 @@ const config: Config = {
     // image: 'img/docusaurus-social-card.jpg',
     defaultMode: 'dark',
     navbar: {
-      title: 'Docs',
+      title: 'Using Praxis',
       logo: {
         alt: 'Praxis Logo',
         src: 'img/praxis-studios-docs.png',
       },
       items: [
         {
-          type: 'adminGuideSidebar',
-          sidebarId: 'adminGuideSidebar',
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
         },
+                {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'API',
+        },
+              {to: 'blog', label: 'Blog', position: 'left'}, // or position: 'right'
         {
           href: 'https://praxispowered.com/contact/',
           label: 'Request a Demo',

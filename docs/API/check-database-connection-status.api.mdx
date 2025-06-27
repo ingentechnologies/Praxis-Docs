@@ -1,0 +1,63 @@
+---
+id: check-database-connection-status
+title: "Check database connection status"
+description: "Returns the current database connection status with explanatory message"
+sidebar_label: "Check database connection status"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1v2zAM/SsCTxug5qPtSbeg3Yb2VLQZeghyYGQ2VmtLmkRnCQz/94GO12QNul42X6wP8vHp8UktFJRtcpFd8GDgnrhJPisuSdkmJfKsCmRcYSZlg/dkJVJlRm6y+um4VLSNFXrkkHaqppxxTaAhUY7BZ8pgWjifTOT3Z63r93ETcXK0oULlxlrK+ampqh1osMEzeRYwjLFyFiVt/JwFsYVsS6pRRryLBAbC6pksg4aYQqTEbs/nN81DYObk/Br0W46HmQpP70pBGTTQFutYCdjEqMLlIYYKraZGHc3OX2fOr7W6OI7uVy6Ncn6DlSuUTVSQZ4dVhk7DXp8j3s4zrSmdEL/6uHmfJmeXn495TzWQb2owi4me6nN9oS+XXaeBHffH+t2whz7/fmiw0HqFOJL2f6lwEGHayaeBcZ3BLGBOWTJhqaEmLkMBBtbUdx+5BANjjG7MlHlcrASH0oaSpLbQpAoMlMwxm/E4JoejmHDrcrWNIxvqE4HvkkN133h2NanZ3Y166NGgWwqwbZLj3YPYce+4FWGiNGuEx2vzpJzw6MPADEGgh8HXkGpkMHD7OD+pf/s4VxxeyKuIOVOhnFfbM+xvy9l+oyQshFGnwfmn0BceWtmzn93dgAaRYA85HU1Gk48Peh1sU5Pn/upJ92PIXGN/AT32B7kqyb78xXtvi7SHi/0Pn6BBZaYtj2OFrifbN7odHLEAjE4iKYtNipV4pwyZZattpeT3VHWdLP9oKO3ALJYaNpgcrkTIxbLTMOgsNnqhHRiYWUtRADdYNULh5K3qjj367cscuu4Xv+XtEg==
+sidebar_class_name: "get api-method"
+info_path: docs/API/pria-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check database connection status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/test/db"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the current database connection status with explanatory message
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Database connection status retrieved successfully","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string","description":"Description of database connection states","example":"0: disconnected, 1: connected, 2: connecting, 3: disconnecting, 4: invalid credentials"},"status":{"type":"integer","description":"Current database connection status (0-4)","example":1,"enum":[0,1,2,3,4]}},"title":"DatabaseStatusResponse"},"example":{"message":"0: disconnected, 1: connected, 2: connecting, 3: disconnecting, 4: invalid credentials","status":1}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

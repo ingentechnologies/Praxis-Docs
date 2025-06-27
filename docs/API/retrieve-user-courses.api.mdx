@@ -1,0 +1,71 @@
+---
+id: retrieve-user-courses
+title: "Retrieve user courses"
+description: "Gets a list of all courses associated with the authenticated user"
+sidebar_label: "Retrieve user courses"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVVGP2kYQ/iureWkq+Q5StS9+I2laEVXJ6bhTHhBCgz3gTezdvZ3xBYr836tZmwLHpZdI5QGMd/abb76d+XYPJXERbRDrHeTwJwkbNLVlMX5tsK5N4dvIxAaZfWFRqDRfrVRGKjLYSkVObJFet0wRMmAq2mhlB/l8D28II8VJKxXk80W3yCDSQ0ssb3y5g3yf/tpIJeQSW8qg8E7IiS5hCLVCW+9Gn1n57YGLihrUJ9kFghz86jMVAtmTQt41QXamXzRrH41Ulg25MnjrBLqu65QKB++YWPF+GY/15xxm1hYFMa/but6ZSBItPQ6VHoSBH+eMMeIOMrBCDT9XS4g+UBTbM+sTLW15Emqd0CbJfU743tmHlowt9VjWluJQPA10ocsOeA4bOkFkidZtLgA/YEPaCucQyGxZsK/5fMPksPRsx/QQ5pVP4Vj/DNkL1Z/X/Q2W3y77yLTL4MdLPtsebCFtpGUb6++gdPuXEX8O8hObAQO0/8RKTaeSaZLKsvi4Wxa+7eV94cQ/tM2KovItLdZ+05Ihp43KxrpTzQdgzVEjy/IQvixRnlVl7WODAjlowJXYhi6ST2cfjS6wYBMOmin6kcwZibOy3x5epWH8dfz6spnunVqMj/ZvKs2VmbpHrG1pfDSNZbZuYzANqBH/hZyW9ttzYzx1QtFhbZjiI0VDMfrYc8ENQz6He53ot75p0JUMiwwaksqXkEPwnJoS1cJghMGOdPxHx/HvQTn5XWoNqEQC56NRiBavQ8St5XobrgvfXCh4Ey2a29apimZyMzWzhAZqlQcnnamB9NOwOvHTf09M0ymPFAb5EATZ8PDH4Rzff7q7yP/+010vngnITKWe1/aqV/WqX6gIS+rlUku7PRr4uy02Qc9y32Vg3donUsPxpsomN1PIQOXp072+Hl+PXxbhd1+0DTlJRppGz7M0mOy0H2K4Hdz4qRmfIe+P3vy/3G2D4EJbGYUabeI22EHfIXPAYCGDYcOB1yKDShspn8N+v0Km+1h3nb5+aCnqXbnI4BGjxZWKN1+oE/S6a1t9oV0amFTL1Z2y0PC6TdfJ0zunyw47JkVBQf4z9rTXbz7OtENWw93c+FL3RPwKWfrOATLorTt1Y3q3hxrdpsWNxvaY+vkH3HjuCA==
+sidebar_class_name: "post api-method"
+info_path: docs/API/pria-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Retrieve user courses"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/user/courses"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Gets a list of all courses associated with the authenticated user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Empty object for this endpoint"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successfully retrieved user courses","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"course_id":{"type":"integer","description":"Unique identifier for the course"},"course_name":{"type":"string","description":"Name of the course"},"assistant":{"description":"Assistant associated with the course (optional)","type":"object","properties":{"_id":{"type":"string","description":"Unique identifier for the assistant"},"name":{"type":"string","description":"Name of the assistant"},"picture_url":{"type":"string","description":"URL to the assistant's picture"}},"title":"Assistant"},"history_count":{"type":"integer","description":"Number of dialogue entries in the course history"},"last_dialogue_date":{"type":"string","format":"date-time","description":"ISO timestamp of the last dialogue in the course"}},"title":"Course"}}}}},"401":{"description":"Unauthorized - Invalid or missing access token"},"500":{"description":"Internal server error"}}}
+>
+  
+</StatusCodes>
+
+
+      
