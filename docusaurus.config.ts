@@ -1,8 +1,8 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as Plugin from "@docusaurus/types/src/plugin";
-import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import type * as Plugin from '@docusaurus/types/src/plugin';
+import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -25,9 +25,9 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Praxis AI', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'Praxis Docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -41,14 +41,11 @@ const config: Config = {
   presets: [
     [
       'classic',
-      { docs: {
-          sidebarPath: './sidebars.ts',
+      {
+        docs: {
+          sidebarPath: './sidebars.docs.ts',
           routeBasePath: '/', // Set the base path for docs
-          docItemComponent: "@theme/ApiItem",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          docItemComponent: '@theme/ApiItem',
         },
 
         blog: {},
@@ -59,27 +56,25 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-  'docusaurus-theme-openapi-docs',
-],
+  themes: ['docusaurus-theme-openapi-docs'],
 
   plugins: [
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: "api", // plugin id
-        docsPluginId: "classic", // configured for preset-classic
+        id: 'api', // plugin id
+        docsPluginId: 'classic', // configured for preset-classic
         config: {
-          petstore: {
-            specPath: "./examples/praxis.yaml", // Path to your OpenAPI spec file
-            outputDir: "docs/API",
+          praxis: {
+            specPath: 'docs/api/praxis.yaml', // Path to your OpenAPI spec file
+            outputDir: 'docs/api', // Output directory for generated docs
             sidebarOptions: {
-              groupPathsBy: "tag",
+              groupPathsBy: 'tag',
             },
           } satisfies OpenApiPlugin.Options,
-        }
+        },
       },
-    ]
+    ],
   ],
 
   themeConfig: {
@@ -87,25 +82,16 @@ const config: Config = {
     // image: 'img/docusaurus-social-card.jpg',
     defaultMode: 'dark',
     navbar: {
-      title: 'Using Praxis',
+      title: 'Docs',
       logo: {
         alt: 'Praxis Logo',
         src: 'img/praxis-studios-docs.png',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-                {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'API',
-        },
-              {to: 'blog', label: 'Blog', position: 'left'}, // or position: 'right'
+        { to: 'api', label: 'API Reference', position: 'left' },
+        { to: 'sdk', label: 'SDK', position: 'left' },        
+        { to: 'integrations', label: 'Integrations', position: 'left' },
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
           href: 'https://praxispowered.com/contact/',
           label: 'Request a Demo',

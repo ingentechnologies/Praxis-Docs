@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "API/pria-api",
+      id: "api/pria-api",
     },
     {
       type: "category",
@@ -12,19 +12,19 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "API/check-database-connection-status",
+          id: "api/check-database-connection-status",
           label: "Check database connection status",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "API/health-check-endpoint-to-verify-service-status",
+          id: "api/health-check-endpoint-to-verify-service-status",
           label: "Health check endpoint to verify service status",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "API/test-a-url-and-retrieve-associated-information",
+          id: "api/test-a-url-and-retrieve-associated-information",
           label: "Test a URL and retrieve associated information",
           className: "api-method post",
         },
@@ -36,13 +36,13 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "API/user-authentication-and-sign-in",
+          id: "api/user-authentication-and-sign-in",
           label: "User authentication and sign-in",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/automatic-user-signup-and-authentication",
+          id: "api/automatic-user-signup-and-authentication",
           label: "Automatic user signup and authentication",
           className: "api-method post",
         },
@@ -54,7 +54,7 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "API/process-personal-q-a-requests-with-ai-assistant",
+          id: "api/process-personal-q-a-requests-with-ai-assistant",
           label: "Process personal Q&A requests with AI assistant",
           className: "api-method post",
         },
@@ -66,43 +66,43 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "API/refresh-user-profile-data",
+          id: "api/refresh-user-profile-data",
           label: "Refresh user profile data",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/refresh-user-entitlements-and-permissions",
+          id: "api/refresh-user-entitlements-and-permissions",
           label: "Refresh user entitlements and permissions",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/retrieve-user-conversation-histories",
+          id: "api/retrieve-user-conversation-histories",
           label: "Retrieve user conversation histories",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/retrieve-users-favorite-conversations",
+          id: "api/retrieve-users-favorite-conversations",
           label: "Retrieve user's favorite conversations",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/retrieve-user-courses",
+          id: "api/retrieve-user-courses",
           label: "Retrieve user courses",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/search-and-retrieve-user-uploaded-files",
+          id: "api/search-and-retrieve-user-uploaded-files",
           label: "Search and retrieve user uploaded files",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "API/retrieve-user-settings",
+          id: "api/retrieve-user-settings",
           label: "Retrieve user settings",
           className: "api-method post",
         },

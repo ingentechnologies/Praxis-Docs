@@ -1,6 +1,6 @@
 ---
-slug: welcome
-title: Welcome
+slug: v1.1
+title: v1.1
 authors: [jmarcey, slorber]
 tags: [facebook, hello, docusaurus]
 ---
