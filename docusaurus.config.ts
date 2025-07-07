@@ -82,14 +82,14 @@ const config: Config = {
     // image: 'img/docusaurus-social-card.jpg',
     defaultMode: 'dark',
     navbar: {
-      title: 'Docs',
+      title: 'Admin Guide',
       logo: {
         alt: 'Praxis Logo',
         src: 'img/praxis-studios-docs.png',
       },
       items: [
         { to: 'api', label: 'API Reference', position: 'left' },
-        { to: 'sdk', label: 'SDK', position: 'left' },        
+        { to: 'sdk', label: 'SDK', position: 'left' },     
         { to: 'integrations', label: 'Integrations', position: 'left' },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
