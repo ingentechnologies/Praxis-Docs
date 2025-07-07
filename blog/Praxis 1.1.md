@@ -1,7 +1,7 @@
 ---
 slug: v1.1
 title: v1.1
-authors: [jmarcey, slorber]
+authors: [hlebegue]
 tags: [facebook, hello, docusaurus]
 ---
 
