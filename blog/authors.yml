@@ -2,11 +2,11 @@ hlebegue:
   name: Hugo Lebegue
   title: Praxis AI Co-Founder
   url: https://github.com/JoelMarcey
-  image_url: https://github.com/JoelMarcey.png
+  image_url: https://secure.gravatar.com/avatar/6df4991f78c0116e8df91261fcc6be88a099192d89a5ae2e098e1896c726e4fb?s=80&d=identicon
   email: jimarcey@gmail.com
   socials:
     x: joelmarcey
-    github: JoelMarcey
+    gitlab: JoelMarcey
 
 slorber:
   name: Sébastien Lorber

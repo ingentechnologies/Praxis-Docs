@@ -1,6 +1,61 @@
 ---
 sidebar_position: 5
-slug: /
+slug: /user-guide
 sidebar: adminGuideSidebar
-title: User Guides
+title: User Guide
 ---
+
+- **User Guide**
+  - **Welcome to the world of Generative AI +**
+    - Main Screen
+  - **My Profile**
+    - Switch Accounts
+    - Edit Profile
+    - Change Password
+    - Provide Feedback
+    - Add Credits
+  - **Interaction**
+    - Input Prompt
+    - My Response
+    - Speech to Text
+    - Convo Mode
+  - **History, Left Nav Bar, Favorites and Settings**
+    - Conversation History
+    - Loading more history
+    - Left Navigation Bar
+    - Listing Conversations
+  - What can I do?
+  - **Content Creation**
+    - Image Generation
+    - Sharing A Dialogue
+    - Content Generation
+    - Resource Locator (Links and Videos)
+    - Finding Images
+    - Content Summarization
+    - Content Download
+  - Assistants
+  - **Files Management**
+    - Upload Files
+    - Upload Pages (URL)
+    - My Files
+    - RAG: Search Vectors
+  - **Media Handling**
+    - Image Analysis
+    - Extracting Text from Audio and Videos
+    - Youtube Transcripts
+    - Play Videos on Youtube
+    - Play Audio and Video Files
+    - Finding Sounds
+  - **Technical Assistance**
+    - Writing Code
+    - BLAST Feature
+    - Generate SVG icons
+    - Prompts for Software Developer
+    - Dataset Analysis
+    - 2D Charting
+  - **Advanced Features**
+    - LMS Integration
+    - Conversational Assessment
+    - User Memory
+    - Scientific Notations
+    - Putting it together

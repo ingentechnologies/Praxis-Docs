@@ -5,8 +5,10 @@ title: 'SDK'
 sidebar: sdkSidebar
 ---
 
+https://gitlab.com/praxis-ai/pria-client-sdk
 
-# Pria JavaScript SDK – Developer Guide
+
+# JavaScript SDK
 
 ## Introduction
 

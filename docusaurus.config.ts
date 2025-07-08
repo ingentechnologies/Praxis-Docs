@@ -82,7 +82,7 @@ const config: Config = {
     // image: 'img/docusaurus-social-card.jpg',
     defaultMode: 'dark',
     navbar: {
-      title: 'Guides',
+      title: 'Guide',
       logo: {
         alt: 'Praxis Logo',
         src: 'img/praxis-studios-docs.png',

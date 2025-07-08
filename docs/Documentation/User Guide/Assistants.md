@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-slug: /guides/assistance
-title: 'Assistance'
+sidebar_position: 6
+slug: /guides/assistants
+title: 'Assistants'
 sidebar: documentationSidebar
 ---
