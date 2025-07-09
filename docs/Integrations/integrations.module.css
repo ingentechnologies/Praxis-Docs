@@ -1,0 +1,37 @@
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tile {
+  border: 1px solid #eaeaea;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fafafa;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tile:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.tile img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.tile h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.tile p {
+  font-size: 0.95rem;
+  color: #444;
+}

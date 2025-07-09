@@ -30,7 +30,7 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
+    // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
@@ -76,11 +76,12 @@ const config: Config = {
       },
     ],
   ],
-
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
-    defaultMode: 'dark',
+    colorMode: {
+      defaultMode: 'dark',
+    },
     navbar: {
       title: 'Guide',
       logo: {
@@ -89,9 +90,10 @@ const config: Config = {
       },
       items: [
         { to: 'api', label: 'API Reference', position: 'left' },
-        { to: 'sdk', label: 'SDK', position: 'left' },     
+        { to: 'sdk', label: 'SDK', position: 'left' },
         { to: 'integrations', label: 'Integrations', position: 'left' },
         { to: 'blog', label: 'Blog', position: 'left' },
+        { to: 'showcase', label: 'Showcase', position: 'left' },
         {
           href: 'https://praxispowered.com/contact/',
           label: 'Request a Demo',
@@ -101,43 +103,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      // links: [
-      //   {
-      //     title: 'Docs',
-      //     items: [
-      //       {
-      //         label: 'API Reference',
-      //         to: '/api-reference/',
-      //       },
-      //     ],
-      //   },
-      //   // {
-      //   //   title: 'Community',
-      //   //   items: [
-      //   //     {
-      //   //       label: 'Stack Overflow',
-      //   //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //   //     },
-      //   //     {
-      //   //       label: 'Discord',
-      //   //       href: 'https://discordapp.com/invite/docusaurus',
-      //   //     },
-      //   //     {
-      //   //       label: 'X',
-      //   //       href: 'https://x.com/docusaurus',
-      //   //     },
-      //   //   ],
-      //   // },
-      //   {
-      //     title: 'More',
-      //     items: [
-      //       {
-      //         label: 'GitHub',
-      //         href: 'https://github.com/facebook/docusaurus',
-      //       },
-      //     ],
-      //   },
-      // ],
       copyright: `Copyright © ${new Date().getFullYear()} Praxis AI`,
     },
     prism: {
