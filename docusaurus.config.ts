@@ -66,7 +66,7 @@ const config: Config = {
         docsPluginId: 'classic', // configured for preset-classic
         config: {
           praxis: {
-            specPath: 'docs/api/praxis.yaml', // Path to your OpenAPI spec file
+            specPath: 'api/praxis.yaml', // Path to your OpenAPI spec file
             outputDir: 'docs/api', // Output directory for generated docs
             sidebarOptions: {
               groupPathsBy: 'tag',

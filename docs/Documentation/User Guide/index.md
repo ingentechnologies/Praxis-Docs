@@ -5,6 +5,28 @@ sidebar: adminGuideSidebar
 title: User Guide
 ---
 
+
+
+## Main Screen
+This is the main screen where you will interact with me:
+
+![Placeholder Image](https://placehold.co/600x400)
+
+:::note
+The background color, logo and my personality may change based on your institution or school, but the elements of the user interface (UI) are the same.
+:::
+
+On the top toolbar, click the digital expert logo to get back to this screen at any time. On the right, you can request the UI to be in Full-Screen mode.
+
+![Placeholder Image](https://placehold.co/600x400)
+
+Click on your icon to access additional menu items, such as My Profile, Add Credits, Change Password, Referrals, Help, Terms, Privacy, and to log out when this application is running in standalone mode.
+
+Let’s get started!
+
+
+
+
 - **User Guide**
   - **Welcome to the world of Generative AI +**
     - Main Screen
