@@ -30,7 +30,7 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-    // Even if you don't use internationalization, you can use this field to set
+  // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
@@ -87,12 +87,18 @@ const config: Config = {
       logo: {
         alt: 'Praxis Logo',
         src: 'img/praxis-studios-docs.png',
+        
+        srcDark: 'img/praxispwrd-white.png',
+        style: {
+          height: '40px', // adjust as needed
+          width: 'auto',
+        },
       },
       items: [
         { to: 'api', label: 'API Reference', position: 'left' },
         { to: 'sdk', label: 'SDK', position: 'left' },
         { to: 'integrations', label: 'Integrations', position: 'left' },
-        { to: 'blog', label: 'Blog', position: 'left' },
+        { to: 'blog', label: 'Changelog', position: 'left' },
         { to: 'showcase', label: 'Showcase', position: 'left' },
         {
           href: 'https://praxispowered.com/contact/',

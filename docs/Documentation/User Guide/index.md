@@ -10,7 +10,9 @@ title: User Guide
 ## Main Screen
 This is the main screen where you will interact with me:
 
-![Placeholder Image](https://placehold.co/600x400)
+![Main Screen](../media/main-screen.webp)
+
+
 
 :::note
 The background color, logo and my personality may change based on your institution or school, but the elements of the user interface (UI) are the same.
