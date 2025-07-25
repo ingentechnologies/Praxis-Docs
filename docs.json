@@ -140,8 +140,7 @@
             "pages": ["integrations/canvas"]
           }
         ]
-      }
-
+      },
       {
         "tab": "LXP",
         "groups": [
