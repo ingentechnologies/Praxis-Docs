@@ -100,15 +100,15 @@
         "groups": [
           {
             "group": "API Documentation",
-            "pages": ["api/api-introduction"]
+            "pages": ["api/introduction"]
           },
           {
             "group": "Runtime API",
-            "openapi": "api/runtime-api-reference/runtime-api.json"
+            "openapi": "api/runtime/runtime-api.json"
           },
                     {
             "group": "Administrator API",
-            "openapi": "api/admin-api-reference/admin-api.json"
+            "openapi": "api/admin/admin-api.json"
           }          
 
         ]
