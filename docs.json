@@ -149,11 +149,11 @@
           },
           {
             "group": "Canvas",
-            "pages": "lxp/canvas"
+            "pages": ["lxp/canvas"]
           },
           {
             "group": "D2L Brightspace",
-            "pages": "lxp/d2l-brightspace"
+            "pages": ["lxp/d2l-brightspace"]
           }
         ]
       }
