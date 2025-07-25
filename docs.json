@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Praxis AI",
   "colors": {
     "primary": "#5011FD",
     "light": "#5011FD",
-    "dark": "#5011FD"
+    "dark": "#c1c1fd"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/favicon.svg",
   
   "navigation": {
     "tabs": [
