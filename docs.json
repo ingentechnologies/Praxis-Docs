@@ -8,6 +8,7 @@
     "dark": "#5011FD"
   },
   "favicon": "/favicon.svg",
+  
   "navigation": {
     "tabs": [
      {
@@ -16,7 +17,9 @@
               "introduction/welcome",
               "introduction/plans-and-credits",
               "introduction/faq",
-              "introduction/getting-started"
+              "introduction/getting-started",
+              "introduction/praxis-studios"
+
             ]
       },
       {
