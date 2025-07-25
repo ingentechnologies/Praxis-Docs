@@ -150,12 +150,12 @@
           },
           {
             "group": "Canvas",
-            "openapi": "api-reference/runtime/runtime-api.json"
+            "openapi": "lxp/canvas"
           },
                     {
             "group": "D2L Brightspace",
-            "openapi": "api-reference/admin/admin-api.json"
-          }          
+            "openapi": "lxp/d2l-brightspace"
+          }
 
         ]
       }
