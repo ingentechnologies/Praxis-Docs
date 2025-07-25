@@ -1,0 +1,193 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Praxis AI",
+  "colors": {
+    "primary": "#5011FD",
+    "light": "#5011FD",
+    "dark": "#5011FD"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "user-guide/getting-started/welcome",
+              "user-guide/getting-started/main-screen",
+              "user-guide/getting-started/capabilities"
+            ]
+          },
+
+          {
+            "group": "Using the Interface",
+            "pages": [
+              "user-guide/using-the-interface/input-responses",
+              "user-guide/using-the-interface/nav-history",
+              "user-guide/using-the-interface/convo-speech"
+            ]
+          },
+          {
+            "group": "Profile Settings",
+            "pages": [
+              "user-guide/profile-settings/switching-accounts",
+              "user-guide/profile-settings/your-gallery",
+              "user-guide/profile-settings/edit-profile",
+              "user-guide/profile-settings/change-password",
+              "user-guide/profile-settings/add-credits"
+            ]
+          },
+          {
+            "group": "Content & Media",
+            "pages": [
+              "user-guide/content-media/content-generation",
+              "user-guide/content-media/image-audio-analysis",
+              "user-guide/content-media/sharing-downloading"
+            ]
+          },
+          {
+            "group": "Files & Documents",
+            "pages": [
+              "user-guide/files-documents/uploading",
+              "user-guide/files-documents/managing-files",
+              "user-guide/files-documents/retrieval-vectors"
+            ]
+          },
+          {
+            "group": "Assistants & Personalization",
+            "pages": [
+              "user-guide/assistants-personalization/ai-assistants",
+              "user-guide/assistants-personalization/lms-assessment",
+              "user-guide/assistants-personalization/memory-notations"
+            ]
+          },
+          {
+            "group": "Developer Tools",
+            "pages": [
+              "user-guide/developer-tools/code-data-tools",
+              "user-guide/developer-tools/scientific-technical-prompts"
+            ]
+          },
+
+          {
+            "group": "Customization",
+            "pages": ["essentials/settings", "essentials/navigation"]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "AI tools",
+            "pages": [
+              "ai-tools/cursor",
+              "ai-tools/claude-code",
+              "ai-tools/windsurf"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": ["api-introduction"]
+          },
+          {
+            "group": "Runtime API",
+            "openapi": "runtime-api-reference/runtime-api.json"
+          },
+                    {
+            "group": "Administrator API",
+            "openapi": "admin-api-reference/admin-api.json"
+          }          
+
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Product Updates",
+            "pages": ["changelog"]
+          }
+        ]
+      },
+      {
+        "tab": "SDK",
+        "groups": [
+          {
+            "group": "SDK Documentation",
+            "pages": ["sdk/introduction"]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Canvas",
+            "pages": ["integrations/canvas"]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://praxisai.mintlify.app/",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://praxispowered.com/",
+          "icon": "slack"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://praxispowered.com/",
+          "icon": "newspaper"
+        },
+        {
+          "anchor": "Github",
+          "href": "https://github.com/Praxis-AI-Powered",
+          "icon": "github"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:humans@praxis-ai.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Request a Demo",
+      "href": "https://praxispowered.com/contact/"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/AiPraxis",
+      "github": "https://github.com/praxis-ai",
+      "linkedin": "https://linkedin.com/company/praxis-ai"
+    }
+  }
+}
