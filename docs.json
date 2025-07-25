@@ -106,14 +106,13 @@
             "group": "Runtime API",
             "openapi": "api-reference/runtime/runtime-api.json"
           },
-                    {
+          {
             "group": "Administrator API",
             "openapi": "api-reference/admin/admin-api.json"
-          }          
-
+          }
         ]
       },
-      
+
       {
         "tab": "Changelog",
         "groups": [
@@ -150,16 +149,14 @@
           },
           {
             "group": "Canvas",
-            "openapi": "lxp/canvas"
+            "pages": "lxp/canvas"
           },
-                    {
+          {
             "group": "D2L Brightspace",
-            "openapi": "lxp/d2l-brightspace"
+            "pages": "lxp/d2l-brightspace"
           }
-
         ]
       }
-
     ],
     "global": {
       "anchors": [
