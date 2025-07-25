@@ -113,6 +113,7 @@
 
         ]
       },
+      
       {
         "tab": "Changelog",
         "groups": [
@@ -140,6 +141,26 @@
           }
         ]
       }
+
+      {
+        "tab": "LXP",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": ["lxp/introduction"]
+          },
+          {
+            "group": "Canvas",
+            "openapi": "api-reference/runtime/runtime-api.json"
+          },
+                    {
+            "group": "D2L Brightspace",
+            "openapi": "api-reference/admin/admin-api.json"
+          }          
+
+        ]
+      }
+
     ],
     "global": {
       "anchors": [
