@@ -10,6 +10,15 @@
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
+     {
+        "tab": "Introduction",
+            "pages": [
+              "introduction/welcome",
+              "introduction/plans-and-credits",
+              "introduction/faq",
+              "introduction/getting-started"
+            ]
+      },
       {
         "tab": "Guides",
         "groups": [
@@ -114,15 +123,6 @@
       },
 
       {
-        "tab": "Changelog",
-        "groups": [
-          {
-            "group": "Product Updates",
-            "pages": ["changelog"]
-          }
-        ]
-      },
-      {
         "tab": "SDK",
         "groups": [
           {
@@ -154,6 +154,16 @@
           {
             "group": "D2L Brightspace",
             "pages": ["lxp/d2l-brightspace"]
+          }
+        ]
+      },
+
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Product Updates",
+            "pages": ["changelog"]
           }
         ]
       }
