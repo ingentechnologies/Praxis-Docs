@@ -1,0 +1,130 @@
+<div
+  id="chat-assistant-sheet"
+  class="absolute inset-0 -top-px min-h-full flex flex-col overflow-hidden shrink-0 chat-assistant-sheet"
+  aria-hidden="false"
+>
+  <div class="w-full flex flex-col pb-4 h-full lg:pt-3">
+    <div class="chat-assistant-sheet-header flex items-center justify-between pb-3 px-4">
+      <div class="flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          class="size-5 text-primary dark:text-primary-light"
+        >
+          <g fill="currentColor">
+            <path
+              d="M5.658,2.99l-1.263-.421-.421-1.263c-.137-.408-.812-.408-.949,0l-.421,1.263-1.263,.421c-.204,.068-.342,.259-.342,.474s.138,.406,.342,.474l1.263,.421,.421,1.263c.068,.204,.26,.342,.475,.342s.406-.138,.475-.342l.421-1.263,1.263-.421c.204-.068,.342-.259,.342-.474s-.138-.406-.342-.474Z"
+              fill="currentColor"
+              data-stroke="none"
+              stroke="none"
+            ></path>
+            <polygon
+              points="9.5 2.75 11.412 7.587 16.25 9.5 11.412 11.413 9.5 16.25 7.587 11.413 2.75 9.5 7.587 7.587 9.5 2.75"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            ></polygon>
+          </g>
+        </svg>
+        <span class="font-semibold text-gray-900 dark:text-gray-100">
+          Assistant
+        </span>
+      </div>
+      <div class="flex items-center gap-1">
+        <button class="group hover:bg-gray-100 dark:hover:bg-white/10 p-1.5 rounded-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-maximize2 size-[13px] text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300"
+          >
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" x2="14" y1="3" y2="10"></line>
+            <line x1="3" x2="10" y1="21" y2="14"></line>
+          </svg>
+        </button>
+        <button class="group hover:bg-gray-100 dark:hover:bg-white/10 p-1.5 rounded-lg">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3.5 text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300"
+          >
+            <path
+              d="M12.4444 3.55566L3.55554 12.4446"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M3.55554 3.55566L12.4444 12.4446"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      id="chat-content"
+      class="chat-assistant-sheet-content flex-1 overflow-y-auto relative px-4"
+    >
+      <div class="mt-4 flex flex-col items-center text-sm justify-between">
+        <div class="mx-8 text-center text-gray-400 dark:text-gray-600 text-xs chat-assistant-disclaimer-text">
+          Responses are generated using AI and may contain mistakes.
+        </div>
+        <div class="flex flex-col gap-4 text-gray-800 dark:text-gray-200"></div>
+      </div>
+    </div>
+    <div class="px-4">
+      <div class="">
+        <div class="flex items-end gap-2 relative">
+          <textarea
+            id="chat-assistant-textarea"
+            autocomplete="off"
+            placeholder="Ask a question..."
+            class="grow w-full px-3.5 pr-10 py-2.5 bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-600/30 rounded-2xl shadow-sm focus:outline-none focus:border-primary dark:focus:border-primary-light text-gray-900 dark:text-gray-100 text-sm chat-assistant-input"
+            style="resize: none; height: 42px !important;"
+          ></textarea>
+          <button
+            class="absolute right-2.5 bottom-[9px] flex justify-center items-center p-1 w-6 h-6 rounded-lg bg-primary/30 dark:bg-primary-dark/30 chat-assistant-send-button"
+            aria-label="Send message"
+            disabled=""
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-up w-3.5 h-3.5 text-white dark:text-white"
+            >
+              <path d="m5 12 7-7 7 7"></path>
+              <path d="M12 19V5"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
