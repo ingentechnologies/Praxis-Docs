@@ -24,13 +24,9 @@
       },
       {
         "tab": "Guides",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": ["guides/overview"]
-          }
 
-        ]
+            "pages": ["guides/overview", "guides/user/getting-started/welcome"]
+
       },
       {
         "tab": "API Reference",
@@ -51,7 +47,7 @@
       },
 
       {
-        "tab": "SDK",
+        "tab": "SDKs",
         "groups": [
           {
             "group": "SDKs",
