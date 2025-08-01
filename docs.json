@@ -8,25 +8,53 @@
     "dark": "#5011FD"
   },
   "favicon": "/images/favicon.svg",
-  
+
   "navigation": {
     "tabs": [
-     {
+      {
         "tab": "Introduction",
-            "pages": [
-              "introduction/welcome",
-              "introduction/plans-and-credits",
-              "introduction/faq",
-              "introduction/getting-started",
-              "introduction/praxis-studios"
-
-            ]
+        "pages": [
+          "introduction/welcome",
+          "introduction/plans-and-credits",
+          "introduction/faq",
+          "introduction/getting-started",
+          "introduction/praxis-studios"
+        ]
       },
       {
         "tab": "Guides",
-
-            "pages": ["guides/overview", "guides/user/getting-started/welcome"]
-
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "notebook",
+            "pages": ["guides/overview","guides/main-screen", "guides/capabilities"]
+          },
+          {
+            "group": "Assistant Personalization",
+            "pages": ["guides/user/assistants-personalization/ai-assistants", "guides/user/assistants-personalization/lms-assessment","guides/user/assistants-personalization/memory-notations"]
+          },
+          {
+            "group": "Content and Media",
+            "pages": ["guides/user/content-and-media/content-generation", "guides/user/content-and-media/image-audio-analysis", "guides/user/content-and-media/sharing-downloading"]
+          },
+          {
+            "group": "Developer Tools",
+            "pages": ["guides/user/developer-tools/code-data-tools", "guides/user/developer-tools/scientific-technical-prompts"]
+          },
+          {
+            "group": "Files and Documents",
+            "pages": ["guides/user/files-documents/managing-files", "guides/user/files-documents/retrieval-vectors", "guides/user/files-documents/uploading"]
+          },
+          {
+            "group": "Profile Settings",
+            "pages": ["guides/user/profile-settings/add-credits", "guides/user/profile-settings/change-password","guides/user/profile-settings/edit-profile","guides/user/profile-settings/switching-accounts","guides/user/profile-settings/your-gallery"]
+          },
+          
+          {
+            "group": "Administration",
+            "pages": ["guides/user/profile-settings/add-credits", "guides/user/profile-settings/change-password","guides/user/profile-settings/edit-profile","guides/user/profile-settings/switching-accounts","guides/user/profile-settings/your-gallery"]
+          }
+        ]
       },
       {
         "tab": "API Reference",
@@ -58,7 +86,6 @@
       {
         "tab": "Integrations",
         "pages": ["integrations/overview"]
-    
       },
       {
         "tab": "LXP",
@@ -105,7 +132,7 @@
           "href": "https://github.com/Praxis-AI-Powered",
           "icon": "github"
         },
-                {
+        {
           "anchor": "Status",
           "href": "https://github.com/Praxis-AI-Powered",
           "icon": "signal"
@@ -137,13 +164,7 @@
       "linkedin": "https://linkedin.com/company/praxis-ai"
     }
   },
-   "contextual": {
-   "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude"
-
-   ]
- }
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  }
 }
