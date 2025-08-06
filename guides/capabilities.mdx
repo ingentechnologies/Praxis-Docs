@@ -3,3 +3,15 @@ title: "Capabilities"
 description: "To Do Add Content Here"
 icon: 'text-size'
 ---
+
+
+```mermaid
+flowchart TB
+    A["Account Admin creates invite link and sends to User"] --> B["User clicks invite link to request joining, request is emailed to Admin"]
+    B --> C@{ label: "Membership is created in 'Pending' state" }
+    C --> D["Account Admin approves request to join Digital Twin"]
+    D --> E["Email confirming approval is sent to User"]
+    E --> F@{ label: "User's Membership is set to Active" }
+
+    C@{ shape: rect}
+    F@{ shape: rect}
