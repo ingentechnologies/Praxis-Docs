@@ -13,11 +13,11 @@
       {
         "tab": "Introduction",
         "pages": [
-          "introduction/welcome",
-          "introduction/plans-and-credits",
-          "introduction/faq",
-          "introduction/getting-started",
-          "introduction/praxis-studios"
+          "welcome",
+          "plans-and-credits",
+          "faq",
+          "getting-started",
+          "praxis-studios"
         ]
       },
       {

@@ -1,0 +1,21 @@
+---
+title: "Diagrams"
+description: "Page Description"
+icon: 'text-size'
+---
+
+
+```mermaid
+sequenceDiagram
+    participant A as Account Admin
+    participant U as User
+    participant S as Praxis Services
+    A->>U: Create invite link
+    U->>A: Click invite link to request joining
+    A->>S: Membership created in 'Pending' state
+    S->>U: Email request to join
+    A->>S: Approve request to join Digital Twin
+    S->>U: Email confirming approval sent to User
+    S->>U: User's Membership set to Active
+    
+```
