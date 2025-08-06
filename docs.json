@@ -31,6 +31,14 @@
               "guides/capabilities"
             ]
           },
+                    {
+            "group": "Using the Interface",
+            "pages": [
+              "guides/interface-overview/using-the-interface/input-responses",
+              "guides/interface-overview/using-the-interface/nav-history",
+              "guides/interface-overview/using-the-interface/convo-speech"
+            ]
+          },
           {
             "group": "Assistant Personalization",
             "pages": [
