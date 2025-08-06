@@ -27,11 +27,23 @@
             "group": "Getting Started",
             "pages": [
               "guides/overview",
-              "guides/main-screen",
-              "guides/capabilities"
+                            "guides/capabilities",
+              "guides/main-screen"
+
             ]
           },
-                    {
+
+          {
+            "group": "Profile Settings",
+            "pages": [
+              "guides/user/profile-settings/add-credits",
+              "guides/user/profile-settings/change-password",
+              "guides/user/profile-settings/edit-profile",
+              "guides/user/profile-settings/switching-accounts",
+              "guides/user/profile-settings/your-gallery"
+            ]
+          },
+          {
             "group": "Using the Interface",
             "pages": [
               "guides/interface-overview/using-the-interface/input-responses",
@@ -68,16 +80,6 @@
               "guides/user/files-documents/managing-files",
               "guides/user/files-documents/retrieval-vectors",
               "guides/user/files-documents/uploading"
-            ]
-          },
-          {
-            "group": "Profile Settings",
-            "pages": [
-              "guides/user/profile-settings/add-credits",
-              "guides/user/profile-settings/change-password",
-              "guides/user/profile-settings/edit-profile",
-              "guides/user/profile-settings/switching-accounts",
-              "guides/user/profile-settings/your-gallery"
             ]
           },
 
