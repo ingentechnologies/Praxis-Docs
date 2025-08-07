@@ -25,7 +25,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["guides/introduction", "contact-support"]
+            "pages": ["guides/introduction"]
           },
 
           {
@@ -34,18 +34,10 @@
               "guides/interface/input-responses",
               "guides/interface/nav-history",
               "guides/interface/convo-speech",
-              "guides/interface/your-gallery"
+              "guides/interface/your-gallery",
+              "guides/interface/switching-accounts"
             ]
           },
-          {
-            "group": "Files and Documents",
-            "pages": [
-              "guides/user/files-documents/managing-files",
-              "guides/user/files-documents/retrieval-vectors",
-              "guides/user/files-documents/uploading"
-            ]
-          },
-
           {
             "group": "Assistant Personalization",
             "pages": [
@@ -69,29 +61,33 @@
               "guides/user/developer-tools/scientific-technical-prompts"
             ]
           },
-
+          {
+            "group": "Files and Documents",
+            "pages": [
+              "guides/user/files-documents/managing-files",
+              "guides/user/files-documents/retrieval-vectors",
+              "guides/user/files-documents/uploading"
+            ]
+          },
 
           {
             "group": "Settings & Account",
             "pages": [
               "guides/user/credits",
               "guides/user/profile-settings/change-password",
-              "guides/user/profile-settings/edit-profile",
-              "guides/user/profile-settings/switching-accounts",
-              "guides/user/profile-settings/your-gallery"
+              "guides/user/profile-settings/edit-profile"
             ]
           },
 
           {
-            "group": "Administrator Guides",
+            "group": "Admin Guides",
             "pages": [
-                            "guides/admin/instances",
+              "guides/admin/instances",
               "guides/admin/users",
               "guides/admin/histories",
               "guides/admin/sessions",
               "guides/admin/feedback",
               "guides/admin/entitlements"
-              
             ]
           }
         ]
