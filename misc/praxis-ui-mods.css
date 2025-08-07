@@ -1,0 +1,144 @@
+
+/* 
+  CSS Template for Customization of the Pria UI 
+  01/22/2025 - version 1.3 
+*/
+
+/*
+Account for responsive breakpoints, use the following: 
+*/
+/*
+max-sm	@media not all and (min-width: 640px) { ... }
+max-md	@media not all and (min-width: 768px) { ... }
+max-lg	@media not all and (min-width: 1024px) { ... }
+max-xl	@media not all and (min-width: 1280px) { ... }
+max-2xl	@media not all and (min-width: 1536px) { ... }
+*/
+
+/* Common */
+.pria-ui-background {}
+
+/* Pria UI Section */
+.pria-ui-topbar {}
+
+.pria-ui-sidebar {}
+
+.pria-ui-messages {}
+
+.pria-ui-input {}
+
+.pria-ui-entrysearch {}
+
+.pria-ui-message {}
+
+.pria-message-in {}
+
+.pria-message-out {}
+
+.pria-ui-assistants {}
+
+.pria-ui-assistant {}
+
+.pria-ui-voices {}
+
+.pria-ui-assistant.active {}
+
+.pria-ui-assistant.inactive {}
+
+.pria-ui-assistant.unpublished {}
+
+.pria-ui-files {}
+
+.pria-ui-file {}
+
+.pria-ui-file.selected {}
+
+.pria-ui-file.active {}
+
+.pria-ui-file.inactive {}
+
+.pria-ui-file.error {}
+
+.pria-ui-uploads {}
+
+.pria-ui-chartcontainer {}
+
+/* Admin section */
+.pria-ui-wrapper {}
+
+.pria-ui-tabpane {}
+
+/* Profile section */
+.pria-ui-profile-header {}
+
+/* Feedback section */
+.pria-ui-feedback {}
+
+.pria-ui-output {}
+
+/* Examples */
+.pria-ui-topbar,
+.pria-ui-sidebar,
+.pria-ui-background,
+.pria-ui-messages,
+.pria-ui-input,
+.pria-ui-profile-header,
+.pria-ui-entrysearch,
+.pria-ui-wrapper,
+.pria-ui-tabpane,
+.pria-ui-files,
+.pria-ui-assistants,
+.pria-ui-uploads,
+.pria-ui-voices,
+.pria-ui-chartcontainer,
+.pria-ui-feedback,
+.pria-ui-output {
+    /* Purple*/
+    /* background-color: rgba(237, 233, 254, 1);*/
+    /* Blue Sky */
+    /* background-color: rgba(135, 206, 235, 1); */
+    /* Peach */
+    /* background-color: rgba(255, 228, 205, 1);*/
+    /* Sun */
+    background: radial-gradient(circle, #FFFFE0, #fff7e6, #FFA500);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.pria-ui-message:HOVER,
+.pria-ui-message:FOCUS {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.pria-ui-assistant.active {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.pria-ui-assistant.unpublished {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.pria-ui-assistant.inactive {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.pria-ui-file.selected {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.pria-ui-file.active {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.pria-ui-file.inactive {
+    background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+.pria-ui-file.error {
+    background-color: rgba(255, 0, 0, 0.1) !important;
+}
+.pria-login-btn{
+}
+.pria-signup-btn{
+}
