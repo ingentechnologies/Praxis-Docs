@@ -33,9 +33,19 @@
             "pages": [
               "guides/interface/input-responses",
               "guides/interface/nav-history",
-              "guides/interface/convo-speech"
+              "guides/interface/convo-speech",
+              "guides/interface/your-gallery"
             ]
           },
+          {
+            "group": "Files and Documents",
+            "pages": [
+              "guides/user/files-documents/managing-files",
+              "guides/user/files-documents/retrieval-vectors",
+              "guides/user/files-documents/uploading"
+            ]
+          },
+
           {
             "group": "Assistant Personalization",
             "pages": [
@@ -59,19 +69,12 @@
               "guides/user/developer-tools/scientific-technical-prompts"
             ]
           },
-          {
-            "group": "Files and Documents",
-            "pages": [
-              "guides/user/files-documents/managing-files",
-              "guides/user/files-documents/retrieval-vectors",
-              "guides/user/files-documents/uploading"
-            ]
-          },
+
 
           {
             "group": "Settings & Account",
             "pages": [
-              "guides/user/profile-settings/add-credits",
+              "guides/user/credits",
               "guides/user/profile-settings/change-password",
               "guides/user/profile-settings/edit-profile",
               "guides/user/profile-settings/switching-accounts",
@@ -80,14 +83,15 @@
           },
 
           {
-            "group": "Administration",
+            "group": "Administrator Guides",
             "pages": [
-              "guides/admin/manage-instances",
-              "guides/admin/manage-users",
-              "guides/admin/billing-invoices",
-              "guides/admin/sso",
-              "guides/admin/api-keys",
-              "guides/admin/custom-domain"
+                            "guides/admin/instances",
+              "guides/admin/users",
+              "guides/admin/histories",
+              "guides/admin/sessions",
+              "guides/admin/feedback",
+              "guides/admin/entitlements"
+              
             ]
           }
         ]
