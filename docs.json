@@ -7,13 +7,10 @@
     "light": "#5011FD",
     "dark": "#5011FD"
   },
-  "banner":{
-
-"content":"🚀 **New** instances now receive **50** free credits to get started!  [Get Started Here](https://hiimpria.ai/login/signup)",
-"dismissible": true
-
-  }
-  ,
+  "banner": {
+    "content": "🚀 **New** instances now receive **50** free credits to get started!  [Get Started Here](https://hiimpria.ai/login/signup)",
+    "dismissible": true
+  },
   "favicon": "/images/favicon.svg",
   "navigation": {
     "tabs": [
@@ -96,11 +93,9 @@
               "guides/admin/entitlements"
             ]
           },
-                    {
+          {
             "group": "Support",
-            "pages": [
-              "contact-support"
-            ]
+            "pages": ["contact-support"]
           }
         ]
       },
@@ -165,11 +160,7 @@
     ],
     "global": {
       "anchors": [
-        {
-          "anchor": "Support",
-          "href": "https://praxispowered.com/",
-          "icon": "slack"
-        },
+
         {
           "anchor": "Blog",
           "href": "https://praxispowered.com/",
@@ -184,6 +175,11 @@
           "anchor": "Status",
           "href": "https://github.com/Praxis-AI-Powered",
           "icon": "signal"
+        },
+                {
+          "anchor": "Feature Request",
+          "href": "https://praxis-ai.canny.io/feature-requests",
+          "icon": "slack"
         }
       ]
     }
