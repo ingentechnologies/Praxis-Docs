@@ -1,81 +1,62 @@
 ---
-title: "Main Screen"
-description: "This is the main screen where you will interact with me."
+title: 'Main Screen'
+description: 'This is the main screen where you will interact with me.'
 icon: 'file-xml'
 ---
 
-<Note>The background color, logo and my personality may change based on your institution or school, but the elements of the user interface (UI) are the same.</Note>
+<Note>
+  The background color, logo and my personality may change based on your
+  institution or school, but the elements of the user interface (UI) are the
+  same.
+</Note>
 
-![Praxis UI interface](/images/guides/interface/praxis-ui.webp)
+<img 
+  src="/images/guides/interface/praxis-ui.webp" 
+  alt="Main Praxis interface"
+  height="600"
+  className="rounded-xl"
+/>
 
+<p>Here are the main elements of the Praxis AI interface:</p>
 
-<AccordionGroup>
-  
-  <Accordion title="Main Screen Elements">
-    <p>Here are the main elements of the Praxis AI interface:</p>
-    <ul>
-      <li><strong>Profile:</strong> Access your profile settings.</li>
-      <li><strong>Chat:</strong> Where you can type your questions or commands.</li>
-      <li><strong>Convo Mode:</strong> For a more natural conversation experience.</li>
-      <li><strong>Credits:</strong> Shows your remaining credits for using services.</li>
-      <li><strong>Add Credits:</strong> Purchase additional credits if needed.</li>
-      <li><strong>Change Password:</strong> Update your password for security.</li>
-      <li><strong>Admin:</strong> For administrators to manage user accounts and settings.</li>
-      <li><strong>Fullscreen:</strong> Enter fullscreen mode for an immersive experience.</li>
-      <li><strong>Files in your IPVault:</strong> Manage your stored files.</li>
-      <li><strong>Assistants:</strong> Access and configure your AI assistants.</li>
-      <li><strong>History:</strong> Review past interactions with Praxis AI.</li>
-    </ul>
-</Accordion>
-
-<Accordion title="1. Profile">On the top left of the toolbar, click the digital expert logo to get back to this screen</Accordion>
-
-<Accordion title="2. Chat">
-    This is where you can type your questions or commands. You can also use voice input if your device supports it.
-</Accordion>
-
-<Accordion title="3. Convo Mode">
-    In Convo Mode, you can have a more natural and fluid conversation with me. This mode is designed to understand context and follow-up questions better.
-</Accordion>
-
-<Accordion title="4. Credits">
-    This shows how many credits you have left for using the Praxis AI services. You can purchase more credits if needed.
-</Accordion>
-
-<Accordion title="5. Profile">
-    Click here to access your profile settings, where you can manage your account, preferences, and other settings.
-</Accordion>
-
-<Accordion title="6. Add Credits">
-    If you need more credits, click here to purchase additional credits for using the Praxis AI services.
-</Accordion>
-
-<Accordion title="7. Change Password">
+<Columns cols={3}>
+  <Card title="1. Settings" icon="pen-to-square" href="/development">
+    On the top right of the toolbar, click your profile icon to access settings.
+  </Card>
+  <Card title="2. Chat" icon="sparkles" href="/essentials/settings">
+    Type your questions or commands. You can also use voice input if your device
+    supports it.
+  </Card>
+  <Card title="3. Convo Mode" icon="sparkles" href="/guides/user/assistants-personalization/ai-assistants">
+    Have a natural and fluid conversations with me in 109 different languages.
+  </Card>
+  <Card title="4. Credits" icon="paperclip" href="/api-reference/introduction">
+    Credits you have left for using the Praxis AI services. You can purchase more credits if needed.
+  </Card>
+  <Card title="5. Profile" icon="user" href="/guides/user/profile">
+    Access your profile settings, where you can manage your preferences, and other settings.
+  </Card>
+  <Card title="6. Add Credits" icon="user" href="/guides/user/profile">
+    If you need more credits, click here to purchase additional credits for
+    using the Praxis AI services.
+  </Card>
+  <Card title="7. Change Password" icon="user" href="/guides/user/profile">
     You can change your password here for security purposes.
-</Accordion>
-
-<Accordion title="8. Admin">
-    This section is for administrators to manage user accounts, monitor usage, and access advanced settings.
-</Accordion>
-
-<Accordion title="9. Fullscreen">
+  </Card>
+  <Card title="8. Admin" icon="user" href="/guides/user/profile">
+    This section is for administrators to manage user accounts, monitor usage,
+    and access advanced settings.
+  </Card>
+  <Card title="9. Fullscreen" icon="user" href="/guides/user/profile">
     Click this button to enter fullscreen mode for a more immersive experience.
-</Accordion>
-
-<Accordion title="10. Files in your IPVault">
-    This section shows the files you have stored in your IPVault. You can upload, download, and manage your files here.
-</Accordion>
-
-<Accordion title="11. Assistants">
-    This section allows you to access your AI assistants, including adding, removing, and configuring them.
-</Accordion>
-
-<Accordion title="12. History">
-    This section shows your past interactions with Praxis AI, allowing you to review and manage your conversation history.
-</Accordion>
-
-</AccordionGroup>
-
-
-
-
+    </Card>
+    <Card title="10. Files in the IPVault" icon="user" href="/guides/user/profile">
+    Shows the files you have stored in your IPVault. You can upload, download, and manage your files here.
+  </Card>
+  <Card title="11. Assistants" icon="user" href="/guides/user/profile">
+    Access you AI assistants, including adding,removing, and configuring them.
+  </Card>
+  <Card title="12. History" icon="user" href="/guides/user/profile">
+    View past interactions with Praxis AI, allowing you toreview and manage your conversation history.
+  </Card>
+</Columns>
