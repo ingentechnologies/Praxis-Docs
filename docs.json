@@ -31,7 +31,6 @@
           {
             "group": "Using the Interface",
             "pages": [
-              "guides/interface/main-screen",
               "guides/interface/input-responses",
               "guides/interface/nav-history",
               "guides/interface/convo-speech"
