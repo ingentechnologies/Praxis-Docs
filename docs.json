@@ -38,9 +38,9 @@
             ]
           },
           {
-            "group": "Assistant Personalization",
+            "group": "Assistants",
             "pages": [
-              "guides/user/assistants-personalization/ai-assistants",
+              "guides/user/assistants-personalization/assistants",
               "guides/user/assistants-personalization/lms-assessment",
               "guides/user/assistants-personalization/memory-notations"
             ]
@@ -87,6 +87,12 @@
               "guides/admin/sessions",
               "guides/admin/feedback",
               "guides/admin/entitlements"
+            ]
+          },
+                    {
+            "group": "Support",
+            "pages": [
+              "contact-support"
             ]
           }
         ]
