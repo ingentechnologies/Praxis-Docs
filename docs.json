@@ -14,9 +14,9 @@
         "tab": "Introduction",
         "pages": [
           "welcome",
+          "getting-started",
           "plans-and-credits",
           "faq",
-          "getting-started",
           "praxis-studios"
         ]
       },
@@ -25,21 +25,16 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": [
-              "guides/introduction",
-              
-              "contact-support"
-
-            ]
+            "pages": ["guides/introduction", "contact-support"]
           },
 
           {
             "group": "Using the Interface",
             "pages": [
-              "guides/interface-overview/main-screen",
-              "guides/interface-overview/using-the-interface/input-responses",
-              "guides/interface-overview/using-the-interface/nav-history",
-              "guides/interface-overview/using-the-interface/convo-speech"
+              "guides/interface/main-screen",
+              "guides/interface/input-responses",
+              "guides/interface/nav-history",
+              "guides/interface/convo-speech"
             ]
           },
           {
