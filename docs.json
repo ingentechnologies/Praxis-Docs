@@ -25,7 +25,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["guides/introduction"]
+            "pages": ["guides/introduction", "guides/interface-overview"]
           },
 
           {
@@ -34,8 +34,7 @@
               "guides/interface/input-responses",
               "guides/interface/nav-history",
               "guides/interface/convo-speech",
-              "guides/interface/your-gallery",
-              "guides/interface/switching-accounts"
+              "guides/interface/switching-experts"
             ]
           },
           {
