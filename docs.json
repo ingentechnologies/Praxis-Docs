@@ -36,7 +36,7 @@
             "group": "Using the Interface",
             "pages": [
               "guides/interface/input-responses",
-              "guides/interface/nav-history",
+              "guides/interface/history-settings",
               "guides/interface/convo-speech",
               "guides/interface/switching-experts"
             ]
@@ -83,7 +83,7 @@
           },
 
           {
-            "group": "Admin Guides",
+            "group": "Manage Instances",
             "pages": [
               "guides/admin/instances",
               "guides/admin/users",
