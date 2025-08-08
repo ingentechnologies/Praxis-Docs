@@ -85,7 +85,11 @@
           {
             "group": "Manage Instances",
             "pages": [
-              "guides/admin/instances",
+              "guides/admin/configuration",
+              "guides/admin/personalization",
+              "guides/admin/ai-models",
+              "guides/admin/tools",
+                            "guides/admin/ipvault",
               "guides/admin/users",
               "guides/admin/histories",
               "guides/admin/sessions",

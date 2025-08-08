@@ -1,0 +1,58 @@
+---
+title: 'IP Vault'
+description: 'Learn how to manage your IP Vault effectively.'
+icon: 'text-size'
+---
+
+
+## IP Vault
+The IP Vault is a secure storage space for your intellectual property (IP) and other important files. It allows you to upload, manage, and retrieve files that are relevant to your digital twin's
+
+
+
+### RAG (Retrieval Augmented Generation)
+
+Retrieval Augmented Generation is a core functionality of your digital twin. It means that your digital twin is capable of searching documents you have uploaded for articles of content relevant to the conversation and add them during your interaction with the large language model. This technique allows you to source the content to trusted material you control.
+
+RAG is enabled by default and is at work when you upload a file in your private IP Vault, and when you select the files to include in the conversation.
+
+
+### File Upload Process
+To better understand the k-NN Vector Score %, here is a breakdown
+
+<Steps>
+
+  <Step title="“Vector Embedding">
+    - When you upload a file to your instance, the content is broken down into sections. 
+    - Each section is converted into a “Vector Embedding”.
+    </Step>
+
+  <Step title="Question Processing">
+    - When you ask a question, it is also converted into a Vector Embedding.
+    - This embedding captures the semantic meaning of the question, allowing for effective matching with relevant file sections.
+    - The Vector Embedding is a numerical representation of the content, capturing its meaning in a way that can be compared to other embeddings.
+    - This process is crucial for enabling the system to find relevant sections of the uploaded files that match the question being asked.
+    - The Vector Embedding is created using advanced algorithms that analyze the content of the file and the question, transforming them into a format that can be efficiently compared.
+    - This allows the system to understand the context and semantics of both the file content and the question, enabling accurate retrieval of relevant information.
+    - The Vector Embedding is a key component of the Retrieval Augmented Generation (RAG) process, allowing the system to effectively search and retrieve relevant content from the uploaded files.
+  </Step>
+
+
+  <Step title="Relevance Matching">
+    - The system uses the Euclidean k-NN (k-nearest neighbors) algorithm to compare the question's embedding with the embeddings of the file sections.
+    - Sections are ranked based on how closely they match the question's embedding, using a relevance score.
+
+  </Step>
+  <Step title="Threshold">
+    You can adjust the threshold
+      - Increase it for stricter selection criteria.
+      - Lower it to include sections that might be less relevant to the question.
+  </Step>
+
+  
+</Steps>
+
+
+<Note>
+Disable File Upload for Students: You may choose to disable File upload to prevent users from uploading files. Don’t worry, as administrator, you can still upload files for your instance. This is covered in a section on course material later in this guide.
+</Note>
