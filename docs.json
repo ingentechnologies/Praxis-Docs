@@ -126,7 +126,7 @@
         "groups": [
           {
             "group": "SDKs",
-            "pages": ["sdk/introduction"]
+            "pages": ["sdk/introduction","sdk/object-definitions","sdk/usage-examples"]
           }
         ]
       },

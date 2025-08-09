@@ -1,0 +1,55 @@
+---
+title: 'Object Definitions'
+description: 'This document describes the object definitions used by the Praxis AI SDK.'
+---
+
+## Request Object
+
+```javascript
+const request = {
+	command: 'post',
+	inputs: [<string>],
+	assistantId: <string>,
+	selectedCourse: {
+		course_id: <string>,
+		course_name: <string>
+	}
+}
+```
+
+
+## Response Object
+
+```json
+{
+   "type": "pria-response",
+   "response": {
+      "content": {
+         "success": true,
+         "outputs": [
+            "I am doing great ! Happy birthday by the way, doing anything special?"
+         ],
+         "usage": 12048,
+         "institutioncredits": 991,
+         "credits": 991,
+         "creditsUsed": 59,
+         "totalLength": 12048,
+         "totalCredits": 2,
+         "query_duration_ms": 9404,
+         "requestArgs": {
+            "userISODate": "2024-12-23T14:25:48.245Z",
+            "userTimezone": "Indian/Mauritius",
+            "socketId": "kdzUm6yzkFd9YDcWAAAP",
+            "assistantId":"67568474f66f51c8dc860c1f",
+            "selectedCourse" : {
+		"course_id": 123456,
+		"course_name": "Pre-assessment (AI for Analysts)"
+	     }
+          },
+         "model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"
+      },
+      "type": "object"
+   },
+   "version": 1
+}
+```

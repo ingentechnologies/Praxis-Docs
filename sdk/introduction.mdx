@@ -3,12 +3,190 @@ title: 'Introduction'
 description: 'Example section for showcasing Software Development Kits'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+Once you have installed Pria onto your web site (or LMS such as Canvas) you can communicate to Pria through Javascript. This document describes how to make requests to Pria and receive responses from Pria, without requiring the Pria UI
 
-## Welcome
+There are two ways to integrate Praxis: [Embed](https://mintlify.com/docs/api-playground/openapi/setup) and [SDK](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## Embed
 
+Install Pria on your Website using the custom SDK https://pria.praxislxp.com/pria-sdk-web.js or follow this guide to install Pria as a Theme onto Canvas https://learning.praxislxp.com/praxis/pria-custom-theme-canvas-install-guide .
+
+Once your instance is configured, and to hide the pria UI, set the display options of the priasdk to noUI=true value
+
+
+[SDK Playground](https://pria.praxislxp.com/test_sdk.html)
+
+Once your instance is configured, and to hide the pria UI, set the display options of the priasdk to `noUI=true` value
+
+```javascript
+    var displayOptions = {
+        fullScreen: false, // True for expanded in full screen
+        openOnLoad: false, // True to open Pria immediately when loaded 
+        buttonWidth: '80px', // Size of the button containing the Pria Logo
+        buttonPosition: 'fixed', // Determine the position of the button (fixed, relative, sticky)
+        buttonPositionRight: '20px', // Position of the button relative to the right edge of the screen
+        buttonPositionBottom: '20px', // Position of the button relative to the bottom edge of the screen
+        buttonNoBounce: true,  // Determine wether the button will not bounce when Pria is closed
+        priaContainerId: '', // Id of the container receiving pria window (default empty uses BODY)
+        buttonContainerId: '', // Id of the container receiving the button (default empty uses BODY)
+        allowPop: false, // true to show the button and pop Pria out the containing iFrame 
+        noUI: false // true to disable the UI. Pria is still accessible through the Javascript SDK
+    }
+
+```
+
+### Global Window Object
+Pria SDK is available as a window global object and contains the following functions:
+
+```javascript
+const pria = {
+    load: priasdk,
+    send: priaSend,
+    subscribe: priaSubscribe,
+    unsubscribe: priaUnsubscribe,
+    setVisible: priaSetVisible,
+    version: 1
+}
+
+// support for the browser and nodejs
+if (isNode) {
+    module.exports = { priasdk, pria }
+} else {
+    window.priasdk = priasdk;
+    window.pria = pria;
+}
+
+```
+
+
+### Make a simple request
+To send a request to Pria, ise the send(0 function.
+
+When Pria is installed and running, Pria will be available in your page like the example below:
+
+
+n this example features Pria named as ‘Scarlet’ which is a custom Digital Twin.
+
+At the time of this writing, Pria send() API function SDK supports the following commands:
+
+post.message : Sends a text message to Pria
+
+convo.start: Sends a request to start the Conversational feature Speech to Speech
+
+convo.stop: Sends a request to stop the Conversational feature Speech to Speech
+
+Anywhere in the DOM of your web page, you can send requests to Pria using a simple Javascript code like this:
+
+```javascript
+const request = {
+	command: 'post.message',
+	inputs: ['How are you?','Today is my birthday !'],
+}
+
+pria.send(request)
+```
+
+### Convo Mode Request
+
+To start the Convo feature, you can use the following code:
+```javascript
+const request = {
+    command: 'convo.start'
+}
+pria.send(request)
+```
+
+The function pria.send may throw errors such as: “Connect Pria first, then retry”, and “Function requires valid JSON.”
+
+The SDK uses the identity of the user currently connected to the digital twin.
+
+Pria will only respond when the digital is properly configured and fully connected.
+
+
+### Receive responses
+
+To receive a response from Pria, you must subscribe first.
+
+This is done using the pria.subscribe function like the following example:
+
+```javascript
+const gotResponseFromPria = (response) => {
+    ....
+}
+pria.subscribe(gotResponseFromPria)
+```
+
+### Example Response
+
+When you send a request to Pria, you will receive a response in the following format:
+
+```json
+{
+   "type": "pria-response",
+   "response": {
+      "command": "post.message",
+      "content": {
+         "success": true,
+         "outputs": [
+            "I am doing great ! Happy birthday by the way.."
+         ],
+         "usage": 12048,
+         "query_duration_ms": 9404,
+         "model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"
+      },
+      "isError": false,
+      "type": "object"
+   },
+   "version": 1
+}
+
+{
+    "type": "pria-response",
+    "response": {
+        "content": "Unauthorized",
+        "command": "convo.start",
+        "type": "string",
+        "isError": true
+    },
+    "version": 1
+}
+
+{
+   "type": "pria-response",
+   "response": {
+      "content": "Convo stopped (STS)",
+      "command": "convo.stop",
+      "type": "string",
+      "isError": false
+   },
+   "version": 1
+}
+
+{
+   "type": "pria-response",
+   "response": {
+      "content": [
+         {
+            "_id": "67568474f66f51c8dc860c1f",
+            "name": " New Conversation",
+            "description": "Start a new conversation! This assistant is designed to initiate and facilitate fresh, engaging dialogues on a wide range of topics, adapting to the user's interests and needs.✏️📝 It employs a dynamic approach, utilizing available tools and user memory to personalize interactions, while maintaining a focus on the current conversation's context and goals. The primary benefit of this assistant is its ability to provide tailored, informative, and thought-provoking exchanges that encourage learning, exploration, and meaningful interaction, all while adhering to strict guidelines for accuracy, citation, and ethical communication.",
+            "picture_url": "/assistant_new_conversation.webp",
+            "status": "active",
+            "liked_count": 3,
+            "admin_only": false,
+            "created": "2024-12-09T05:47:32.361Z",
+
+            "institution_shared": false,
+            "remember_history": 3,
+            "argument_5": null,
+            "editable_others": false
+         },
+         ...
+      ],
+      "command": "assistants.list",
+      "type": "object",
+      "isError": false
+   },
+   "version": 1
+}
+```
