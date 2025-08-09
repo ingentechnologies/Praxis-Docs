@@ -5,11 +5,29 @@ description: 'Example section for showcasing Software Development Kits'
 
 Once you have installed Pria onto your web site (or LMS such as Canvas) you can communicate to Pria through Javascript. This document describes how to make requests to Pria and receive responses from Pria, without requiring the Pria UI
 
-There are two ways to integrate Praxis: [Embed](https://mintlify.com/docs/api-playground/openapi/setup) and [SDK](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+There are two ways to integrate Praxis: 
+- [Embed](https://mintlify.com/docs/api-playground/openapi/setup) 
+- [SDK](https://mintlify.com/docs/api-playground/mdx/configuration). 
+
+
+<Columns cols={2}>
+  <Card title="Embed" icon="pen-to-square" href="https://www.canva.com/design/DAGvVkyaSJY/qMHI8e4n3_cm0Gv45p7PuA/watch?utm_content=DAGvVkyaSJY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he80f2f6101">
+    Learn how to communicate with your AI digital twin.
+  </Card>
+  <Card title="JavaScript SDK" icon="waveform-lines" href="https://www.canva.com/design/DAGvbzNRJ3k/0qd_jIvfAyFqLTnmOis91w/watch?utm_content=DAGvbzNRJ3k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7a33588f3b">
+    Engage with your AI using real-time conversation features.
+  </Card>
+</Columns>
+
+
+
+
 
 ## Embed
 
-Install Pria on your Website using the custom SDK https://pria.praxislxp.com/pria-sdk-web.js or follow this guide to install Pria as a Theme onto Canvas https://learning.praxislxp.com/praxis/pria-custom-theme-canvas-install-guide .
+Install Pria on your Website using the custom SDK https://pria.praxislxp.com/pria-sdk-web.js
+
+<Note>To install Pria as a Theme into Canvas https://learning.praxislxp.com/praxis/pria-custom-theme-canvas-install-guide</Note>
 
 Once your instance is configured, and to hide the pria UI, set the display options of the priasdk to noUI=true value
 
@@ -74,6 +92,10 @@ post.message : Sends a text message to Pria
 convo.start: Sends a request to start the Conversational feature Speech to Speech
 
 convo.stop: Sends a request to stop the Conversational feature Speech to Speech
+
+
+
+
 
 Anywhere in the DOM of your web page, you can send requests to Pria using a simple Javascript code like this:
 
@@ -190,3 +212,7 @@ When you send a request to Pria, you will receive a response in the following fo
    "version": 1
 }
 ```
+
+Pria outputs content in Markdown format. See more at https://en.wikipedia.org/wiki/Markdown
+
+Note: The value of the usage property indicates the total number of tokens used by this query (input + output)
