@@ -5,11 +5,62 @@ icon: 'code'
 ---
 
 
-## Writing Code
+
+
+## Software Development
+
 
 I can help you write code in almost any programming language. For example, ask me:
 
-Write react code to call the google API
+```text Prompt wrap icon="comment" 
+Write react code to call the Google API
+```
+
+Since LLM (Large Language Models like me) accepts prompts in Natural Language, we tend to get more accurate and precise answers if we provide more descriptive prompts. It is similar to providing more details in an address to reach the desired location more accurately.
+
+Now the question arises, how to formulate the `prompt`to get more accurate and precise answers?
+
+Here is a some great prompts for software Developers:
+
+
+ 
+
+```text Prompt wrap icon="comment" 
+Explain how the {concept or function} works in {programming language}.
+```
+```text Prompt wrap icon="comment" 
+What is the correct syntax for a {statement or function} in {programming language}?
+```
+```text Prompt wrap icon="comment" 
+How do I fix the following {programming language} code which {explain the functioning}? {code snippet}
+```
+```text Prompt wrap icon="comment" 
+Show me best practices for writing {concept or function} in {programming language}.
+```
+```text Prompt wrap icon="comment" 
+Optimize the following {programming language} code which {explain the functioning}: {code snippet}
+```
+```text Prompt wrap icon="comment" 
+Write a program/function to {explain functionality} in {programming language}
+```
+```text Prompt wrap icon="comment" 
+I want you to act like a {programming language} interpreter/compiler. I will give you {programming language} code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The first code is: {code}
+```
+```text Prompt wrap icon="comment" 
+Convert the following {programming language 1} code to {programming language 2}: {code snippet}
+```
+```text Prompt wrap icon="comment" 
+I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance in designing or redeveloping its website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools, etc, in order to develop a comprehensive plan for the project. My first request is “I need help creating a {website type} for {purpose}.”
+```
+```text Prompt wrap icon="comment" 
+Regenerate the code snippet below, but please include comments on each line of code {enter code}
+```
+```text Prompt wrap icon="comment" 
+Generate documentation for the code below. You should include detailed instructions to allow a developer to run it on a local machine, explain what the code does, and list vulnerabilities that exist in this code. {enter code}
+```
+```text Prompt wrap icon="comment" 
+Can you help me write test cases for this feature {explain the feature}?
+```
 
 
 
@@ -19,13 +70,14 @@ This feature uses a powerful bioinformatics tool used to compare a query sequenc
 
 The tool offers various types of BLAST searches, including:
 
-blastn: for nucleotide-nucleotide comparisons
-blastp: for protein-protein comparisons
-blastx: for nucleotide query against protein database
-tblastn: for protein query against nucleotide database
+- **blastn**: for nucleotide-nucleotide comparisons
+- **blastp**: for protein-protein comparisons
+- **blastx**: for nucleotide query against protein database
+- **tblastn**: for protein query against nucleotide database
+
 For example:
 
-```
+```text Prompt wrap icon="comment" 
 search blastp for MKVKVLSLLVPALLVAGAANAAEVYNKDGNKLDLYGKVDGLHYFSDNKDVDGDQTYMRLGFKGETQVTDQLTGYGQWEYQIQGNSAENENNSWTRVAFAGLKFQDVGSFDYGRNYGVVYDALGYTDMLPEFGGDTAYSDDFFVGRVGGVATYRNSNFFGLVDGLNFAVQYLGKNERDTARRSNGDGVGGSISYEYEGFGIVGAYGAADRTNLQEAQPLGNGKKAEQWATGLKYDANNIYLAANYGETRNATPITNKFTNTSGFANKTQDVLLVAQYQFDFGLRPSIAYTKSKAKDVEGIGDVDLVNYFEVGATYYFNKNMSTYVDYIINQIDSDNKLGVGSDDTVAVGIVYQF and save the result
 ```
 
@@ -33,64 +85,51 @@ search blastp for MKVKVLSLLVPALLVAGAANAAEVYNKDGNKLDLYGKVDGLHYFSDNKDVDGDQTYMRLGFK
 
 Here is an example on how to create an icon, by simply describing its content and meaning
 
+```text Prompt wrap icon="comment" 
 Generate an SVG icon with view box “0 0 24 24” that means expand and contract horizontally, using a chevron left, an outlined rectangle of the same height in the center and chevron right . Each symbols should be spaced out equally, have space between them and not overlap. Use stroke width of 1.
-
-## Prompts for Software Developper
-
-Since LLM (Large Language Models like me) accepts prompts in Natural Language, we tend to get more accurate and precise answers if we provide more descriptive prompts. It is similar to providing more details in an address to reach the desired location more accurately.
-
-Now the question arises, how to formulate the `prompt`to get more accurate and precise answers?
-
-Here is a some great prompts for software Developers:
-
 ```
-Explain how the {concept or function} works in {programming language}.
-What is the correct syntax for a {statement or function} in {programming language}?
-How do I fix the following {programming language} code which {explain the functioning}? {code snippet}
-Show me best practices for writing {concept or function} in {programming language}.
-Optimize the following {programming language} code which {explain the functioning}: {code snippet}
-Write a program/function to {explain functionality} in {programming language}
-I want you to act like a {programming language} interpreter/compiler. I will give you {programming language} code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The first code is: {code}
-Convert the following {programming language 1} code to {programming language 2}: {code snippet}
-I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance in designing or redeveloping its website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company’s business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools, etc, in order to develop a comprehensive plan for the project. My first request is “I need help creating a {website type} for {purpose}.”
-Regenerate the code snippet below, but please include comments on each line of code {enter code}
-Generate documentation for the code below. You should include detailed instructions to allow a developer to run it on a local machine, explain what the code does, and list vulnerabilities that exist in this code. {enter code}
-Can you help me write test cases for this feature {explain the feature}?
-```
+
+
 
 
 ## Dataset Analysis
 
-I can analyze complex dataset and provide analysis. Let’s take a look at the dataset from the The Conference Board Economic Forecast for the US Economy at https://www.conference-board.org/research/us-forecast and ask the following qestion:
+I can analyze complex dataset and provide analysis. Let's take a look at the dataset from the The Conference Board Economic Forecast for the US Economy at https://www.conference-board.org/research/us-forecast and ask the following qestion:
 
+```text Prompt wrap icon="comment" 
 What kind of insights we can get from this dataset?
 
-```
 2022 2023 2024 2025 2021* 2022* 2023* 2024 202
 I Q* II Q* III Q* IV Q* I Q* II Q* III Q* IV Q* I Q II Q III Q IV Q I Q II Q III Q IV Q
-Real GDP −2.0 −0.6 2.7 2.6 2.2 2.1 4.9 3.4 2.3 0.6 2.6 1.2 1.7 1.9 2.0 2.1 5.8 1.9 2.5 2.2 1.5
+Real GDP -2.0 -0.6 2.7 2.6 2.2 2.1 4.9 3.4 2.3 0.6 2.6 1.2 1.7 1.9 2.0 2.1 5.8 1.9 2.5 2.2 1.5
 Real GDP (YoY) 3.6 1.9 1.7 0.7 1.7 2.4 2.9 3.1 3.1 2.8 1.7 1.2 1.0 1.3 1.7 1.9 5.8 1.9 2.5 2.2 1.5
-Real disposable income −9.8 −1.4 3.6 2.2 10.8 3.3 0.5 2.0 1.1 0.7 0.5 1.0 1.5 1.8 1.9 2.0 3.2 −6.0 4.2 1.2 1.4
+Real disposable income -9.8 -1.4 3.6 2.2 10.8 3.3 0.5 2.0 1.1 0.7 0.5 1.0 1.5 1.8 1.9 2.0 3.2 -6.0 4.2 1.2 1.4
 Real consumer spending 0.0 2.0 1.6 1.2 3.8 0.8 3.1 3.3 2.3 1.0 0.3 0.9 1.5 1.7 1.8 1.9 8.4 2.5 2.2 1.9 1.3
-Residential investment −1.9 −14.1 −26.5 −24.9 −5.3 −2.2 6.7 2.8 7.0 4.0 1.0 2.0 2.5 3.5 4.0 4.0 10.7 −9.0 −10.6 3.9 2.8
+Residential investment -1.9 -14.1 -26.5 -24.9 -5.3 -2.2 6.7 2.8 7.0 4.0 1.0 2.0 2.5 3.5 4.0 4.0 10.7 -9.0 -10.6 3.9 2.8
 ```
 
 ## 2D Charting
 
 I am equipped with a special tool that help visualize datasets in 2D.
 
-The `create_chart_2d` tool allows me to turn numbers and data into easy-to-understand charts. Here’s how it works in simple steps:
+The `create_chart_2d` tool allows me to turn numbers and data into easy-to-understand charts.
 
-Get Data: I take data from different formats like CSV or TSV, or even data you paste into my input dialog entry
-Organize Data: I sort the data so it’s ready to be turned into a chart.
-Make Charts: Using Apex Charts , I create visual charts, like lines or bars, to show what the data means.
+Here's how it works in simple steps:
+
+<Steps>
+<Step>Get Data: I take data from different formats like CSV or TSV, or even data you paste into my input dialog entry</Step>
+<Step>Organize Data: I sort the data so it's ready to be turned into a chart.</Step>
+<Step>Make Charts: Using Apex Charts , I create visual charts, like lines or bars, to show what the data means.</Step>
+</Steps>
+
 This is an example at work:
 
+
+```text Prompt wrap icon="comment" 
 Generate a chart for the following data set:
-```
 2022 2023 2024 2025 2021* 2022* 2023* 2024 2025
 I Q* II Q* III Q* IV Q* I Q* II Q* III Q* IV Q* I Q II Q III Q IV Q I Q II Q III Q IV Q
-Real GDP −2.0 −0.6 2.7 2.6 2.2 2.1 4.9 3.4 2.3 0.6 2.6 1.2 1.7 1.9 2.0 2.1 5.8 1.9 2.5 2.2 1.5
+Real GDP -2.0 -0.6 2.7 2.6 2.2 2.1 4.9 3.4 2.3 0.6 2.6 1.2 1.7 1.9 2.0 2.1 5.8 1.9 2.5 2.2 1.5
 Real GDP (YoY) 3.6 1.9 1.7 0.7 1.7 2.4 2.9 3.1 3.1 2.8 1.7 1.2 1.0 1.3 1.7 1.9 5.8 1.9 2.5 2.2 1.5
 ```
 
@@ -103,4 +142,4 @@ An another using the Area
 Additional options are offered on the graph to allow extracting the data as CSV and zoom in/out on specific sections.
 
 
-Whether you’re analyzing financial trends, tracking website traffic, or comparing sales performance across different regions, this tool unlocks the full potential of your data through effective visualization.
+Whether you're analyzing financial trends, tracking website traffic, or comparing sales performance across different regions, this tool unlocks the full potential of your data through effective visualization.
