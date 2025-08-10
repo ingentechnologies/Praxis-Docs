@@ -8,7 +8,7 @@
     "dark": "#5011FD"
   },
   "banner": {
-    "content": "🚀 **New** instances now receive **50** free credits to get started!  [Get Started Here](https://hiimpria.ai/login/signup)",
+    "content": "🚀 **New** instances now receive **50** free credits to get started!  [Get Started](https://hiimpria.ai/login/signup)",
     "dismissible": true
   },
   "favicon": "/images/favicon.svg",
@@ -69,9 +69,9 @@
           {
             "group": "Files and Documents",
             "pages": [
+                                          "guides/user/files-documents/ipvault",
               "guides/user/files-documents/managing-files",
-              "guides/user/files-documents/retrieval-vectors",
-              "guides/user/files-documents/uploading"
+              "guides/user/files-documents/retrieval-vectors"
             ]
           },
 
@@ -91,7 +91,7 @@
               "guides/admin/personalization",
               "guides/admin/ai-models",
               "guides/admin/tools",
-                            "guides/admin/ipvault",
+
               "guides/admin/users",
               "guides/admin/histories",
               "guides/admin/sessions",
