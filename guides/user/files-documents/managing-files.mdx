@@ -4,91 +4,68 @@ description: "Learn how to upload and manage files for your digital twin."
 icon: "files"
 ---
 
+You can add files to a collection, enabling efficient search and retrieval of relevant content. To access your file list, click on “Add” and select the paperclip icon. You may upload files directly from your device or specify a URL to download text content from a particular location.
 
-You can add files to a collection so that I can search and include relevant elements in my answers. To access your file list, click on “Add” and the paperclip icon.
-You can select a file from your device, or simply point to a URL to download the text content at that specific location.
-
-
-## Upload Files
-
-
+## Uploading Files
 
 <Steps>
-  <Step title="Click Upload File">
-  
-  ![Files Button](/images/guides/files-documents/files-button.webp)
-  </Step>
-  <Step title="Select a File">
+    <Step title="Click Upload File">
+        ![Files Button](/images/guides/files-documents/files-button.webp)
+    </Step>
+    <Step title="Select a File">
+        The first time you upload, you will be prompted to add a file.
 
-The first time around, you will be prompted to Add a file
-
-![Alt text describing the image](/images/guides/files-documents/files-uploader.webp)
-![Alt text describing the image](/images/guides/files-documents/files-upload-pdf.webp)
-
-  </Step>
-  <Step>Click OK to confirm the file selection</Step>
+        ![File Uploader](/images/guides/files-documents/files-uploader.webp)
+        ![PDF Upload](/images/guides/files-documents/files-upload-pdf.webp)
+    </Step>
+    <Step>Click OK to confirm your file selection.</Step>
 </Steps>
 
+Click **Upload File** or **URL**, then select a file. Use your device’s file manager to choose the desired file (for example, a DOCX document), then click **OK** in the lower-left corner.
 
+A wide variety of file types are supported, including:
 
+| **Category**                | **Supported Formats**                                    |
+|-----------------------------|---------------------------------------------------------|
+| Images                      | PNG, WEBP, JPEG, JPG                                    |
+| Audio                       | M4A, MP3, WAV, WEBM                                     |
+| Video                       | MP4, WEBM, MPEG                                         |
+| Portable Document Format    | PDF                                                     |
+| Text                        | HTML, HTM, MHTML, XHTML, TXT, JSON                      |
+| Data Files                  | CSV, TSV                                                |
+| MS Office Documents         | DOC, DOCX, XLS, XLSX, PPT, PPTX                        |
+| Apache Open Office          | ODT, ODS, ODP                                           |
+| Extended Markup Language    | XML                                                     |
+| Jupyter Notebooks           | IPYNB                                                   |
+| IMS Common Cartridge        | IMSCC                                                   |
+| Archives                    | ZIP                                                     |
 
+<Note>You may add multiple files, up to a total of 500MB.</Note>
 
+Click **Upload** to begin the upload process. A progress indicator will appear below. Once the files are uploaded, ingestion will begin and may take several minutes to complete.
 
+![Upload Status](/images/guides/files-documents/files-upload-status.webp)
 
-Click Upload File (1) or URL, then select a File (2). Use your device file manager to select an input file (in this example a docx), then click Ok in the lower-left corner.
+When ingestion is complete, the file status will display as “Success.”
 
+![Upload Success](/images/guides/files-documents/files-upload-success.webp)
 
-I support a large variety of file types, including (but not limited to )
+## Uploading Web Pages (via URL)
 
-| **Category**                   | **Supported Formats**                                    |
-|-------------------------------|-----------------------------------------------------------|
-| Images                        | PNG, WEBP, JPEG, JPG                                      |
-| Audio                         | M4A, MP3, M4A, WAV, WEBM                                  |
-| Video                         | MP4, WEBM, MPEG                                           |
-| Portable Document Format      | PDF                                                       |
-| Text                          | HTML, HTM, MHTML, XHTML, TXT, JSON                       |
-| Data Files                    | CSV, TSV                                                  |
-| MS Office Documents           | DOC, DOCX, XLS, XLSX, PPT, PPTX                          |
-| Apache Open Office            | ODT, ODS, ODP                                             |
-| Extended Markup Language      | XML                                                       |
-| Jupyter Notebooks             | IPYNB                                                     |
-| IMS Creative Common format    | IMSCC                                                     |
-| ZIP                           | ZIP                                                       |
+You can also import content from a web page by providing its URL. In the File Upload dialog, click the **URL** tab and enter the desired web page address, for example:
 
+![PDF Upload](/images/guides/files-documents/url-upload.webp)
 
+## Files
+The following image represents the appearance of the file list after multiple files have been uploaded.
+![PDF Upload](/images/guides/files-documents/files-myfiles.webp)
 
+### File Actions
 
-
-
-
-The file is now added to the list of files to upload. Repeat adding as files as needed up to 500MB.
-
-Click Upload (3) to start the upload process. A progress indicator will display in green below. After the files are uploaded, the process of ingestion starts and can take several minutes to complete.
-
-![Alt text describing the image](/images/guides/files-documents/files-upload-status.webp)
-
-When the ingestion process completes, the file status is “Success.”
-
-
-![Alt text describing the image](/images/guides/files-documents/files-upload-success.webp)
-
-
-## Upload Pages (URL)
-
-Pria is equipped with the ability to scrape a web page and a given URL, extract the text and download it into your files list.
-
-In the File Upload, click on the URL tab, then enter the URL of the web page, example:
-
-```
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-```
-
-![Alt text describing the image](https://placeholdit.com/1000x600/fcefff/c0a1e6)
-
-Click Upload
-
-![Alt text describing the image](https://placeholdit.com/1000x600/fcefff/c0a1e6)
-Click OK to close the upload dialog, you have imported the entire content of the page at the URL
-
-## My Files
-
+- Edit: Click the pencil icon to edit the file name or description.
+- Delete: Click the trash can icon to remove the file from your collection.
+- View: Click the eye icon to view the file in a new tab.
+- Download: Click the download icon to save the file to your device.
+- View Vectors Embeddings: Click the cube icon to view the search vectors for the file, which are used for vector-based searches.
+- View Metadata: Click the info icon to view metadata about the file, such as its size, type, and upload date.
+- View Content: Click the document icon to view the content of the file directly in the interface.
