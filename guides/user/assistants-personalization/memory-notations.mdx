@@ -1,6 +1,6 @@
 ---
 title: "Memory and Notations"
-description: "To Do Add Content Here"
+description: "Learn how to use memory notations to personalize your experience with me and leverage scientific notations for complex calculations."
 icon: 'text-size'
 ---
 
@@ -9,40 +9,76 @@ icon: 'text-size'
 
 The User Memory is a feature unique to me. Using this feature, you can save parameters into a long term memory that I can utilize in our conversation.
 
-Can you remember that my preferred programming language is JAVASCRIPT ? Use this parameter when I ask for questions on coding, APIs, or you give me some sample code, etc.
-Use it to save the score earned with the assessment in the exercise above
+For example, you can ask me: 
+```text Prompt wrap icon="comment"
+Can you remember that my preferred programming language is JavaScript? Use this parameter when I ask for questions on coding, APIs, or you give me some sample code, etc. Use it to save the score earned with the assessment in the exercise above
+```
 
 
+The user memory is a feature that allows me to store, recall, and utilize specific pieces of information shared by you during our interactions. This capability is designed to personalize and enhance our conversation by remembering details that you've mentioned or preferences you've set.
 
-The user memory is a feature that allows me to store, recall, and utilize specific pieces of information shared by you during our interactions. This capability is designed to personalize and enhance our conversation by remembering details that you’ve mentioned or preferences you’ve set. Here’s how it can be used:
+Here's how it can be used:
 
-Personalization: By remembering your preferences, such as your favorite foods (like peanut butter and milkshakes), I can tailor my responses to align more closely with your likes and interests.
-Continuity: It helps maintain continuity in our conversations. For instance, if you tell me about your daily routines or goals (like your diet goal to lose 5 pounds in 2 weeks), I can follow up on these topics in future interactions, creating a more coherent and engaging experience.
-Efficiency: It allows for more efficient interactions. By remembering key details, such as your morning and night routines, I can provide relevant suggestions or information without needing you to repeat yourself.
-Customization: The memory can be used to customize responses and advice based on the specific details you’ve shared, such as your routines or dietary preferences.
-Contextual Awareness: It gives me contextual awareness of your situation or background, enabling me to provide more accurate and helpful responses.
+- **Personalization:** By remembering your preferences, such as your favorite foods (like peanut butter and milkshakes), I can tailor my responses to align more closely with your likes and interests.
+
+- **Continuity:** It helps maintain continuity in our conversations. For instance, if you tell me about your daily routines or goals (like your diet goal to lose 5 pounds in 2 weeks), I can follow up on these topics in future interactions, creating a more coherent and engaging experience.
+
+- **Efficiency:** It allows for more efficient interactions. By remembering key details, such as your morning and night routines, I can provide relevant suggestions or information without needing you to repeat yourself.
+
+- **Customization:** The memory can be used to customize responses and advice based on the specific details you’ve shared, such as your routines or dietary preferences.
+
+- **Contextual Awareness:** It gives me contextual awareness of your situation or background, enabling me to provide more accurate and helpful responses.
 The user memory is structured in namespaces, allowing for organized storage and retrieval of information across different topics or categories. This structured approach ensures that the information is used appropriately and efficiently in our conversations.
 
 Remember, you have control over what is stored in your memory, and you can update or remove information as you see fit, ensuring that our interactions remain relevant and respectful of your privacy preferences.
 
-The user memory can be cleared completely and at anytime by simply asking me: Clear my user memory.
+The user memory can be cleared completely and at anytime by simply asking me: 
 
+```text
+> Clear my user memory.
+```
 Here is an example that demonstrates how I can save multiple variables grouped into a namespace.
 
 Enter:
 
-Save the following properties in the namespace ‘granola’:
-I eat cereals every morning with coffee, then I go to the gym and drink a protein shake that keeps me going for the day. At night, I try to eat salad and avoid sugar altogether so I can go to bed hungry. I hope that this diet will help me lose 5 pounds in 2 weeks.
+```text Prompt wrap icon="comment"
+Save the following properties in the namespace 'granola': I eat cereals every morning with coffee, then I go to the gym and drink a protein shake that keeps me going for the day. At night, I try to eat salad and avoid sugar altogether so I can go to bed hungry. I hope that this diet will help me lose 5 pounds in 2 weeks.
+```
 
+Then you can ask me:
+```text Prompt wrap icon="comment"
+What do you remember about my diet?
+```
 To recall parameters from a specific namespace, simply ask me:
 
+```text Prompt wrap icon="comment"
 What do you remember about Granola
-
+```
 For advanced functions, you can ask
 
-Show my memory in JSON
+```text Prompt wrap icon="comment"
+> Show my memory in JSON
+```
 
+```json Response icon="message-bot"
+[
+  {
+    "key_name": "avoid",
+    "key_value": "sugar",
+    "key_description": "Food to avoid",
+    "key_namespace": "granola"
+  },
+  {
+    "key_name": "bedtime_strategy",
+    "key_value": "go to bed hungry",
+    "key_description": "Nighttime eating habit"
+  }
+]
+```
+
+```text Prompt wrap 
 Can you print the content of my user memory in a table format ?
+```
 
 The memory feature can be used for many purposes. Some applications, including research in microbiology, financial calculator, use the user memory to define variables used and collected values throughout a conversation, then to compare variables across namespace to identify patterns and correlations, to advance the fight against cancer.
 
@@ -51,9 +87,13 @@ The memory feature can be used for many purposes. Some applications, including r
 
 I fully support scientific notations in KaTeX format. Here is an example of question a Math teacher asked:
 
+```text Prompt wrap icon="comment"
 Evaluate the triple integral of f(x,y,z) = z, where z goes from 0 to sqrt(4-x^2-y^2), and y goes from -sqrt(4-x^2) to sqrt(4-x^2) and x goes from -2 to 2.
+``` 
 
 And an additional one in Chemistry
 
+```text Prompt wrap icon="comment"
 If 20.86 mL of 2.29 M potassium iodide is needed to reach the equivalence point with 16.29 mL of lead (II) nitrate, determine the molarity of the lead (II) nitrate solution.
 Note: First write the balance equation between potassium iodide and lead (II) nitrate.
+```
