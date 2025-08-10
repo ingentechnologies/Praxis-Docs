@@ -1,0 +1,66 @@
+---
+title: "Scientific Prompts"
+description: "To Do Add Content Here"
+icon: 'symbols'
+---
+
+
+
+## BLAST Feature
+
+This feature uses a powerful bioinformatics tool used to compare a query sequence (DNA, RNA, or protein) against a database of sequences to identify regions of similarity. 
+
+The tool offers various types of BLAST searches, including:
+
+- **blastn**: for nucleotide-nucleotide comparisons
+- **blastp**: for protein-protein comparisons
+- **blastx**: for nucleotide query against protein database
+- **tblastn**: for protein query against nucleotide database
+
+For example:
+
+```text Prompt wrap icon="comment" 
+search blastp for MKVKVLSLLVPALLVAGAANAAEVYNKDGNKLDLYGKVDGLHYFSDNKDVDGDQTYMRLGFKGETQVTDQLTGYGQWEYQIQGNSAENENNSWTRVAFAGLKFQDVGSFDYGRNYGVVYDALGYTDMLPEFGGDTAYSDDFFVGRVGGVATYRNSNFFGLVDGLNFAVQYLGKNERDTARRSNGDGVGGSISYEYEGFGIVGAYGAADRTNLQEAQPLGNGKKAEQWATGLKYDANNIYLAANYGETRNATPITNKFTNTSGFANKTQDVLLVAQYQFDFGLRPSIAYTKSKAKDVEGIGDVDLVNYFEVGATYYFNKNMSTYVDYIINQIDSDNKLGVGSDDTVAVGIVYQF and save the result
+```
+
+```md Response wrap icon="message-bot" 
+Certainly! I'll use the search_blast tool to perform a BLASTP search for the protein sequence you provided. I'll set the tool to save the results as well.
+
+The BLAST search results for the provided protein sequence reveal several important findings:
+1.	Sequence Identity: The query sequence shows high similarity (88–88% identity) to multiple porin OmpF proteins, primarily from Escherichia coli strains.
+2.	Top Hits: The top hits include:
+- WP_077492852.1 porin OmpF [Escherichia coli] with a score of 630 bits and 88% identity
+- MBS8794624.1 porin OmpF [Escherichia coli] with a score of 629 bits and 88% identity
+- AFA1190.1 outer membrane protein F [Escherichia coli] with a score of 629 bits and 88% identity
+3.	Protein Function: The results confirm that the query sequence is a porin OmpF, an outer membrane protein that forms water-filled channels allowing passive diffusion of small hydrophilic molecules across the outer membrane.
+4.	Conservation: The high sequence similarity across various E. coli strains suggests that this protein is highly conserved, indicating its crucial role in cellular function.
+5.	Taxonomic Distribution: While most hits are from E. coli, there are also matches from other Enterobacteriaceae, including Shigella flexneri, suggesting a broader distribution within this bacterial family.
+6.	Structural Implications: The high conservation suggests that the protein's structure, including its beta-barrel formation and channel properties, is likely preserved across these bacterial strains.
+7.	E-value: All top hits have an E-value of 0.0, indicating extremely high statistical significance of the matches.
+8.	Alignment Details: The alignments show very few gaps, mostly concentrated in one region (positions 52–60 of the query sequence), suggesting a possible insertion/deletion event in this area.
+9.	Database Information: The search was conducted against a comprehensive database including 829,996,675 sequences, ensuring a wide coverage.
+
+```
+
+## Scientific Notations
+
+I fully support scientific notations in KaTeX format.
+
+Here is an example of question a Math teacher asked:
+
+```text Prompt wrap icon="comment" 
+Evaluate the triple integral of f(x,y,z) = z, where z goes from 0 to sqrt(4-x^2-y^2), and y goes from -sqrt(4-x^2) to sqrt(4-x^2) and x goes from -2 to 2
+```
+
+```text Response wrap icon="message-bot"
+
+
+```
+
+
+
+
+```text Prompt wrap icon="comment" 
+If 20.86 mL of 2.29 M potassium iodide is needed to reach the equivalence point with 16.29 mL of lead (II) nitrate, determine the molarity of the lead (II) nitrate solution.
+Note: First write the balance equation between potassium iodide and lead (II) nitrate.
+```

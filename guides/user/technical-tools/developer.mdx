@@ -1,0 +1,155 @@
+---
+title: "Developer Tools"
+description: "To Do Add Content Here"
+icon: 'code'
+---
+
+
+
+
+## Software Development
+
+
+I can help you write code in almost any programming language. For example, ask me:
+
+```text Prompt wrap icon="comment" 
+Write react code to call the Google API
+```
+
+
+
+<Expandable title="Response from Pria">
+
+To call the Google API from a React application, you typically use the fetch API or a library like Axios to make HTTP requests. Below is a basic example using the fetch API to call the Google Books API from a React component. This example assumes you want to search for books with a specific query.
+
+<Note>First, ensure you have a valid API key from Google Cloud Platform and have enabled the Google Books API for your project.</Note>
+
+<Steps>
+<Step title="Create a React Component">
+
+
+```javascript
+import React, { useState, useEffect } from 'react';
+
+const GoogleBooksSearch = () => {
+  const [books, setBooks] = useState([]);
+  const [query, setQuery] = useState('React Programming');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your Google API key
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setBooks(data.items || []);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, [query]);
+};
+
+return (
+  <div>
+    <h1>Books Search</h1>
+    <ul>
+      {books.map((book) => (
+        <li key={book.id}>{book.volumeInfo.title}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+export default GoogleBooksSearch;
+
+
+```
+
+</Step>
+<Step title="Use the Component in Your App">
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GoogleBooksSearch from './GoogleBooksSearch';
+
+ReactDOM.render(<GoogleBooksSearch />, document.getElementById('root'));
+```
+</Step>
+</Steps>
+
+
+**Explanation:**
+	1.	This component initializes with a default search query, "React Programming".
+	2.	The useEffect hook is used to perform the side effect of fetching data from the Google Books API. It runs once when the component mounts and again if the query state changes.
+	3.	The fetchData async function constructs the URL with the query and API key, makes the request, and updates the books state with the response.
+	4.	The component renders a list of book titles based on the search results.
+
+
+
+**Important Notes:**
+	1.	Replace 'YOUR_API_KEY_HERE' with your actual Google API key.
+	2.	This example uses the fetch API, which is supported in modern browsers. For older browsers, you might need a polyfill.
+	3.	Ensure you handle API rate limits and errors appropriately in a production application.
+	4.	For complex applications, consider using a state management library or React's Context API to manage API calls and state more efficiently.
+
+</Expandable>
+
+
+
+Since LLM (Large Language Models like me) accepts prompts in Natural Language, we tend to get more accurate and precise answers if we provide more descriptive prompts. It is similar to providing more details in an address to reach the desired location more accurately.
+
+Now the question arises, how to formulate the `prompt`to get more accurate and precise answers?
+
+Here is a some great prompts for software Developers:
+
+
+ 
+
+```text Prompt wrap icon="comment" 
+Explain how the {concept or function} works in {programming language}.
+```
+```text Prompt wrap icon="comment" 
+What is the correct syntax for a {statement or function} in {programming language}?
+```
+```text Prompt wrap icon="comment" 
+How do I fix the following {programming language} code which {explain the functioning}? {code snippet}
+```
+```text Prompt wrap icon="comment" 
+Show me best practices for writing {concept or function} in {programming language}.
+```
+```text Prompt wrap icon="comment" 
+Optimize the following {programming language} code which {explain the functioning}: {code snippet}
+```
+```text Prompt wrap icon="comment" 
+Write a program/function to {explain functionality} in {programming language}
+```
+```text Prompt wrap icon="comment" 
+I want you to act like a {programming language} interpreter/compiler. I will give you {programming language} code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The first code is: {code}
+```
+```text Prompt wrap icon="comment" 
+Convert the following {programming language 1} code to {programming language 2}: {code snippet}
+```
+```text Prompt wrap icon="comment" 
+I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance in designing or redeveloping its website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools, etc, in order to develop a comprehensive plan for the project. My first request is “I need help creating a {website type} for {purpose}.”
+```
+```text Prompt wrap icon="comment" 
+Regenerate the code snippet below, but please include comments on each line of code {enter code}
+```
+```text Prompt wrap icon="comment" 
+Generate documentation for the code below. You should include detailed instructions to allow a developer to run it on a local machine, explain what the code does, and list vulnerabilities that exist in this code. {enter code}
+```
+```text Prompt wrap icon="comment" 
+Can you help me write test cases for this feature {explain the feature}?
+```
+
+## Generate SVG icons
+
+Here is an example on how to create an icon, by simply describing its content and meaning
+
+```text Prompt wrap icon="comment" 
+Generate an SVG icon with view box “0 0 24 24” that means expand and contract horizontally, using a chevron left, an outlined rectangle of the same height in the center and chevron right . Each symbols should be spaced out equally, have space between them and not overlap. Use stroke width of 1.
+```

@@ -46,7 +46,7 @@
             "pages": [
               "guides/user/assistants-personalization/assistants",
               "guides/user/assistants-personalization/lms-assessment",
-              "guides/user/assistants-personalization/memory-notations",
+              "guides/user/assistants-personalization/memory",
               "guides/user/assistants-personalization/examples"
             ]
           },
@@ -59,10 +59,11 @@
             ]
           },
           {
-            "group": "Developer Tools",
+            "group": "Technical Tools",
             "pages": [
-              "guides/user/developer-tools/code-data-tools",
-              "guides/user/developer-tools/scientific-technical-prompts"
+              "guides/user/technical-tools/developer",
+              "guides/user/technical-tools/scientific",
+              "guides/user/technical-tools/data-analysis"
             ]
           },
           {
