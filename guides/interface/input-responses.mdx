@@ -1,103 +1,107 @@
 ---
-title: 'Input and Responses'
-description: 'Learn how to interact with me and manage your responses.'
-icon: 'text-size'
+title: "Input and Responses"
+description: "Learn how to interact with your digital twin and manage your responses."
+icon: "text-size"
 ---
 
 ## Text Prompts
 
-To get started, use the input prompt at the bottom of the page. This is where you can type your questions or requests. I can assist with a wide range of topics, from general knowledge to specific tasks.  
+The text input bar at the bottom of your screen is your primary way to interact with your digital twin. Simply type your questions, requests, or instructions there - it can help with everything from answering questions to completing specific tasks.
 
 <Steps>
   <Step title="Enter Your Question">
-    
-![Alt text describing the image](/images/guides/interface/input-prompt.webp)
-Use the input prompt at the bottom of the page to interact with me. Type your question or request in the input field.
+    ![Alt text describing the image](/images/guides/interface/input-prompt.webp)
 
-```text Prompt wrap icon="comment"
-> What can you do?
-```
+    Locate the text input field at the bottom of your screen. Click inside it and type your question, request, or instruction.
 
+    ```text Prompt icon=comment wrap
+    > What can you do?
+    ```
   </Step>
   <Step title="Submit Your Question">
-    Press `Enter` on your keyboard to submit your question.
+    Press `Enter` on your keyboard to submit your question
+
+    <Info>
+      You can also press \`Shift \+ Enter\` to create a new line without sending if you need to write a longer message.
+    </Info>
   </Step>
   <Step title="Response">
-  I will process your request and begin generating a response.
+    Your digital twin will process your request and begin generating a response.
+
     ![Alt text describing the image](/images/guides/interface/prompt-streaming-response.webp)
   </Step>
 </Steps>
 
+### **Quick Tips for Better Interactions**
 
+- **Be clear and specific** - The more details you provide, the better it can help
+- **Ask follow-up questions** - Your conversation builds on itself, so feel free to dive deeper
+- **Try different approaches** - If you don't get the result you want, rephrase your request
+- **Use examples** - Show your digital twin what you're looking for when possible
 
 ## Speech to Text Prompts
 
-When your device contains a microphone, and it is available to the browser, I can use the Speech to Text function to assist in writing your question. You will find the microphone icon on the left side of the Input bar on the bottom of the screen
+When your device has a microphone that's accessible to your browser, you can use voice input to ask questions. Simply click the microphone icon located on the right side of the text input field at the bottom of the platform to start dictating your question.
 
 <Steps>
   <Step title="Click the Microphone Icon">
     Click the microphone icon to start recording your question.
+
     ![Alt text describing the image](/images/guides/interface/speech-text-mic.webp)
-    
+
     <Note>
-    Note: The first time, you will need to grant your browser access to your microphone. Select `Allow while visting the site` to save your choice for next time.
+      Note: The first time, you will need to grant your browser access to your microphone. Select `Allow while visting the site` to save your choice for next time.
     </Note>
-
-
-
   </Step>
   <Step title="Speak Your Question">
-  The microphone icon turns **green** when recording is in progress. Speak your question clearly into your device's microphone.    
+    The microphone icon turns **green** when recording is in progress. Speak your question clearly into your device's microphone.
   </Step>
   <Step title="Response">
-  The recorder detects that your question is finished after a long silence, and will submit your text input to me.
+    The recorder detects that your question is finished after a long silence, and will submit your text input to your digital twin.
+
     ![Alt text describing the image](/images/guides/interface/speech-text-response.webp)
   </Step>
 </Steps>
 
+### Response Options
 
+While your digital twin is generating a response, you can:
 
+• **Stop** the output at any time\
+• **Pause** the scrolling to read at your own pace\
+• **Enable audio** to have the response read aloud
 
-## Responses
+![Midway Response Options Web](/images/midway-response-options.webp)
 
 When my response ends, Move your mouse or pointer over a dialogue to reveal a context menu for this dialogue.
-![Alt text describing the image](/images/guides/interface/prompt-streaming-response.webp)
-
 
 ### Response Actions
+
 You can interact with my responses in several ways:
 For each dialogue, you can:
+
 ![Alt text describing the image](/images/guides/interface/prompt-response-actions.webp)
 
 <AccordionGroup>
-<Accordion title="1. Share as a link" icon="message">
-TODO: Add content here about sharing as a link.
-
-</Accordion>
-<Accordion title="2. View Details" icon="message">
-TODO: Add content here about viewing details.
-
-</Accordion>
-<Accordion title="3. Delete the dialog" icon="message">
-TODO: Add content here about deleting the dialog.
-
-</Accordion>
-
-<Accordion title="4. Copy the input" icon="message">
-TODO: Add content here about copying the input.
-
-</Accordion>
-<Accordion title="5. Copy the output" icon="message">
-TODO: Add content here about copying the output.
-
-</Accordion>
-<Accordion title="6. Change Text to Speech Voice" icon="message">
-TODO: Add content here about changing the Text to Speech voice.
-
-</Accordion>
-
-<Accordion title="7. Text to Speech" icon="message">
-TODO: Add content here about Text to Speech.
-
-</Accordion>
+  <Accordion title="1. Share as a link" icon="message">
+    Generate a shareable link to this conversation that you can send to colleagues, students, or collaborators. Recipients can view the entire dialogue without needing to log into your account. Perfect for sharing insights, getting feedback, or collaborating on projects.
+  </Accordion>
+  <Accordion title="2. View Details" icon="message">
+    Access comprehensive information about this conversation, including timestamps, print options, token usage, model information, and conversation metadata. This feature helps you track your usage and understand the technical details behind your interaction.
+  </Accordion>
+  <Accordion title="3. Delete the dialog" icon="message">
+    Permanently remove this conversation from your history. Once deleted, the dialogue cannot be recovered. Use this feature to clean up your conversation list or remove sensitive discussions you no longer need to keep.
+  </Accordion>
+  <Accordion title="4. Copy the input" icon="message">
+    Copy your original question or prompt to your clipboard. This allows you to easily reuse the same input in a new conversation, share your prompt with others, or save it for future reference without having to retype it.
+  </Accordion>
+  <Accordion title="5. Copy the output" icon="message">
+    Copy your digital twin's complete response to your clipboard. You can then paste the content into documents, emails, presentations, or other applications. Formatting and links are preserved when possible.
+  </Accordion>
+  <Accordion title="6. Change Text to Speech Voice" icon="message">
+    Select from available voice options to customize how your digital twin's responses sound when read aloud. Choose different web-based browser voices, accents, or speaking styles to match your preferences or accessibility needs.
+  </Accordion>
+  <Accordion title="7. Text to Speech" icon="message">
+    Have your digital twin's response read aloud using your selected voice settings. This accessibility feature is helpful for multitasking, learning through audio, or supporting users with visual impairments or reading difficulties.
+  </Accordion>
 </AccordionGroup>

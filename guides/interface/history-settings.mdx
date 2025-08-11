@@ -1,9 +1,8 @@
 ---
 title: "History and Settings"
 description: "Learn how to navigate your conversation history and manage your interactions with Praxis AI."
-icon: 'text-size'
+icon: "text-size"
 ---
-
 
 ## Left Navigation Panel
 
@@ -11,43 +10,33 @@ The left Navigation Panel is revealed when clicking on the tab icon on the top l
 
 ![Praxis AI Left Navigation Screenshot](/images/guides/interface/left-nav-open.gif)
 
-
 The left Navigation Panel contains:
 
 <AccordionGroup>
-<Accordion title="Conversations" icon="message">
-Conversations help you organize your interactions with Pria. Each time you start a new chat through assistants or switch between Canvas classes using the same digital twin, a new conversation is created. You can rename, sort by date, or clear these conversations as needed.
+  <Accordion title="Conversations" icon="message">
+    Conversations help you organize your interactions with Pria. Each time you start a new chat through assistants or switch between Canvas classes using the same digital twin, a new conversation is created. You can rename, sort by date, or clear these conversations as needed.
+  </Accordion>
+  <Accordion title="Favorites" icon="message">
+    Favorites allow you to bookmark and easily access important responses. When you click the star icon on any response, it's saved to your Favorites list for quick reference later. Clicking on a favorite will help you jump directly to it.
+  </Accordion>
+  <Accordion title="Settings" icon="message">
+    Settings allow you to customize your Pria experience by adjusting three key options: the AI Conversation Model, the maximum number of dialogues displayed, and the remember history for Pria.
 
-</Accordion>
-<Accordion title="Favorites" icon="message">
-Favorites allow you to bookmark and easily access important responses. When you click the star icon on any response, it's saved to your Favorites list for quick reference later. Clicking on a favorite will help you jump directly to it.
+    **Max Dialogues:**	Determine the maximum number of dialog to load in your history pane. Too many dialogs may impact performance of the UI, while not enough limit the number of dialogs you can scroll back to. Use 25 by default.
 
-</Accordion>
-<Accordion title="Settings" icon="message">
-Settings allow you to customize your Pria experience by adjusting three key options: the AI Conversation Model, the maximum number of dialogues displayed, and the remember history for Pria.
+    **Remember History:**	This setting determines the number of dialogues I can remember in each conversation, allowing me to recall your previous questions and answers. This is particularly important during interactions that require analyzing your past responses, such as the Conversational Assessment or Interview process.
 
-
-**Max Dialogues:**	Determine the maximum number of dialog to load in your history pane. Too many dialogs may impact performance of the UI, while not enough limit the number of dialogs you can scroll back to. Use 25 by default.
-
-**Remember History:**	This setting determines the number of dialogues I can remember in each conversation, allowing me to recall your previous questions and answers. This is particularly important during interactions that require analyzing your past responses, such as the Conversational Assessment or Interview process.
-
-<Note>A minimum value of 6 is required for the Conversational Assessment. While this setting enhances the context of each interaction, it may also consume additional credits. Therefore, we recommend keeping it between 3 and 6 as needed.</Note>
-
-
-</Accordion>
+    <Note>
+      A minimum value of 6 is required for the Conversational Assessment. While this setting enhances the context of each interaction, it may also consume additional credits. Therefore, we recommend keeping it between 3 and 6 as needed.
+    </Note>
+  </Accordion>
 </AccordionGroup>
-
-
-
-
-
 
 ## Conversation History
 
 Each dialogue containing your question and my answer is recorded and added into the conversation history. The conversation history has several useful buttons to help you navigate the history as well as adding or removing some dialogues to/from your list of favorites.
 
 ![Alt text describing the image](/images/guides/interface/conversation-history.webp)
-
 
 The following functions are available:
 
@@ -63,10 +52,7 @@ Marking a dialogue as a Favorite allows you to quickly go back to it when you ne
 
 A menu will appear when scrolling to the top of the history list.
 
-
 Click the Load Previous …. link to load additional and older history records into the list.
-
-
 
 ## Listing Conversations
 
@@ -77,13 +63,17 @@ The conversations list displays the various interactions you've had with this Pr
 For example, a new conversation will be created when you initiate a fresh conversation with your conversational assessment assistant or switch between courses in Canvas that utilize the same Pria instance.
 
 You can see which conversation you are in by looking at the top of the Pria dialogue.
-![Alt text describing the image](/images/guides/interface/conversation-listing-dialog.webp)
+
+![Conversation Titles Web](/images/conversation-titles.webp)
 
 The conversation list shows the name of the Course or Assistant used, the date it was created and how many dialogues this conversation has. You can mnage any conversation like below:
+
 ![Alt text describing the image](/images/guides/interface/conversation-edit.webp)
 
 You can rename a conversation or delete it entirely if you are no longer using it.
+
 ![Alt text describing the image](/images/guides/interface/conversation-update.webp)
 
-<Danger>Note about Delete: Beware, this will delete this conversation history so only clear if you are Okay no longer referencing these dialogues.</Danger>
-
+<Danger>
+  Note about Delete: Beware, this will delete this conversation history so only clear if you are Okay no longer referencing these dialogues.
+</Danger>
