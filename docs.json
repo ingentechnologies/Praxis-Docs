@@ -214,8 +214,5 @@
       "github": "https://github.com/praxis-ai",
       "linkedin": "https://linkedin.com/company/praxis-ai"
     }
-  },
-  "contextual": {
-    "options": ["copy", "chatgpt", "claude"]
   }
 }
