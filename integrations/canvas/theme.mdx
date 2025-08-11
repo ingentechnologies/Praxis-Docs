@@ -1,6 +1,6 @@
 ---
-title: "Theme"
-description: "Integrate Praxis AI with Canvas LMS"
+title: 'Theme'
+description: 'Integrate Praxis AI with Canvas LMS'
 icon: 'text-size'
 ---
 
@@ -11,45 +11,64 @@ When installed in the Theme, the Instance becomes embedded into Canvas's pages.
 
 ## Add a Instance to your Theme
 
-To add a Instance globally to a Canvas account, inject a segment of Javascript code in the Theme used by the account or sub-account of your choice.
+To add a Instance globally to a Canvas account, you will inject a segment of Javascript code in the Theme used by the account or sub-account of your choice.
 
-We are following the instructions similar to those  posted at https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253
+<Card
+  title="Instructure: How to Upload Custom JavaScript and CSS Files"
+  icon="link"
+  href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253"
+  arrow="true"
+  cta="View"
+>
+  We follow instructions similar to those posted Instructure's documentation on
+  how to upload custom JavaScript and CSS files to an account.
+</Card>
 
+<Note>
+  Prerequisites - You must have administrative access to the Canvas account. -
+  Ensure you have the necessary permissions to edit the Theme. - Download the
+  SDK
+</Note>
+
+<AccordionGroup>
+
+  <Accordion title="1. Download SDK">
+        <Card title="pria-sdk-canvas.js" icon="link" href="https://pria.praxislxp.com/pria-sdk-canvas.js" arrow="true" cta="Download">
+        Download the pria-sdk-canvas.js code onto your computer, and save the file as pria-sdk-canvas.js
+        </Card>
+
+        <Tip>
+            - We recommend storing this file in source control (GitHub, GitLab, etc.) so
+            you can track changes to the file.
+            - You may also save this file into a Google Drive, and edit your customizations on an ongoing basis.
+            - Keep track of the version of the file and your own modification to ensure that you are using the
+            latest and greatest.
+            - When you select this file to inject in your theme,
+            Canvas uploads a copy into its own CDN therefore, you need to reload the files
+            into Canvas after you make a change.
+        </Tip>
+
+  </Accordion>
+
+  <Accordion title="2. Edit Canvas Theme">
+    <Steps>
+        <Step title="Login to Canvas as an Administrator">Ex: https://praxis-ai.instructure.com/ user: hugo@praxis-ai.com / pwd</Step>
+        <Step title="Navigate to Admin Settings">Ex: Praxis AI </Step>
+        <Step title="Select Themes">Click on the current Theme to open the Theme Editor.</Step>
+        <Step title="Open Theme Editor">Click on the "Edit" button to open the Theme Editor.</Step>
+        <Step title="Upload Tab">Click to the Upload tab on the left.</Step>
+        <Step title="Upload SDK JavaScript">Upload the pria-sdk-canvas.js file you downloaded earlier.</Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
 
 ## Edit your Theme
 
-<Steps>
-<Step title="Login to Canvas as an Administrator">
-Ex: https://praxis-ai.instructure.com/ user: hugo@praxis-ai.com / pwd
-</Step>
-<Step title="Navigate to Admin Settings">
-Ex: Praxis AI 
-</Step>
-<Step title="Select Themes">
-Click on the current Theme to open the Theme Editor.
-</Step>
-<Step title="Open Theme Editor">
-Click on the "Edit" button to open the Theme Editor.
-</Step>
-<Step title="Upload Tab">
-Click to the Upload tab on the left.
-</Step>
-<Step title="Download the SDK">
-Download the pria-sdk-canvas.js code at https://pria.praxislxp.com/pria-sdk-canvas.js onto your computer, and save the file as pria-sdk-canvas.js 
-</Step>
-</Steps>
-
-<Note>
-- You may save this file into a Google Drive, and edit your customizations on an ongoing basis. 
-- Keep track of the version of the file and your own modification to ensure that you are using the latest and greatest.
-- When you select this file to inject in your theme, Canvas uploads a copy into its own CDN therefore, you need to reload the files into Canvas after you make a change.
-</Note>
-
 ## Customize Praxis AI Instance
 
-In this step, you will customize the Javascript SDK you downloaded to specify what instance of Praxis AI to use. 
+In this step, you will customize the Javascript SDK you downloaded to specify what instance of Praxis AI to use.
 
-Edit the file pria-sdk-canvas.js from your download 
+Edit the file pria-sdk-canvas.js from your download
 
 If you prefer to disable Praxis AI by default set the INSTITUTION_ID to undefined
 
@@ -65,6 +84,7 @@ var INSTITUTION_ID = “5fd6d7a4-4cc7-4e04-8473-e89aef4e…”;
 Note: The value of the INSTITUTION_ID field is unique to your instance of Pria. Keep this ID confidential.
 
 ## Customize the Instance icon
+
 You can change the icon of the button that will appear on the screen with the following variable:
 If you like to keep using Pria's icon, leave the INSTITUTION_ICON_URL as undefined
 
@@ -73,48 +93,50 @@ If you want to change the icon, set the value of the icon URL to a new location,
 
 var INSTITUTION_ICON_URL = “https://pria.praxislxp.com/logo192.png”;
 
-<Note>
-- We recommend using a square image, no larger than 192 x 192 pixels, that also supports transparency (like PNG or webp format)
-- This image should be placed on a Content Delivery Network that allows access across origin or domains (CORS Policy)
-</Note>
-
-
-
+<Tip>
+  - We recommend using a square image, no larger than 192 x 192 pixels, that
+  also supports transparency (like PNG or webp format) - This image should be
+  placed on a Content Delivery Network that allows access across origin or
+  domains (CORS Policy)
+</Tip>
 
 ## Display Options
 
 You can customize the position, size and container of the Instance's button as well as the main window with the following Javascript DISPLAY_OPTIONS variable:
 
-
 The options are as below:
 
-| Option | Default / Allowed Values | Description | Notes |
-|--------|--------------------------|-------------|-------|
-| **fullScreen** | `true` \| `false` *(default)* | Display Pria in fullscreen. | |
-| **openOnLoad** | `true` \| `false` *(default)* | Open Pria immediately on load or keep closed until user clicks the Pria button. | |
-| **buttonWidth** | CSS width value \| `'80px'` *(default)* | Size of the Pria button. | See [CSS width examples](https://developer.mozilla.org/en-US/docs/Web/CSS/width). |
-| **buttonPosition** | CSS position value \| `'fixed'` *(default)* | Position type of the button. Default is `fixed`, but can be `relative` or `absolute`. | |
-| **buttonPositionBottom** | CSS bottom value \| `'20px'` | Distance from the bottom edge of the screen (only applies to `fixed` or `absolute` position). | See [CSS bottom examples](https://developer.mozilla.org/en-US/docs/Web/CSS/bottom). Example: `calc(100% - 120px)` to place icon at top. |
-| **buttonPositionRight** | CSS right value \| `'20px'` | Distance from the right edge of the screen (only applies to `fixed` or `absolute` position). | See [CSS right examples](https://developer.mozilla.org/en-US/docs/Web/CSS/right). Example: `calc(100% - 120px)` to place icon at top. |
-| **buttonNoBounce** | `true` *(default)* \| `false` | Whether the button bounces when displayed. | Default: no bounce. |
-| **priaContainerId** | Element ID \| `''` *(BODY by default)* | Parent element for Pria UI iFrame. | Empty value appends to `<body>`. |
-| **buttonContainerId** | Element ID \| `''` *(BODY by default)* | Parent element for the Pria button. | Empty value appends to `<body>`. |
-| **allowPop** | `true` \| `false` *(default)* | Option to open Pria in a new tab. | **Deprecated** due to third-party cookie restrictions. |
+| Option                   | Default / Allowed Values                    | Description                                                                                   | Notes                                                                                                                                   |
+| ------------------------ | ------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **fullScreen**           | `true` \| `false` _(default)_               | Display Pria in fullscreen.                                                                   |                                                                                                                                         |
+| **openOnLoad**           | `true` \| `false` _(default)_               | Open Pria immediately on load or keep closed until user clicks the Pria button.               |                                                                                                                                         |
+| **buttonWidth**          | CSS width value \| `'80px'` _(default)_     | Size of the Pria button.                                                                      | See [CSS width examples](https://developer.mozilla.org/en-US/docs/Web/CSS/width).                                                       |
+| **buttonPosition**       | CSS position value \| `'fixed'` _(default)_ | Position type of the button. Default is `fixed`, but can be `relative` or `absolute`.         |                                                                                                                                         |
+| **buttonPositionBottom** | CSS bottom value \| `'20px'`                | Distance from the bottom edge of the screen (only applies to `fixed` or `absolute` position). | See [CSS bottom examples](https://developer.mozilla.org/en-US/docs/Web/CSS/bottom). Example: `calc(100% - 120px)` to place icon at top. |
+| **buttonPositionRight**  | CSS right value \| `'20px'`                 | Distance from the right edge of the screen (only applies to `fixed` or `absolute` position).  | See [CSS right examples](https://developer.mozilla.org/en-US/docs/Web/CSS/right). Example: `calc(100% - 120px)` to place icon at top.   |
+| **buttonNoBounce**       | `true` _(default)_ \| `false`               | Whether the button bounces when displayed.                                                    | Default: no bounce.                                                                                                                     |
+| **priaContainerId**      | Element ID \| `''` _(BODY by default)_      | Parent element for Pria UI iFrame.                                                            | Empty value appends to `<body>`.                                                                                                        |
+| **buttonContainerId**    | Element ID \| `''` _(BODY by default)_      | Parent element for the Pria button.                                                           | Empty value appends to `<body>`.                                                                                                        |
+| **allowPop**             | `true` \| `false` _(default)_               | Option to open Pria in a new tab.                                                             | **Deprecated** due to third-party cookie restrictions.                                                                                  |
 
 The Javascript SDK loads Pria with the loadPria() function.
 
+<Note>
+  the loadPria() function will not load Pria twice if it happens to be called
+  more than once.
+</Note>
 
-<Note>the loadPria() function will not load Pria twice if it happens to be called more than once.</Note>
-
-In the SDK, the loadPria() function is placed when the student or teacher is on a course page. 
+In the SDK, the loadPria() function is placed when the student or teacher is on a course page.
 
 This determination is done using a regular expression with the function onPage() like below:
 
-
-<Note>In Canvas, course pages have URLS that match this structure https://my-univertivt.canvas.edu/courses/106/… and this is what we rely on to determine to loadPria() so it loads only for courses.</Note>
+<Note>
+  In Canvas, course pages have URLS that match this structure
+  https://my-univertivt.canvas.edu/courses/106/… and this is what we rely on to
+  determine to loadPria() so it loads only for courses.
+</Note>
 
 In the SDK, we also load Pria in the Theme Editor so that we can preview Pria after we edit the custom theme. This is not required
-
 
 The page URL match uses Regular Expressions
 
@@ -123,7 +145,6 @@ Load the Instance for certain courses
 It is common that administrator want to load a Instance only for certain courses, while it stays disabled for all the others.
 
 In this case, set the default INSTITUTION_PUBLIC_ID to undefined on line 13.
-
 
 On line 41, inside the block that determines that we are in a course page, add the following code:
 
@@ -136,8 +157,8 @@ INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
 }
 })
 ```
-The code will look like this:
 
+The code will look like this:
 
 This code means that if the current course is either 79875, 72856, or 55621, then we set the INSTITUTION_ID to a specific instance, and customize the icon to our own URL
 
@@ -155,48 +176,39 @@ INSTITUTION_ICON_URL=undefined
 
 The code looks like:
 
-
 You can create javascript code that select a specific instance or Pria for each teacher courses for example:
-
 
 The Javascript SDK has a lot of additional useful functions you can. Let's take a look at those.
 
 HASANYROLE() FUNCTION
 
-The function hasAnyRole() determines if the current user has the specified role (ex:user, teacher, admin,root_admin) 
-
+The function hasAnyRole() determines if the current user has the specified role (ex:user, teacher, admin,root_admin)
 
 ISUSER() FUNCTION
 
 The function isUser() determines if the current user is the one specified by id (ex: 1)
 
-
 ISINUSERS() FUNCTION
 
 The isInUsers() function determines if the current user is in the array of specific user ids
 
-
 ISSTUDENT() FUNCTION
 
-The function isStudent() determines if the current user is a student 
-
+The function isStudent() determines if the current user is a student
 
 ISCOURSE() FUNCTION
 
-The function isCourse() determines the current page is in a specific course (ex: id 123) 
-
+The function isCourse() determines the current page is in a specific course (ex: id 123)
 
 ISINCOURSES() FUNCTION
 
 The function isInCourses() determines if the current course is in an array of specific courses,
-
 
 ONELEMENTRENDERED() FUNCTION
 
 The onElementRendered() function is triggered when an element is fully displayed in the page. You can use this function handler to attach an event to a link or a button on a page that will load the Instance on click.
 
 Example below is an anchor referenced by ID create_ticket
-
 
 THE ENV VARIABLE
 
@@ -206,109 +218,94 @@ To review the properties made available by the ENV variable, open a course page 
 
 Here is an example of such variable:
 
-
 The Instance makes use of the current_user property.
 
-
-current_user_roles property: 
-
+current_user_roles property:
 
 and current_context property:
 
-
 ## Install the Instance SDK into Theme
 
-Once you have customized your SDK Javascript file and added the logic to load the Instance when the proper conditions are met, you are ready to add it to your current Theme 
+Once you have customized your SDK Javascript file and added the logic to load the Instance when the proper conditions are met, you are ready to add it to your current Theme
 
-Step G: In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button  
-
+Step G: In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button
 
 Step H: Select the pria-sdk-canvas.js that you just customized from your download folder, then click OK
 
+Step I: The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme.
 
-Step I: The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme. 
+Click on the Preview Your Changes button
 
-Click  on the Preview Your Changes button 
-
-
-Step J:  Verify that the Instance is running properly in Preview mode 
+Step J: Verify that the Instance is running properly in Preview mode
 
 1- The Instance Icon should appear at the bottom of the screen in preview mode
 
+2- The Instance UI should open and connect upon click on the icon
 
-2- The Instance UI should open and connect upon click on the icon 
-
-
-Step K: If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector. 
+Step K: If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector.
 
 The Instance Icon should display properly
 
-
-Step L: Congratulations, the Instance is now installed in your theme. 
+Step L: Congratulations, the Instance is now installed in your theme.
 
 To verify, login using a standard User account, and navigate to the section of Canvas where you are loading the Instance, example below in a course
 
-
 ## Teacher Onboarding
 
-This process happens IF you decide to leave the INSTITUTION_ID field as an empty string (by default) in the SDK file inserted in the theme. The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in. 
+This process happens IF you decide to leave the INSTITUTION_ID field as an empty string (by default) in the SDK file inserted in the theme. The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in.
 
 When inserted as a theme, Pria is injected in the bottom right corner of a course page.
-
 
 ## Create your Instance
 
 The onboarding wizard starts when the Teacher clicks on Pria's icon to expand for the first time
 This wizard allows for the creation of an instance of Pria, dedicated to the teacher.
 
-Click the + Digital Tein button to create a personalized instance of Pria. 
+Click the + Digital Tein button to create a personalized instance of Pria.
 
-
-In the New Instance dialog, enter 
-a name for your twin, ex: Bob, 
-a picture URL that is accessible on the internet (without CORS issues), and 
+In the New Instance dialog, enter
+a name for your twin, ex: Bob,
+a picture URL that is accessible on the internet (without CORS issues), and
 a picture to use for the ui background
 An A.I. prompt that personalizes your character (more information is available in the Faculty Guide )
 Click Let's GO to finish the creation of your new instance.
 
-You are now in your Instance instance: 
+You are now in your Instance instance:
 
-Congratulations, you just created your very first Instance. 
-Note: Anytime you or your students will click on Pria in this page, you will access this instance directly. 
+Congratulations, you just created your very first Instance.
+Note: Anytime you or your students will click on Pria in this page, you will access this instance directly.
 
 When you place Pria in another course, it is considered a new placement. You will have to go through this wizard again and create a different instance or reuse one of your existing instances like the example below
 
-Selecting an existing instance will associate this placement to the instance. This can not be changed later, unless you remove the placement URL from the list of configured URLs for this instance. 
+Selecting an existing instance will associate this placement to the instance. This can not be changed later, unless you remove the placement URL from the list of configured URLs for this instance.
 
 ## More Personalisation Options
 
-More information on Admin functions is available in the Faculty Guide to your Instance at 
+More information on Admin functions is available in the Faculty Guide to your Instance at
 
 https://learning.praxislxp.com/praxis/faculty-guide-to-your-digital-twin-2/#GPT_and_Personalization
 
-Once connected to your instance, click on the GPT and Personalization Tab. This page is where you can update any personalizations for your Instance. 
+Once connected to your instance, click on the GPT and Personalization Tab. This page is where you can update any personalizations for your Instance.
 
 <Note>
-- Follow the instructions in the Admin Guide to setup integration to your Canvas instance and allow Pria to search your course content.
+    - Follow the instructions in the Admin Guide to setup integration to your Canvas instance and allow Pria to search your course content.
 
-- If you are using Kaltura, this is a good time to configure the integration as well. Contact your IT Administrator
+    - If you are using Kaltura, this is a good time to configure the integration as well. Contact your IT Administrator
 
-- Anytime you make a change to the instance, don't forget to click the Update button to save your changes.
+    - Anytime you make a change to the instance, don't forget to click the Update button to save your changes.
 </Note>
 
+## Whitelisting
 
-## Whitelisting 
-
-In order for Pria and associated services to run without connectivity issues,  the following domains must be Whitelisted by your institution: 
+In order for Pria and associated services to run without connectivity issues, the following domains must be Whitelisted by your institution:
 
 ```
 pria.praxislxp.com
 prialti.praxislxp.com
 ```
 
-## Subaccounts 
+## Subaccounts
 
-Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses. 
-
+Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses.
 
 It is best practice to add Pria only to sub accounts, because scripts are added from Parent to Child domains.
