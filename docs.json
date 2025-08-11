@@ -90,8 +90,9 @@
             "pages": [
               "guides/admin/configuration",
               "guides/admin/personalization",
+                            "guides/admin/ui-customization",
               "guides/admin/ai-models",
-              "guides/admin/agents-and-trusted-sources",
+              "guides/admin/mcp-and-agents",
               "guides/admin/assistants",
               "guides/admin/users",
               "guides/admin/histories",
