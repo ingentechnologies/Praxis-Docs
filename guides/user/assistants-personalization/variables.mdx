@@ -3,3 +3,9 @@ title: "Variables"
 description: "Page Description"
 icon: 'text-size'
 ---
+
+
+Substitution variables are textual placeholders— wrapped in delimiters such as ${variable} —that a prompt-author reserves for data the system will inject at runtime. Think of them as the "mail-merge fields" of a GPT prompt. During execution, Pria replaces each placeholder with the current value: a quizz_id, an API token, or any other contextual fact. Store data meant to be shared among all users and assistants in instance variables, and keep data that should persist across assistants for a single user in user-memory parameters.
+Single source maintenance; suppose the Canvas quizz_id changes from 123 to 789. If that id lives in a single environment variable ${QUIZZ_ID} every assistant that relies on it updates automatically; you don't reopen and edit dozens of prompts. Substitution variables can also be short shared GPT instructions to create common-cross assistant- instructions.
+Safer separation of logic and data; Sensitive data— access tokens, proprietary URLs—reside inside the orchestration layer, never inside the static prompt text. If the prompt is leaked, the secrets are not.
+Composable prompts and modular assistants; When you build multi-step agents (e.g., a teaching bot that calls a grading bot) each step can emit a value that plugs into the next step's template through a variable, forming a clean data pipeline.

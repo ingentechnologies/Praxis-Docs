@@ -182,11 +182,6 @@
           "anchor": "Status",
           "href": "https://github.com/Praxis-AI-Powered",
           "icon": "signal"
-        },
-                {
-          "anchor": "Feature Request",
-          "href": "https://praxis-ai.canny.io/feature-requests",
-          "icon": "slack"
         }
       ]
     }
