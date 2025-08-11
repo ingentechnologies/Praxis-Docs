@@ -46,6 +46,7 @@
             "pages": [
               "guides/user/assistants-personalization/assistants",
               "guides/user/assistants-personalization/memory",
+              "guides/user/assistants-personalization/variables",
               "guides/user/assistants-personalization/lms-assessment",
               "guides/user/assistants-personalization/examples"
             ]
@@ -90,8 +91,8 @@
               "guides/admin/configuration",
               "guides/admin/personalization",
               "guides/admin/ai-models",
-              "guides/admin/tools",
-
+              "guides/admin/agents-and-trusted-sources",
+              "guides/admin/assistants",
               "guides/admin/users",
               "guides/admin/histories",
               "guides/admin/sessions",
