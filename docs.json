@@ -138,24 +138,6 @@
         "pages": ["integrations/overview"]
       },
       {
-        "tab": "LXP",
-        "groups": [
-          {
-            "group": "Learning Experience Platform",
-            "pages": ["lxp/introduction"]
-          },
-          {
-            "group": "Canvas",
-            "pages": ["lxp/canvas"]
-          },
-          {
-            "group": "D2L Brightspace",
-            "pages": ["lxp/d2l-brightspace"]
-          }
-        ]
-      },
-
-      {
         "tab": "Changelog",
         "groups": [
           {
@@ -177,11 +159,6 @@
           "anchor": "Github",
           "href": "https://github.com/Praxis-AI-Powered",
           "icon": "github"
-        },
-        {
-          "anchor": "Status",
-          "href": "https://github.com/Praxis-AI-Powered",
-          "icon": "signal"
         }
       ]
     }
