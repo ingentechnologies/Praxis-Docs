@@ -23,28 +23,27 @@ You can select the AI Models. these models have various performance and feature 
 More informations on models from Amazon Bedrock at https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html
 </Info>
 
-### Anthropic
-- us.anthropic.claude-opus-4-1-20250805-v1:0
-- us.anthropic.claude-opus-4-20250514-v1:0
-- us.anthropic.claude-sonnet-4-20250514-v1:0 — Default
-- us.anthropic.claude-3-7-sonnet-20250219-v1:0
-- us.anthropic.claude-3-5-sonnet-20241022-v2:0
-- us.anthropic.claude-3-5-haiku-20241022-v1:0
-
-### Amazon 
-- us.amazon.nova-premier-v1:0
-- us.amazon.nova-pro-v1:0
-- us.amazon.nova-lite-v1:0
-- us.amazon.nova-micro-v1:0
-
-### Meta 
-- us.meta.llama4-maverick-17b-instruct-v1:0
-- us.meta.llama4-scout-17b-instruct-v1:0
-
-### Cohere
-- cohere.command-r-plus-v1:0
 
 
+| Model Name | Input Size | Output Size |
+|------------|------------|-------------|
+| **Amazon** [Via Amazon Bedrock] |||
+| us.amazon.nova-premier-v1:0 | 1M | 10K |
+| us.amazon.nova-pro-v1:0 | 300K | 10K |
+| us.amazon.nova-lite-v1:0 | 300K | 10K |
+| us.amazon.nova-micro-v1:0 | 128K | 10K |
+| **Anthropic** [Via Amazon Bedrock] |||
+| us.anthropic.claude-opus-4-1-20250805-v1:0 | 200K | 32K |
+| us.anthropic.claude-opus-4-20250514-v1:0 | 200K | 32K |
+| us.anthropic.claude-sonnet-4-20250514-v1:0 | 200K | 64K |
+| us.anthropic.claude-3-7-sonnet-20250219-v1:0 | 200K | 64K |
+| us.anthropic.claude-3-5-sonnet-20241022-v2:0 | 200K | 8,192 |
+| us.anthropic.claude-3-5-haiku-20241022-v1:0 | 200K | 8,192 |
+| **Meta** [Via Amazon Bedrock] |||
+| us.meta.llama4-maverick-17b-instruct-v1:0 | 1M | - |
+| us.meta.llama4-scout-17b-instruct-v1:0 | 10M | - |
+| **Cohere** [Via Amazon Bedrock] |||
+| cohere.command-r-plus-v1:0 | 128K | 4K |
 
 ## Via OpenAI-CLI
 
@@ -52,52 +51,53 @@ More informations on models from Amazon Bedrock at https://docs.aws.amazon.com/b
 More information on the different AI Models from OpenAI is available at: https://platform.openai.com/docs/models/overview
 </Info>
 
-### OpenAI
-- o4-mini
-- o3-deep-research
-- o3-pro
-- o3
-- o3-mini
-- o1
-- gpt-5-chat
-- gpt-5
-- gpt-5-mini
-- gpt-5-nano
-- gpt-4.1
-- gpt-4o
-- gpt-4o-mini
 
-### Google (API Key required)
-- gemini-2.5-pro
-- gemini-2.5-flash
-- gemini-2.5-flash-lite
-- gemini-2.0-flash
-- gemini-2.0-flash-lite
-- gemini-1.5-pro
+| Model Name | Input Size | Output Size |
+|------------|------------|-------------|
+| **OpenAI** [Via OpenAI-CLI] |||
+| o4-mini | 200K | 100K |
+| o3-deep-research | 200K | 100K |
+| o3-pro | 200K | 100K |
+| o3 | 200K | 100K |
+| o3-mini | 200K | 100K |
+| o1 | 200K | 100K |
+| gpt-5-chat-latest | 400K | 128K |
+| gpt-5-2025-08-07 | 400K | 128K |
+| gpt-5-mini-2025-08-07 | 400K | 128K |
+| gpt-5-nano-2025-08-07 | 400K | 128K |
+| gpt-4.1-nano-2025-04-14 | 1M | 32,768 |
+| gpt-4.1 | 1M | 32,768 |
+| gpt-4o | 128K | 16,384 |
+| gpt-4o-mini | 128K | 16,384 |
+| **Google (API Key required)** [Via OpenAI-CLI] |||
+| gemini-2.5-pro | 1M | 65,536 |
+| gemini-2.5-flash | 1M | 65,536 |
+| gemini-2.5-flash-lite | 1M | 65,536 |
+| gemini-2.0-flash | 1M | 8,192 |
+| gemini-2.0-flash-lite | 1M | 8,192 |
+| gemini-1.5-pro | 1M | 8,192 |
+| **Mistral (API Key Required)** [Via OpenAI-CLI] |||
+| pixtral-large-latest | 128K | - |
+| mistral-large-latest | 128K | - |
+| mistral-medium-latest | 128K | - |
+| mistral-small-latest | 128K | - |
+| magistral-medium-latest | 40K | - |
+| magistral-small-latest | 40K | - |
+| **xAI (API Key Required)** [Via OpenAI-CLI] |||
+| grok-4 | 256K | - |
+| grok-3 | 131,072 | - |
+| grok-3-fast | 131,072 | - |
+| grok-3-mini | 131,072 | - |
+| **Anthropic (API Key Required)** [Via OpenAI-CLI] |||
+| claude-opus-4-1-20250805 | 200K | 32K |
+| claude-opus-4-20250514 | 200K | 32K |
+| claude-sonnet-4-20250514 | 200K | 64K |
+| claude-3-7-sonnet-latest | 200K | 64K |
+| claude-3-5-sonnet-latest | 200K | 8,192 |
+| claude-3-5-haiku-latest | 200K | 8,192 |
+| **DeepSeek (API Key Required)** [Via OpenAI-CLI] |||
+| deepseek-chat | 64K | 8K |
+| deepseek-resonner | 64K | 64K |
 
-### Mistral (API Key Required)
-- pixtral-large-latest
-- mistral-large-latest
-- mistral-medium-latest
-- mistral-small-latest
-- magistral-medium-latest
-- magistral-small-latest
 
-### xAI (API Key Required)
-- grok-4-latest
-- grok-3-latest
-- grok-3-fast-latest
-- grok-3-mini-latest
-
-### Anthropic (API Key Required)
-- claude-opus-4-1
-- claude-opus-4-0
-- claude-sonnet-4-0
-- claude-3-7-sonnet
-- claude-3-5-sonnet
-- claude-3-5-haiku
-
-### DeepSeek (API Key Required)
-- deepseek-chat
-- deepseek-resonner
 
