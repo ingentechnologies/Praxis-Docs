@@ -4,76 +4,224 @@ description: "Learn how to navigate your conversation history and manage your in
 icon: "text-size"
 ---
 
+<Info>
+  Your conversation history and settings are the foundation of a personalized AI experience. Learn to navigate, organize, and customize your interactions effectively.
+</Info>
+
 ## Left Navigation Panel
 
-The left Navigation Panel is revealed when clicking on the tab icon on the top left side of the screen.
+Access your navigation panel by clicking the **tab icon** in the top-left corner of your screen.
 
-![Praxis AI Left Navigation Screenshot](/images/guides/interface/left-nav-open.gif)
+<Frame caption="Opening the left navigation panel reveals your conversation management tools">
+  ![Praxis AI Left Navigation Screenshot](/images/guides/interface/left-nav-open.gif)
+</Frame>
 
-The left Navigation Panel contains:
+The navigation panel provides three essential sections:
+
+<CardGroup cols={3}>
+  <Card title="Conversations" icon="comments">
+    Organize and manage all your AI interactions
+  </Card>
+  <Card title="Favorites" icon="star">
+    Quick access to bookmarked responses
+  </Card>
+  <Card title="Settings" icon="gear">
+    Customize your AI experience preferences
+  </Card>
+</CardGroup>
+
+### Navigation Panel Features
 
 <AccordionGroup>
-  <Accordion title="Conversations" icon="message">
-    Conversations help you organize your interactions with Pria. Each time you start a new chat through assistants or switch between Canvas classes using the same digital twin, a new conversation is created. You can rename, sort by date, or clear these conversations as needed.
+  <Accordion title="Conversations" icon="comments">
+    **Organize Your AI Interactions**
+
+    Conversations automatically organize your interactions with Pria. Each time you:
+
+    - Start a new chat through assistants
+    - Switch between Canvas classes using the same digital twin
+    - Begin a specialized session (like Conversational Assessment)
+
+    A new conversation thread is created for better organization.
+
+    **Management Options:**
+
+    - ✏️ Rename conversations for easy identification
+    - 📅 Sort by creation date
+    - 🗑️ Clear conversations when no longer needed
   </Accordion>
-  <Accordion title="Favorites" icon="message">
-    Favorites allow you to bookmark and easily access important responses. When you click the star icon on any response, it's saved to your Favorites list for quick reference later. Clicking on a favorite will help you jump directly to it.
+  <Accordion title="Favorites" icon="star">
+    **Bookmark Important Responses**
+
+    Save valuable AI responses for quick future reference:
+
+    1. **Save**: Click the ⭐ star icon on any response
+    2. **Access**: Find all favorites in this dedicated section
+    3. **Navigate**: Click any favorite to jump directly to that conversation
+
+    <Tip>
+      Use favorites to bookmark key insights, important explanations, or reference materials you'll need again.
+    </Tip>
   </Accordion>
-  <Accordion title="Settings" icon="message">
-    Settings allow you to customize your Pria experience by adjusting three key options: the AI Conversation Model, the maximum number of dialogues displayed, and the remember history for Pria.
+  <Accordion title="Settings" icon="gear">
+    **Customize Your AI Experience**
 
-    **Max Dialogues:**	Determine the maximum number of dialogue to load in your history pane. Too many dialogs may impact performance of the UI, while not enough limit the number of dialogs you can scroll back to. Use 25 by default.
+    Fine-tune three critical settings for optimal performance:
 
-    **Remember History:**	This setting determines the number of dialogues I can remember in each conversation, allowing me to recall your previous questions and answers. This is particularly important during interactions that require analyzing your past responses, such as the Conversational Assessment or Interview process.
+    <Tabs>
+      <Tab title="AI Model">
+        **AI Conversation Model**
 
-    <Note>
-      A minimum value of 6 is required for the Conversational Assessment. While this setting enhances the context of each interaction, it may also consume additional credits. Therefore, we recommend keeping it between 3 and 6 as needed.
-    </Note>
+        Select the AI model that best fits your needs and usage patterns.
+      </Tab>
+      <Tab title="Max Dialogues">
+        **Maximum Dialogues Display**
+
+        - **Purpose**: Controls how many dialogue pairs load in your history
+        - **Default**: 25 dialogues
+        - **Balance**: Too many may slow performance; too few limits scrollback access
+        - **Recommendation**: Adjust based on your device performance and needs
+      </Tab>
+      <Tab title="Remember History">
+        **AI Memory Span**
+
+        - **Function**: Determines how many previous dialogues the AI remembers
+        - **Impact**: Enables context-aware responses and follow-up questions
+        - **Range**: 3-6 recommended for optimal balance
+        - **Special Requirements**: Minimum of 6 needed for Conversational Assessment
+
+        <Warning>
+          Higher values provide better context but consume more credits. Find your optimal balance between context and cost.
+        </Warning>
+      </Tab>
+    </Tabs>
   </Accordion>
 </AccordionGroup>
 
-## Conversation History
+## Conversation History Management
 
-Each dialogue containing your question and my answer is recorded and added into the conversation history. The conversation history has several useful buttons to help you navigate the history as well as adding or removing some dialogues to/from your list of favorites.
+Your conversation history captures every interaction, creating a searchable record of your AI sessions.
 
-![Conversation History](/images/guides/interface/conversation-history.webp)
+<Frame caption="Navigate and manage your conversation history with intuitive controls">
+  ![Conversation History Example](/images/conversation-history-example.gif)
+</Frame>
 
-The following functions are available:
+### Essential History Controls
 
-1. Open the side tab to navigate your conversations
-2. Make your conversation appear larger or smaller
-3. Click the star to add the conversation to your favorites
+<Steps>
+  <Step title="Navigate" icon="compass">
+    **Open Side Panel**
 
-Marking a dialogue as a Favorite allows you to quickly go back to it when you need.
+    Click the side tab to browse all your conversations and switch between different sessions.
+  </Step>
+  <Step title="Resize Display" icon="expand">
+    **Adjust View Size**
+
+    Make conversations appear larger or smaller to match your reading preferences and screen size.
+  </Step>
+  <Step title="Bookmark Responses" icon="star">
+    **Add to Favorites**
+
+    Click the star icon on any response to save it to your favorites for instant future access.
+  </Step>
+</Steps>
+
+<Tip>
+  Regularly bookmark valuable responses to build your personal knowledge base for quick reference.
+</Tip>
+
+---
 
 ## Loading Previous Dialogues
 
-![Loading Previous Dialogues](/images/guides/interface/load-prev-dialogues.webp)
+<Frame caption="Access older conversations by loading previous dialogue history">
+  ![Loading Previous Dialogues](/images/guides/interface/load-prev-dialogues.webp)
+</Frame>
 
-A menu will appear when scrolling to the top of the history list.
+**How to Access Older Conversations:**
 
-Click the Load Previous …. link to load additional and older history records into the list.
+1. **Scroll to Top**: Navigate to the beginning of your current history list
+2. **Find Load Menu**: A "Load Previous..." option appears automatically
+3. **Click to Load**: Select the link to retrieve older dialogue records
+4. **Browse History**: Scroll through expanded conversation history
 
-## Listing Conversations
+<Info>
+  This feature helps you access your complete conversation archive without overwhelming the interface with too much data at once.
+</Info>
 
-The conversations list displays the various interactions you've had with this Pria instance.
+---
 
-![Conversation Listing](/images/guides/interface/conversation-listing.webp)
+## Conversation List Management
 
-For example, a new conversation will be created when you initiate a fresh conversation with your conversational assessment assistant or switch between courses in Canvas that utilize the same Pria instance.
+<Frame caption="Your conversations list showing different AI interactions and management options">
+  ![Conversations List Web](/images/conversations-list.webp)
+</Frame>
 
-You can see which conversation you are in by looking at the top of the Pria dialogue.
+### Understanding Your Conversations
 
-![Conversation Titles](/images/conversation-titles.webp)
+Each conversation entry displays:
 
-The conversation list shows the name of the Course or Assistant used, the date it was created and how many dialogues this conversation has. You can mnage any conversation like below:
+- **Name**: Course or Assistant identifier
+- **Date**: Creation timestamp
+- **Count**: Number of dialogue exchanges
+- **Context**: Current active conversation indicator
 
-![Edit Conversations](/images/guides/interface/conversation-edit.webp)
+<Frame caption="Identify your current conversation context at the top of the dialogue">
+  ![Conversation Titles](/images/conversation-titles.webp)
+</Frame>
 
-You can rename a conversation or delete it entirely if you are no longer using it.
+### Conversation Management Tools
 
-![Update Conversations](/images/guides/interface/conversation-update.webp)
+<Frame caption="Rename, organize, or delete conversations as needed">
+  ![Conversations List Management Web](/images/conversations-list-management.webp)
+</Frame>
+
+<CardGroup cols={2}>
+  <Card title="Rename Conversations" icon="pen">
+    **Customize for Easy Identification**
+
+    Give your conversations meaningful names that reflect their content or purpose.
+  </Card>
+  <Card title="🗑️ Delete Conversations" icon="trash">
+    **Clean Up Your History**
+
+    Remove conversations you no longer need to keep your list organized.
+  </Card>
+</CardGroup>
+
+<Frame caption="Edit conversation names for better organization">
+  ![Conversations Name Editing Example Web](/images/conversations-name-editing-example.webp)
+</Frame>
 
 <Danger>
-  Note about Delete: Beware, this will delete this conversation history so only clear if you are Okay no longer referencing these dialogues.
+  **Deletion Warning**
+
+  Deleting a conversation permanently removes all dialogue history. Only delete conversations you're certain you won't need to reference again. This action cannot be undone.
 </Danger>
+
+---
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Naming Strategy" icon="tag">
+    **Organize Effectively**
+
+    - Use descriptive conversation names
+    - Include dates for time-sensitive topics
+    - Add project or subject identifiers
+    - Keep names concise but informative
+  </Card>
+  <Card title="Favorites Strategy" icon="star">
+    **Build Your Knowledge Base**
+
+    - Bookmark key explanations
+    - Save important reference materials
+    - Mark successful problem solutions
+    - Collect valuable insights for later use
+  </Card>
+</CardGroup>
+
+<Tip>
+  Regular maintenance of your conversation history and favorites creates a powerful personal knowledge management system that grows more valuable over time.
+</Tip>
