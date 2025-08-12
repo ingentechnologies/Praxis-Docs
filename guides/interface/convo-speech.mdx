@@ -6,105 +6,75 @@ icon: "text-size"
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FMVFZLjzgno?si=0ajDlxyOXmQMAeKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-<video autoPlay loop playsInline className="w-full aspect-video rounded-xl" src="/images/guides/interface/convo-mode.mp4" />
-
 ## **Activating Conversation Mode**
 
-1. From the main interface, look for the <Icon icon="waveform-lines" /> conversation icon on the text input bar
-2. Allow microphone use in the browser
-3. Check if voice activation is enabled by clicking start and saying "Hey [Digital Twin Name]" 
+<Steps>
+  <Step title="Locate convo mode icon">
+    From the main interface, look for the <Icon icon="waveform-lines" iconType="solid" /> Conversation icon on the text input bar
 
-## **Core Conversation Features**
+    <img
+      src="/images/convo-mode-ui-locations.webp"
+      alt="Convo Mode Ui Locations Web"
+      title="Convo Mode Ui Locations Web"
+      style={{ width:"100%" }}
+    />
+  </Step>
+  <Step title="Enable microphone">
+    Allow microphone use in the browser
+  </Step>
+  <Step title="Test it out">
+    Check if voice activation is enabled by clicking start and saying "Hey [Digital Twin Name]"
+  </Step>
+</Steps>
 
-### **Natural Dialogue Flow**
+## What does Convo Mode do?
 
-- **Turn-taking**: The AI waits for natural pauses before responding
-- **Context retention**: Maintains conversation context across multiple exchanges
-- **Follow-up questions**: Ask clarifying questions without repeating context
-- **Topic transitions**: Smoothly switch between subjects while maintaining flow
-
-### **Voice Capabilities**
-
-- **Speech-to-text**: Your spoken words are converted to text in real-time
-- **Text-to-speech**: AI responses are spoken aloud with natural intonation
-- **Voice recognition**: Learns your speech patterns for improved accuracy
-- **Accent adaptation**: Adjusts to various accents and speaking styles
-
-### **Seamless Language Switching**
-
-- **Mid-conversation transitions**: Switch languages without interrupting the flow
-- **Automatic detection**: AI recognizes when you change languages
-- **Context preservation**: Maintains topic context across language switches
-- **Code-switching support**: Natural mixing of languages in bilingual conversations
-
-### **Language-Specific Features**
-
-- **Cultural adaptation**: Responses adapt to cultural context of the language
-- **Pronunciation assistance**: Helps with pronunciation in different languages
-- **Translation support**: Can translate concepts between languages during conversation
-- **Regional variations**: Recognizes different dialects and regional expressions
-
-## **Conversation Controls**
-
-### **During Conversation**
-
-- **Pause**: Temporarily stop the AI from responding
-- **Resume**: Continue the conversation where you left off
-- **Stop**: End the current response and start fresh
-- **Repeat**: Ask the AI to repeat its last response
-- **Clarify**: Request clarification on any point
-
-### **Session Management**
-
-- **Save conversation**: Preserve important dialogue sessions
-- **Export transcript**: Download conversation history as text
-- **Share session**: Send conversation links to colleagues
-- **Resume later**: Pick up conversations from where you left off
-
-## **Advanced Conversation Techniques**
-
-### **Effective Communication Strategies**
-
-- **Be specific**: Provide clear context for better responses
-- **Use natural language**: Speak as you would to a colleague
-- **Ask follow-ups**: Build on previous responses for deeper insights
-- **Provide feedback**: Let the AI know when responses are helpful or need adjustment
-
-### **Managing Complex Discussions**
-
-- **Break down topics**: Divide complex subjects into manageable parts
-- **Use examples**: Provide specific examples to illustrate your points
-- **Reference previous points**: Build on earlier parts of the conversation
-- **Summarize periodically**: Confirm understanding of key points
+<CardGroup cols={2}>
+  <Card title="Natural Dialogue Flow" icon="comments">
+    Your digital twin knows how to have actual conversations. It waits for you to finish your thoughts before jumping in, remembers what you've been talking about, and lets you ask follow-up questions without having to repeat yourself.
+  </Card>
+  <Card title="Voice Capabilities" icon="microphone">
+    When you speak, your words appear as text right away. When your digital twin responds, you'll hear it speak back to you with a natural-sounding voice. The more you use it, the better it gets at understanding how you talk.
+  </Card>
+  <Card title="Multilingual Support" icon="globe">
+    Switch between languages right in the middle of a conversation. Your digital twin will catch on and switch with you, keeping track of what you were talking about.
+  </Card>
+  <Card title="Cultural Adaptation" icon="users">
+    It even understands when bilingual speakers naturally mix languages, and it adapts its responses to fit the cultural context of whatever language you're using.
+  </Card>
+  <Card title="Knowledge Integration" icon="brain">
+    Your AI assistant automatically references your uploaded documents and custom-built assistants during conversations, providing personalized and contextually relevant responses.
+  </Card>
+  <Card title="Audio Transcriptions" icon="file-text">
+    All voice conversations are automatically saved as searchable transcript files that you can access, review, and reference at any time.
+  </Card>
+</CardGroup>
 
 ## **Troubleshooting Common Issues**
 
-### **Audio Problems**
-
-- **Microphone not working**: Check permissions and hardware connections
-- **Poor audio quality**: Adjust input sensitivity and check for background noise
-- **Echo or feedback**: Use headphones or adjust speaker volume
-- **Voice not recognized**: Speak clearly and check language settings
-
-### **Conversation Flow Issues**
-
-- **AI not responding**: Check internet connection and try restarting
-- **Context lost**: Provide brief recap of previous discussion
-- **Misunderstood requests**: Rephrase using different words or examples
-- **Language switching problems**: Explicitly state language changes
-
-## **Maximizing Your Conversation Experience**
-
-### **Preparation Tips**
-
-- **Clear objectives**: Know what you want to accomplish
-- **Quiet environment**: Minimize background noise and distractions
-- **Good equipment**: Use quality microphones and speakers/headphones
-- **Stable connection**: Ensure reliable internet for smooth conversations
-
-### **After Conversations**
-
-- **Review transcripts**: Check important points and decisions
-- **Save key insights**: Preserve valuable information for later use
-- **Share learnings**: Distribute useful conversations with team members
-- **Plan follow-ups**: Schedule additional conversations as needed
+<AccordionGroup>
+  <Accordion title="Microphone not working" icon="microphone">
+    Check permissions and hardware connections. Your microphone needs to be enabled in the platform for convo mode to work
+  </Accordion>
+  <Accordion title="Poor audio quality" icon="volume">
+    Adjust input sensitivity and check for background noise
+  </Accordion>
+  <Accordion title="Echo or feedback" icon="waveform">
+    Use headphones or adjust speaker volume
+  </Accordion>
+  <Accordion title="Voice not recognized" icon="microphone-slash">
+    Speak clearly and check language settings
+  </Accordion>
+  <Accordion title="AI not responding" icon="wifi">
+    Check internet connection and try restarting
+  </Accordion>
+  <Accordion title="Context lost" icon="clock">
+    Provide brief recap of previous discussion to your digital twin and pick up from there
+  </Accordion>
+  <Accordion title="Misunderstood requests" icon="question">
+    Rephrase using different words or examples
+  </Accordion>
+  <Accordion title="Language switching problems" icon="language">
+    Explicitly state language changes if it does not pick up on the changes
+  </Accordion>
+</AccordionGroup>
