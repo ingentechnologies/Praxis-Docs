@@ -16,18 +16,18 @@ Like a well-conducted symphony, every part of your AI organization plays in harm
 
 ```mermaid
 flowchart TD
-	AC["Accounts"]
+    AC["Accounts"]
     TR["Transfers"]
-	TO["Tools"]
+    TO["Tools"]
     US["Users"]
     IN["Instances"]
     AC --> IN
     AC --> TR
-	TO -->|Agents| IN
+    TO -->|Agents| IN
     US -->|Member| IN
     US <-->|History| IN
-	IN --> AS["Assistants"]
-	IN --> VA["Variables"]
+    IN --> AS["Assistants"]
+    IN --> VA["Variables"]
     IN --> UP["Uploads"]
     IN --> MC["Mcp Servers"]
     US <--> ME["Memory"]
