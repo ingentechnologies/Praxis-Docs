@@ -16,15 +16,22 @@ Like a well-conducted symphony, every part of your AI organization plays in harm
 
 ```mermaid
 flowchart TD
-        A["Account"]
-        U["Users"]
-        A --> B["Expert A Instance"]
-        A --> C["Expert B Instance"]
-        B --> D["Assistant A1"]
-        B --> E["Assistant A2"]
-        B --> MA["Members A"]
-        C --> F["Assistant B1"]
-        C --> MB["Members B"]
+	AC["Accounts"]
+    TR["Transfers"]
+	TO["Tools"]
+    US["Users"]
+    IN["Instances"]
+    AC --> IN
+    AC --> TR
+	TO -->|Agents| IN
+    US -->|Member| IN
+    US <-->|History| IN
+	IN --> AS["Assistants"]
+	IN --> VA["Variables"]
+    IN --> UP["Uploads"]
+    IN --> MC["Mcp Servers"]
+    US <--> ME["Memory"]
+    UP --> EM["Embeddings"]
 ```
 
 ## Secure IP Vaults
