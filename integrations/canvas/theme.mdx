@@ -127,13 +127,18 @@ var INSTITUTION_ID = “5fd6d7a4-4cc7-4e04-8473-e89aef4e…”;
 You can change the icon of the button that will appear on the screen with the following variable:
 If you like to keep using Pria's icon, leave the `INSTITUTION_ICON_URL` as undefined
 
+
+![Instance Icon](/images/integrations/canvas/canvas-expert-icon.png)
+
 ```javascript
 var INSTITUTION_ICON_URL;
 ```
 
 If you want to change the icon, set the value of the icon URL to a new location, like the example below:
 
+```javascript
 var INSTITUTION_ICON_URL = “https://pria.praxislxp.com/logo192.png”;
+```
 
 <Tip>
   - We recommend using a square image, no larger than 192 x 192 pixels, that
@@ -562,30 +567,45 @@ The teacher (or any administrator) is then expected to Create an instance of Pri
 
 When inserted as a theme, Pria is injected in the bottom right corner of a course page.
 
-## Create your Instance
 
-The onboarding wizard starts when the Teacher clicks on Pria's icon to expand for the first time
-This wizard allows for the creation of an instance of Pria, dedicated to the teacher.
+
+## Create your Digital Twin
+
+- The onboarding wizard starts when the Teacher clicks on Pria's icon to expand for the first time
+- This wizard allows for the creation of an instance of Pria, dedicated to the teacher.
+
+![Onboarding Wizard](/images/integrations/canvas/canvas-start-new.png)
+
 
 Click the + Digital Twin button to create a personalized instance of Pria.
 
+![Onboarding Wizard](/images/integrations/canvas/canvas-new-digital-twin.png)
+
+
 In the New Instance dialog, enter
-a name for your twin, ex: Bob,
-a picture URL that is accessible on the internet (without CORS issues), and
-a picture to use for the ui background
-An A.I. prompt that personalizes your character (more information is available in the Faculty Guide )
+- a name for your twin, ex: Bob,
+- a picture URL that is accessible on the internet (without CORS issues), and
+- a picture to use for the ui background
+- An A.I. prompt that personalizes your character (more information is available in the Faculty Guide )
+
 Click Let's GO to finish the creation of your new instance.
 
 You are now in your Instance instance:
+  Congratulations, you just created your very first Instance.
 
-Congratulations, you just created your very first Instance.
+![Onboarding Wizard](/images/integrations/canvas/canvas-integration-complete.webp)
+
 
 <Note>
   Anytime you or your students will click on Pria in this page, you will access
   this instance directly.
 </Note>
 
-When you place Pria in another course, it is considered a new placement. You will have to go through this wizard again and create a different instance or reuse one of your existing instances like the example below
+When you place Pria in another course, it is considered a new placement.
+You will have to go through this wizard again and create a different instance or reuse one of your existing instances like the example below
+
+![Onboarding Wizard](/images/integrations/canvas/canvas-get-connected.png)
+
 
 Selecting an existing instance will associate this placement to the instance. This can not be changed later, unless you remove the placement URL from the list of configured URLs for this instance.
 
@@ -596,6 +616,9 @@ Selecting an existing instance will associate this placement to the instance. Th
 </Card>
 
 Once connected to your instance, click on the GPT and Personalization Tab. This page is where you can update any personalizations for your Instance.
+
+![Onboarding Wizard](/images/integrations/canvas/canvas-more-personalization.webp)
+
 
 <Note>
     - Follow the instructions in the Admin Guide to setup integration to your Canvas instance and allow Pria to search your course content.
