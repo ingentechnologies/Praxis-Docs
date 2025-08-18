@@ -455,13 +455,25 @@ To verify, login using a standard User account, and navigate to the section of C
 
 
 
+## Subaccounts
 
+Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses.
+
+<Note>
+It is best practice to add Pria only to sub accounts, because scripts are added from Parent to Child domains.
+</Note>
 
 
 
 ## Teacher Onboarding
 
-This process happens IF you decide to leave the `INSTITUTION_ID` field as an empty string (by default) in the SDK file inserted in the theme. The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in.
+<Warning>
+
+This process happens IF you decide to leave the `INSTITUTION_ID` field as an empty string (by default) in the SDK file inserted in the theme.
+
+The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in.
+
+</Warning>
 
 When inserted as a theme, Pria is injected in the bottom right corner of a course page.
 
@@ -470,7 +482,7 @@ When inserted as a theme, Pria is injected in the bottom right corner of a cours
 The onboarding wizard starts when the Teacher clicks on Pria's icon to expand for the first time
 This wizard allows for the creation of an instance of Pria, dedicated to the teacher.
 
-Click the + Digital Tein button to create a personalized instance of Pria.
+Click the + Digital Twin button to create a personalized instance of Pria.
 
 In the New Instance dialog, enter
 a name for your twin, ex: Bob,
@@ -515,10 +527,3 @@ pria.praxislxp.com
 prialti.praxislxp.com
 ```
 
-## Subaccounts
-
-Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses.
-
-<Info>
-It is best practice to add Pria only to sub accounts, because scripts are added from Parent to Child domains.
-</Info>
