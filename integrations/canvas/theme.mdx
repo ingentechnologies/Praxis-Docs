@@ -44,10 +44,30 @@ To add a Praxis AI Instance globally to a Canvas account, you will upload a segm
   <Accordion title="Step 2. Edit Canvas Theme and Upload SDK">
     <Steps>
         <Step title="Login to Canvas as an Administrator">Ex: https://praxis-ai.instructure.com/ user: hugo@praxis-ai.com / pwd</Step>
-        <Step title="Navigate to Admin Settings">Ex: Praxis AI </Step>
-        <Step title="Select Themes">Click on the current Theme to open the Theme Editor.</Step>
-        <Step title="Open Theme Editor">Click on the "Edit" button to open the Theme Editor.</Step>
-        <Step title="Upload Tab">Click to the Upload tab on the left.</Step>
+        <Step title="Navigate to Admin Settings">
+
+        Ex: Praxis AI 
+        ![Edit Canvas Theme](/images/integrations/canvas/canvas-admin-navigate.png)
+        
+        </Step>
+        <Step title="Select Themes">
+        
+        Click on the current Theme to open the Theme Editor.
+        ![Edit Canvas Theme](/images/integrations/canvas/canvas-select-theme.png)
+        
+        </Step>
+        <Step title="Open Theme Editor">
+
+        Click on the "Edit" button to open the Theme Editor.
+        ![Edit Canvas Theme](/images/integrations/canvas/canvas-open-editor.png)
+        
+        </Step>
+        <Step title="Upload Tab">
+        
+        Click to the Upload tab on the left.
+        ![Edit Canvas Theme](/images/integrations/canvas/canvas-theme-upload.png)
+        
+        </Step>
         <Step title="Upload SDK JavaScript">Upload the pria-sdk-canvas.js file you downloaded earlier.</Step>
     </Steps>
 
@@ -65,11 +85,13 @@ To add a Praxis AI Instance globally to a Canvas account, you will upload a segm
   </Accordion>
 </AccordionGroup>
 
-## Customize Praxis AI Instance
+## Customizing the SDK
 
 In this step, you will customize the Javascript SDK you downloaded to specify what instance of Praxis AI to use.
 
-Edit the file pria-sdk-canvas.js from your download
+Edit the file `pria-sdk-canvas.js` from your download
+
+#### Disabled by Default
 
 If you prefer to disable Praxis AI by default set the `INSTITUTION_ID` to undefined
 
@@ -77,13 +99,17 @@ If you prefer to disable Praxis AI by default set the `INSTITUTION_ID` to undefi
 var INSTITUTION_ID;
 ```
 
-If you prefer using the “Teacher Onboarding” process, leave the `INSTITUTION_ID` field blank (e.g. “”) like this:
+#### Require Teacher Onboarding
+
+If you prefer to use the “Teacher Onboarding” process, leave the `INSTITUTION_ID` field blank (e.g. “”) like this:
 
 ```javascript
-var INSTITUTION_ID = “”;
+var INSTITUTION_ID = '';
 ```
 
 In this modality, Teacher or Administrator alike will select an existing instance or create a new instance at runtime.
+
+#### Assign all to Praxis AI Instance
 
 If prefer to assign everyone to the same Praxis AI instance (for the sub-account), then set the value of the `INSTITUTION_ID` to the instance public ID given to you by Praxis , ex: 5fd6d7a4-4cc7-4e04-8473-e89aef4e…
 
@@ -91,10 +117,10 @@ If prefer to assign everyone to the same Praxis AI instance (for the sub-account
 var INSTITUTION_ID = “5fd6d7a4-4cc7-4e04-8473-e89aef4e…”;
 ```
 
-<Note>
+<Danger>
   The value of the `INSTITUTION_ID` field is unique to your instance of Pria.
   Keep this ID confidential.
-</Note>
+</Danger>
 
 ## Customize the Instance icon
 
@@ -150,16 +176,29 @@ The options are as below:
 | **buttonContainerId**    | Element ID \| `''` _(BODY by default)_      | Parent element for the Pria button.                                                           | Empty value appends to `<body>`.                                                                                                        |
 | **allowPop**             | `true` \| `false` _(default)_               | Option to open Pria in a new tab.                                                             | **Deprecated** due to third-party cookie restrictions.                                                                                  |
 
-The Javascript SDK loads Pria with the loadPria() function.
+The Javascript SDK loads Pria with the `loadPria()` function.
+
+```javascript
+loadPria();
+```
 
 <Note>
   the loadPria() function will not load Pria twice if it happens to be called
   more than once.
 </Note>
 
-In the SDK, the loadPria() function is placed when the student or teacher is on a course page.
+In the SDK, the `loadPria()` function is placed when the student or teacher is on a course page.
+This determination is done using a regular expression with the function `onPage()` like below:
 
-This determination is done using a regular expression with the function onPage() like below:
+```javascript lines
+// load on all courses page (default)
+// Ex: https://praxis-ai.instructure.com/courses/106
+onPage(/\/courses\/\d+/, function (isOnPage) {
+  if (isOnPage) {
+    loadPria();
+  }
+});
+```
 
 <Note>
   In Canvas, course pages have URLS that match this structure
@@ -167,17 +206,31 @@ This determination is done using a regular expression with the function onPage()
   determine to loadPria() so it loads only for courses.
 </Note>
 
-In the SDK, we also load Pria in the Theme Editor so that we can preview Pria after we edit the custom theme. This is not required
+In the SDK, we also load Praxis AI in the Theme Editor so that we can preview Pria after we edit the custom theme. This is not required
 
-The page URL match uses Regular Expressions
+```javascript lines
+// load on theme_editor page
+// Ex: url https://praxis-ai.instructure.com/accounts/1/theme_editor
+onPage(/\/theme_editor/, function (isOnPage) {
+  if (isOnPage) {
+    loadPria();
+  }
+});
+```
+
+The page URL match uses [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
 ## Load for certain courses
 
 It is common that administrator want to load a Instance only for certain courses, while it stays disabled for all the others.
 
-In this case, set the default `INSTITUTION_PUBLIC_ID` to undefined on line 13.
+In this case, set the default `INSTITUTION_PUBLIC_ID` to undefined.
 
-On line 41, inside the block that determines that we are in a course page, add the following code:
+```javascript lines
+var INSTITUTION_ID; // undefined, "", or valid ID;
+```
+
+On line 1, inside the block that determines that we are in a course page, add the following code:
 
 ```javascript lines
 var coursesForSpecificInstance = [79875, 72856, 55621];
@@ -190,7 +243,7 @@ isInCourses(coursesForSpecificInstance, function (isCourse) {
 });
 ```
 
-The code will look like this:
+### Insitution Specific Courses
 
 ```javascript lines
 // load on all courses page (default)
@@ -204,13 +257,14 @@ onPage(/\/courses\/\d+/, function (isOnPage) {
         INSTITUTION_ICON_URL = 'https://cdn.domain.edu/my/icon.png';
       }
     });
-
     loadPria();
   }
 });
 ```
 
 This code means that if the current course is either `79875`, `72856`, or `55621`, then we set the `INSTITUTION_ID` to a specific instance, and customize the icon to our own URL
+
+### Teacher Specific Courses
 
 Similarly, you may choose to enable the Instance (let teacher crete their own twins) for a specific set of courses.
 
@@ -226,68 +280,66 @@ isInCourses(coursesForDigitalTwin, function (isCourse) {
 })
 ```
 
-The code looks like:
+The resulting code will look like this:
 
 ```javascript lines
 // load on all courses page (default)
 // Ex: https://praxis-ai.instructure.com/courses/106
 onPage(/\/courses\/\d+/, function (isOnPage) {
-    if (isOnPage) {
+  if (isOnPage) {
+    var coursesForSpecificInstance = [79875, 72856, 55621];
+    isInCourses(coursesForSpecificInstance, function (isCourse) {
+      if (isCourse) {
+        INSTITUTION_ID = '1234-5245-ss-aaa';
+        INSTITUTION_ICON_URL = 'https://cdn.domain.edu/my/icon.png';
+      }
+    });
 
-        var coursesForSpecificInstance = [79875, 72856, 55621]
-        isInCourses(coursesForSpecificInstance, function (isCourse) {
-            if (isCourse) {
-                INSTITUTION_ID='1234-5245-ss-aaa'
-                INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
-            }
-        })
+    var coursesForDigitalTwin = [69875, 62856, 65621];
+    isInCourses(coursesForDigitalTwin, function (isCourse) {
+      if (isCourse) {
+        INSTITUTION_ID = '';
+        INSTITUTION_ICON_URL = undefined;
+      }
+    });
 
-        var coursesForDigitalTwin = [69875, 62856, 65621]
-        isInCourses(coursesForDigitalTwin, function (isCourse) {
-            if (isCourse) {
-                INSTITUTION_ID=''
-                INSTITUTION_ICON_URL=undefined
-            }
-        })
-
-        loadPria()
-    }
-})
+    loadPria();
+  }
+});
 ```
 
+### Instance per Teacher
 
-You can create javascript code that select a specific instance or Pria for each teacher courses for example:
+You can write Javascript code that selects a specific Praxis AI instance for each teacher courses for example:
 
 ```javascript lines
 // load on all courses page (default)
 // Ex: https://praxis-ai.instructure.com/courses/106
 onPage(/\/courses\/\d+/, function (isOnPage) {
-    if (isOnPage) {
+  if (isOnPage) {
+    var Quirk = [2250992];
+    isInCourses(Quirk, function (isCourse) {
+      if (isCourse) {
+        INSTITUTION_ID = '7813dada-29ab-48a0-8d33-255354d8XXc';
+        INSTITUTION_ICON_URL = 'https://elearning.inst.edu/wp-content/up1';
+      }
+    });
 
-        var Quirk = [2250992]
-        isInCourses(Quirk, function (isCourse) {
-            if (isCourse) {
-                INSTITUTION_ID='7813dada-29ab-48a0-8d33-255354d8XXc'
-                INSTITUTION_ICON_URL='https://elearning.inst.edu/wp-content/up1'
-            }
-        })
+    var Chauncey = [2351092, 21317];
+    isInCourses(Chauncey, function (isCourse) {
+      if (isCourse) {
+        INSTITUTION_ID = '6c5cde70-2a8f-4986-bdc5-a5e4fe1fYYY';
+        INSTITUTION_ICON_URL = 'https://elearning.inst.edu/wp-content/up1';
+      }
+    });
 
-        var Chauncey = [2351092, 21317]
-        isInCourses(Chauncey, function (isCourse) {
-            if (isCourse) {
-                INSTITUTION_ID='6c5cde70-2a8f-4986-bdc5-a5e4fe1fYYY'
-                INSTITUTION_ICON_URL='https://elearning.inst.edu/wp-content/up1'
-            }
-        })
-
-        loadPria()
-    }
-})
-
+    loadPria();
+  }
+});
 ```
-
 
 ## Useful Functions
+
 The Javascript SDK has a lot of additional useful functions you can. Let's take a look at those.
 
 <AccordionGroup>
@@ -329,8 +381,7 @@ isInUsers(userIds, function (isUser) {
     // loadPria()
   }
 })
-
-````
+```
 
 </Accordion>
 <Accordion title="isStudent()">
@@ -339,11 +390,11 @@ The function isStudent() determines if the current user is a student
 ```javascript
 // load if a student
 isStudent(function (isStudent) {
-if (isStudent) {
-// loadPria()
-}
-})
-````
+  if (isStudent) {
+    // loadPria()
+  }
+});
+```
 
   </Accordion>
   <Accordion title="isCourse()">
@@ -471,33 +522,22 @@ Once you have customized your SDK Javascript file and added the logic to load th
 
     <Steps>
         <Step title="Upload JavaScript SDK">
-        Step G: In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button
-
-Step H: Select the pria-sdk-canvas.js that you just customized from your download folder, then click OK
-
-Step I: The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme.
-
+        - In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button
+        - Select the pria-sdk-canvas.js that you just customized from your download folder, then click OK
+        - The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme.
         </Step>
         <Step title="Preview Changes">
-        Click on the Preview Your Changes button
-
-Step J: Verify that the Instance is running properly in Preview mode
-
-1- The Instance Icon should appear at the bottom of the screen in preview mode
-
-2- The Instance UI should open and connect upon click on the icon
-
-Step K: If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector.
+        - Click on the Preview Your Changes button
+        - Verify that the Instance is running properly in Preview mode
+        - The Instance Icon should appear at the bottom of the screen in preview mode
+        - The Instance UI should open and connect upon click on the icon
+        - If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector.
 
         </Step>
         <Step title="Confirm Praxis Loads">
-
-        The Instance Icon should display properly
-
-Step L: Congratulations, the Instance is now installed in your theme.
-
-To verify, login using a standard User account, and navigate to the section of Canvas where you are loading the Instance, example below in a course
-
+        - The Instance Icon should display properly
+        - Congratulations, the Instance is now installed in your theme.
+        - To verify, login using a standard User account, and navigate to the section of Canvas where you are loading the Instance, example below in a course
         </Step>
     </Steps>
 
