@@ -62,33 +62,46 @@ To add a Instance globally to a Canvas account, you will inject a segment of Jav
   </Accordion>
 </AccordionGroup>
 
-## Edit your Theme
-
 ## Customize Praxis AI Instance
 
 In this step, you will customize the Javascript SDK you downloaded to specify what instance of Praxis AI to use.
 
 Edit the file pria-sdk-canvas.js from your download
 
-If you prefer to disable Praxis AI by default set the INSTITUTION_ID to undefined
+If you prefer to disable Praxis AI by default set the `INSTITUTION_ID` to undefined
 
+```javascript
 var INSTITUTION_ID;
-If you prefer using the “Teacher Onboarding” process, leave the institution_id field blank (e.g. “”) like this:
+```
 
+If you prefer using the “Teacher Onboarding” process, leave the `INSTITUTION_ID` field blank (e.g. “”) like this:
+
+```javascript
 var INSTITUTION_ID = “”;
+```
+
 In this modality, Teacher or Administrator alike will select an existing instance or create a new instance at runtime.
 
-If prefer to assign everyone to the same Praxis AI instance (for the sub-account), then set the value of the INSTITUTION_ID to the instance public ID given to you by Praxis , ex: 5fd6d7a4-4cc7-4e04-8473-e89aef4e…
+If prefer to assign everyone to the same Praxis AI instance (for the sub-account), then set the value of the `INSTITUTION_ID` to the instance public ID given to you by Praxis , ex: 5fd6d7a4-4cc7-4e04-8473-e89aef4e…
 
+```javascript
 var INSTITUTION_ID = “5fd6d7a4-4cc7-4e04-8473-e89aef4e…”;
-Note: The value of the INSTITUTION_ID field is unique to your instance of Pria. Keep this ID confidential.
+```
+
+<Note>
+  The value of the `INSTITUTION_ID` field is unique to your instance of Pria.
+  Keep this ID confidential.
+</Note>
 
 ## Customize the Instance icon
 
 You can change the icon of the button that will appear on the screen with the following variable:
-If you like to keep using Pria's icon, leave the INSTITUTION_ICON_URL as undefined
+If you like to keep using Pria's icon, leave the `INSTITUTION_ICON_URL` as undefined
 
+```javascript
 var INSTITUTION_ICON_URL;
+```
+
 If you want to change the icon, set the value of the icon URL to a new location, like the example below:
 
 var INSTITUTION_ICON_URL = “https://pria.praxislxp.com/logo192.png”;
@@ -102,7 +115,22 @@ var INSTITUTION_ICON_URL = “https://pria.praxislxp.com/logo192.png”;
 
 ## Display Options
 
-You can customize the position, size and container of the Instance's button as well as the main window with the following Javascript DISPLAY_OPTIONS variable:
+You can customize the position, size and container of the Instance's button as well as the main window with the following Javascript `DISPLAY_OPTIONS` variable:
+
+```javascript
+var DISPLAY_OPTIONS = {
+  fullScreen: false, // True for expanded in full screen
+  openOnLoad: false, // True to open Pria immediately when loaded
+  buttonWidth: '80px', // Size of the button containing the Pria Logo
+  buttonPosition: 'fixed', // Determine the position of the button (fixed, relative, sticky)
+  buttonPositionRight: '20px', // Position of the button relative to the right edge of the screen
+  buttonPositionBottom: '20px', // Position of the button relative to the bottom edge of the screen
+  buttonNoBounce: true, // Determine whether the button will not bounce when Pria is closed
+  priaContainerId: '', // Id of the container receiving pria window (default empty uses BODY)
+  buttonContainerId: '', // Id of the container receiving the button (default empty uses BODY)
+  allowPop: false, // True to show the button and pop Pria out the containing iFrame
+};
+```
 
 The options are as below:
 
@@ -140,37 +168,56 @@ In the SDK, we also load Pria in the Theme Editor so that we can preview Pria af
 
 The page URL match uses Regular Expressions
 
-Load the Instance for certain courses
+## Load for certain courses
 
 It is common that administrator want to load a Instance only for certain courses, while it stays disabled for all the others.
 
-In this case, set the default INSTITUTION_PUBLIC_ID to undefined on line 13.
+In this case, set the default `INSTITUTION_PUBLIC_ID` to undefined on line 13.
 
 On line 41, inside the block that determines that we are in a course page, add the following code:
 
-```JavaScript
+```javascript lines
 var coursesForSpecificInstance = [79875, 72856, 55621]
+
 isInCourses(coursesForSpecificInstance, function (isCourse) {
-if (isCourse) {
-INSTITUTION_ID='1234-5245-ss-aaa'
-INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
-}
+  if (isCourse) {
+    INSTITUTION_ID='1234-5245-ss-aaa'
+    INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
+  }
 })
 ```
 
 The code will look like this:
 
-This code means that if the current course is either 79875, 72856, or 55621, then we set the INSTITUTION_ID to a specific instance, and customize the icon to our own URL
+```javascript lines
+// load on all courses page (default)
+// Ex: https://praxis-ai.instructure.com/courses/106
+onPage(/\/courses\/\d+/, function (isOnPage) {
+  if (isOnPage) {
+    var coursesForSpecificInstance = [79875, 72856, 55621];
+    isInCourses(coursesForSpecificInstance, function (isCourse) {
+      if (isCourse) {
+        INSTITUTION_ID = '1234-5245-ss-aaa';
+        INSTITUTION_ICON_URL = 'https://cdn.domain.edu/my/icon.png';
+      }
+    });
+
+    loadPria();
+  }
+});
+```
+
+This code means that if the current course is either 79875, 72856, or 55621, then we set the `INSTITUTION_ID` to a specific instance, and customize the icon to our own URL
 
 Similarly, you may choose to enable the Instance (let teacher crete their own twins) for a specific set of courses. To do so, simply set the INSTITUION_ID to empty string like this:
 
 ```JavaScript
 var coursesForDigitalTwin = [69875, 62856, 65621]
 isInCourses(coursesForDigitalTwin, function (isCourse) {
-if (isCourse) {
-INSTITUTION_ID=”
-INSTITUTION_ICON_URL=undefined
-}
+  if (isCourse) {
+    INSTITUTION_ID = '';
+    INSTITUTION_ICON_URL = undefined;
+  }
 })
 ```
 
@@ -180,49 +227,193 @@ You can create javascript code that select a specific instance or Pria for each 
 
 The Javascript SDK has a lot of additional useful functions you can. Let's take a look at those.
 
-HASANYROLE() FUNCTION
+<AccordionGroup>
+  <Accordion title="hasAnyRole()">
+  
+  The function hasAnyRole() determines if the current user has the specified role (ex:user, teacher, admin,root_admin)
+  
+  ```javascript lines
+// load for a user role
+// ex: user, teacher, admin, root_admin, etc.
+hasAnyRole('user', function (hasRole) {
+    if (hasRole) {
+        // loadPria()
+    }
+})
+  ```
+  </Accordion>
+  <Accordion title="isUser()">
+  The function isUser() determines if the current user is the one specified by id (ex: 1)
+  
+  ```javascript lines
+// load for a specific user
+isUser(1, function (isUser) {
+    if (isUser) {
+        // loadPria()
+    }
+})
+  ```
+  
+  </Accordion>
+  <Accordion title="isInUsers()">
+  The isInUsers() function determines if the current user is in the array of specific user ids
+  
+  ```javascript lines
+// load for specific users
+var userIds= [1,2, 3]
+isInUsers(userIds, function (isUser) {
+  if (isUser) {
+    // loadPria()
+  }
+})
 
-The function hasAnyRole() determines if the current user has the specified role (ex:user, teacher, admin,root_admin)
+  ```
+  
+  </Accordion>
+  <Accordion title="isStudent()">
+  The function isStudent() determines if the current user is a student
 
-ISUSER() FUNCTION
+```javascript
+// load if a student
+isStudent(function (isStudent) {
+  if (isStudent) {
+  // loadPria()
+  }
+  })
+```
 
-The function isUser() determines if the current user is the one specified by id (ex: 1)
 
-ISINUSERS() FUNCTION
+  </Accordion>
+  <Accordion title="isCourse()">
+  The function isCourse() determines if the current page is in a specific course (ex: id 123)
+  
+  ```javascript lines
+// load for a specific course
+isCourse(123, function (isCourse) {
+  if (isCourse) {
+    // loadPria()
+  }
+})
+  ```
+  
+  </Accordion>
+  <Accordion title="isInCourses()">
+  The function isInCourses() determines if the current course is in an array of specific courses
+  
+    ```javascript lines
+    var courseIds = [1234, 2345]
+    isInCourses (courselds, function (isCourse) {
+    if (isCourse) {
+      // loadPria()
+    }
+    })
 
-The isInUsers() function determines if the current user is in the array of specific user ids
+    ```
+  
+  
+  </Accordion>
+  <Accordion title="onElementRendered()">
+  The onElementRendered() function is triggered when an element is fully displayed in the page
+  Example below is an anchor referenced by ID create_ticket.
 
-ISSTUDENT() FUNCTION
+  ```javascript lines
+  // Load with an action on a page using el (a jquery element collection)
+  onElementRendered ('a[href=#create_ticket]', function (el) {
+  // loadPria()
+  } )
+  ```
 
-The function isStudent() determines if the current user is a student
+  </Accordion>
+</AccordionGroup>
 
-ISCOURSE() FUNCTION
 
-The function isCourse() determines the current page is in a specific course (ex: id 123)
 
-ISINCOURSES() FUNCTION
+## The ENV variable
 
-The function isInCourses() determines if the current course is in an array of specific courses,
+In Canvas, a Javascript object called `ENV` is available to any pages rendered in the Application.
+When injected as a Theme, the Instance has access to the variable and uses it to determine who is the current user, or what course is he/she launching.
 
-ONELEMENTRENDERED() FUNCTION
-
-The onElementRendered() function is triggered when an element is fully displayed in the page. You can use this function handler to attach an event to a link or a button on a page that will load the Instance on click.
-
-Example below is an anchor referenced by ID create_ticket
-
-THE ENV VARIABLE
-
-In Canvas, a Javascript object called ENV is available to any pages rendered in the Application. When injected as a Theme, the Instance has access to the variable and uses it to determine who is the current user, or what course is he/she launching.
-
-To review the properties made available by the ENV variable, open a course page in Canvas, and launch the Developer Mode (F12 on Windows - developer tools on Mac) then in the Console window, type ENV then press the ENTER key.
+To review the properties made available by the `ENV` variable, open a course page in Canvas, and launch the Developer Mode (F12 on Windows - developer tools on Mac) then in the Console window, type ENV then press the ENTER key.
 
 Here is an example of such variable:
 
-The Instance makes use of the current_user property.
+```
+14:27:02.413 ENV
+14:27:02.448 {ASSET_HOST: 'https://dul1hjcxv0uqb.cloudfront.net', active_brand_config_json_url: 'https://dul1hjcxv0uqb.cloudfront.net/dist/brand…bl…/variables-7dd4b8981a9f0e021ec0229e4bd5873.json', active_brand_config: {...}, confetti_branding_enabled: false, url_to_what_gets_loaded_inside_the_tinymce_editor_css: Array(3), …}
+  ACCOUNT_ID: "1"
+  ASSET_HOST: "https://dul1hjcxv0uqb.cloudfront.net"
+  BIGEASY_LOCALE: "en_US"
+  CAN_VIEW_CONTENT_SHARES: true
+  CONTEXT_TIMEZONE: "America/Los_Angeles"
+  DATA_COLLECTION_ENDPOINT: "https://canvas-frontend-data-iad.prod..."
+  DEEP_LINKING_LOGGING: null
+  DEEP_LINKING_POST_MESSAGE_ORIGIN: "https://praxis-ai.instructure..."
+  DIRECT_SHARE_ENABLED: false
+  DOMAIN_ROOT_ACCOUNT_ID: "24379000000000001"
+  FEATURES: {featured_help_links: true, lti_platform_storage: true, ...}
+  FULLCALENDAR_LOCALE: "en"
+  FULL_STORY_ENABLED: false
+  K5_HOMEROOM_COURSE: false
+  K5_SUBJECT_COURSE: false
+  K5_USER: false
+  LOCALE: "en"
+  LOCALES: ['en']
+  LOCALE_TRANSLATION_FILE: "/dist/javascripts/translations/en-88841"
+  LTI_LAUNCH_FRAME_ALLOWANCES: (8) ['geolocation*', 'microphone*', …]
+  MOMENT_LOCALE: "en"
+  RAILS_ENVIRONMENT: "Production"
+  SENTRY_FRONTEND: {dsn: "https://355a1d96712e4038ac25aa852fa79a8f8"}
+  SETTINGS: {open_registration: false, collapse_global_nav: false, …}
+  TIMEZONE: "America/Los_Angeles"
+  USE_CLASSIC_FONT: false
+  account_id: "1"
+  active_brand_config: {md5: "ce87aff671f275c7fa8b620dea9768b", ...}
+  active_brand_config_json_url: "https://dul1hjcxv0uqb.cloudfront.net/dist/brand..."
+  active_context_tab: "brand_configs"
+  allowGlobalIncludes: true
 
-current_user_roles property:
+```
 
-and current_context property:
+
+The Instance makes use of the
+
+- `current_user` property
+
+  ```
+  current_user:
+    anonymous_id: "32"
+    avatar_image_url: "https://praxis-ai.instructure.com/images/ display_name: "Hugo Lebegue"
+    email: "hugo@praxis-ai.com"
+    html_url: "https://praxis-ai.instructure.com/about/110"
+    id: "110"
+  ```
+
+
+- `current_user_roles` property:
+
+
+  ```
+  current_user_roles: Array(5)
+    0: "user"
+    1: "student"
+    2: "teacher"
+    3: "admin"
+    4: "root_admin"
+  ```
+
+
+
+- `current_context` property:
+  ```
+  current_context: id: "213"
+  name: "Hugo"
+  type: "Course"
+  url: "https://praxis-ai.instructure.com/courses/213'
+  ```
+
+
+
+
 
 ## Install the Instance SDK into Theme
 
@@ -252,7 +443,7 @@ To verify, login using a standard User account, and navigate to the section of C
 
 ## Teacher Onboarding
 
-This process happens IF you decide to leave the INSTITUTION_ID field as an empty string (by default) in the SDK file inserted in the theme. The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in.
+This process happens IF you decide to leave the `INSTITUTION_ID` field as an empty string (by default) in the SDK file inserted in the theme. The teacher (or any administrator) is then expected to Create an instance of Pria (a.k.a. Instance), or connect to an existing one for every course the teacher wants Pria in.
 
 When inserted as a theme, Pria is injected in the bottom right corner of a course page.
 
@@ -293,6 +484,7 @@ Once connected to your instance, click on the GPT and Personalization Tab. This 
     - If you are using Kaltura, this is a good time to configure the integration as well. Contact your IT Administrator
 
     - Anytime you make a change to the instance, don't forget to click the Update button to save your changes.
+
 </Note>
 
 ## Whitelisting
