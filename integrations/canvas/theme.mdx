@@ -6,23 +6,14 @@ icon: 'text-size'
 
 ## Introduction
 
-This document details the installation steps to set up a Instance into Canvas using the Canvas Theme Editor.
+This documentation details the installation steps to set up a Praxis AI Instance into Canvas using the [Canvas Theme Editor](https://community.canvaslms.com/t5/Video-Guide/Theme-Editor-Admins/ta-p/383021).
 When installed in the Theme, the Instance becomes embedded into Canvas's pages.
 
-## Add a Instance to your Theme
+![Praxis AI + Canvas Integration Introduction](/images/integrations/canvas/canvas-introduction.png)
 
-To add a Instance globally to a Canvas account, you will inject a segment of Javascript code in the Theme used by the account or sub-account of your choice.
+## Add a Praxis AI Instance to your Theme
 
-<Card
-  title="Instructure: How to Upload Custom JavaScript and CSS Files"
-  icon="link"
-  href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253"
-  arrow="true"
-  cta="View"
->
-  We follow instructions similar to those posted Instructure's documentation on
-  how to upload custom JavaScript and CSS files to an account.
-</Card>
+To add a Praxis AI Instance globally to a Canvas account, you will upload a segment of JavaScript in the Theme used by the account or sub-account of your choice.
 
 <Note>
   Prerequisites - You must have administrative access to the Canvas account. -
@@ -32,8 +23,8 @@ To add a Instance globally to a Canvas account, you will inject a segment of Jav
 
 <AccordionGroup>
 
-  <Accordion title="1. Download SDK">
-        <Card title="pria-sdk-canvas.js" icon="link" href="https://pria.praxislxp.com/pria-sdk-canvas.js" arrow="true" cta="Download">
+  <Accordion title="Step 1. Download SDK">
+        <Card title="pria-sdk-canvas.js" icon="link" href="https://pria.praxislxp.com/pria-sdk-canvas.js"  download="pria-sdk-canvas.js" arrow="true" cta="Download">
         Download the pria-sdk-canvas.js code onto your computer, and save the file as pria-sdk-canvas.js
         </Card>
 
@@ -50,7 +41,7 @@ To add a Instance globally to a Canvas account, you will inject a segment of Jav
 
   </Accordion>
 
-  <Accordion title="2. Edit Canvas Theme">
+  <Accordion title="Step 2. Edit Canvas Theme and Upload SDK">
     <Steps>
         <Step title="Login to Canvas as an Administrator">Ex: https://praxis-ai.instructure.com/ user: hugo@praxis-ai.com / pwd</Step>
         <Step title="Navigate to Admin Settings">Ex: Praxis AI </Step>
@@ -59,6 +50,18 @@ To add a Instance globally to a Canvas account, you will inject a segment of Jav
         <Step title="Upload Tab">Click to the Upload tab on the left.</Step>
         <Step title="Upload SDK JavaScript">Upload the pria-sdk-canvas.js file you downloaded earlier.</Step>
     </Steps>
+
+<Card
+  title="Instructure: How to Upload Custom JavaScript and CSS Files"
+  icon="link"
+  href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253"
+  arrow="true"
+  cta="Read Canvas Documentation"
+>
+  We follow instructions similar to those posted Instructure's documentation on
+  how to upload custom JavaScript and CSS files to an account.
+</Card>
+
   </Accordion>
 </AccordionGroup>
 
@@ -177,14 +180,14 @@ In this case, set the default `INSTITUTION_PUBLIC_ID` to undefined on line 13.
 On line 41, inside the block that determines that we are in a course page, add the following code:
 
 ```javascript lines
-var coursesForSpecificInstance = [79875, 72856, 55621]
+var coursesForSpecificInstance = [79875, 72856, 55621];
 
 isInCourses(coursesForSpecificInstance, function (isCourse) {
   if (isCourse) {
-    INSTITUTION_ID='1234-5245-ss-aaa'
-    INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
+    INSTITUTION_ID = '1234-5245-ss-aaa';
+    INSTITUTION_ICON_URL = 'https://cdn.domain.edu/my/icon.png';
   }
-})
+});
 ```
 
 The code will look like this:
@@ -207,9 +210,11 @@ onPage(/\/courses\/\d+/, function (isOnPage) {
 });
 ```
 
-This code means that if the current course is either 79875, 72856, or 55621, then we set the `INSTITUTION_ID` to a specific instance, and customize the icon to our own URL
+This code means that if the current course is either `79875`, `72856`, or `55621`, then we set the `INSTITUTION_ID` to a specific instance, and customize the icon to our own URL
 
-Similarly, you may choose to enable the Instance (let teacher crete their own twins) for a specific set of courses. To do so, simply set the INSTITUION_ID to empty string like this:
+Similarly, you may choose to enable the Instance (let teacher crete their own twins) for a specific set of courses.
+
+To do so, simply set the `INSTITUION_ID` to empty string like this:
 
 ```JavaScript
 var coursesForDigitalTwin = [69875, 62856, 65621]
@@ -223,8 +228,66 @@ isInCourses(coursesForDigitalTwin, function (isCourse) {
 
 The code looks like:
 
+```javascript lines
+// load on all courses page (default)
+// Ex: https://praxis-ai.instructure.com/courses/106
+onPage(/\/courses\/\d+/, function (isOnPage) {
+    if (isOnPage) {
+
+        var coursesForSpecificInstance = [79875, 72856, 55621]
+        isInCourses(coursesForSpecificInstance, function (isCourse) {
+            if (isCourse) {
+                INSTITUTION_ID='1234-5245-ss-aaa'
+                INSTITUTION_ICON_URL='https://cdn.domain.edu/my/icon.png'
+            }
+        })
+
+        var coursesForDigitalTwin = [69875, 62856, 65621]
+        isInCourses(coursesForDigitalTwin, function (isCourse) {
+            if (isCourse) {
+                INSTITUTION_ID=''
+                INSTITUTION_ICON_URL=undefined
+            }
+        })
+
+        loadPria()
+    }
+})
+```
+
+
 You can create javascript code that select a specific instance or Pria for each teacher courses for example:
 
+```javascript lines
+// load on all courses page (default)
+// Ex: https://praxis-ai.instructure.com/courses/106
+onPage(/\/courses\/\d+/, function (isOnPage) {
+    if (isOnPage) {
+
+        var Quirk = [2250992]
+        isInCourses(Quirk, function (isCourse) {
+            if (isCourse) {
+                INSTITUTION_ID='7813dada-29ab-48a0-8d33-255354d8XXc'
+                INSTITUTION_ICON_URL='https://elearning.inst.edu/wp-content/up1'
+            }
+        })
+
+        var Chauncey = [2351092, 21317]
+        isInCourses(Chauncey, function (isCourse) {
+            if (isCourse) {
+                INSTITUTION_ID='6c5cde70-2a8f-4986-bdc5-a5e4fe1fYYY'
+                INSTITUTION_ICON_URL='https://elearning.inst.edu/wp-content/up1'
+            }
+        })
+
+        loadPria()
+    }
+})
+
+```
+
+
+## Useful Functions
 The Javascript SDK has a lot of additional useful functions you can. Let's take a look at those.
 
 <AccordionGroup>
@@ -267,21 +330,20 @@ isInUsers(userIds, function (isUser) {
   }
 })
 
-  ```
-  
-  </Accordion>
-  <Accordion title="isStudent()">
-  The function isStudent() determines if the current user is a student
+````
+
+</Accordion>
+<Accordion title="isStudent()">
+The function isStudent() determines if the current user is a student
 
 ```javascript
 // load if a student
 isStudent(function (isStudent) {
-  if (isStudent) {
-  // loadPria()
-  }
-  })
-```
-
+if (isStudent) {
+// loadPria()
+}
+})
+````
 
   </Accordion>
   <Accordion title="isCourse()">
@@ -309,24 +371,21 @@ isCourse(123, function (isCourse) {
     })
 
     ```
-  
-  
+
   </Accordion>
   <Accordion title="onElementRendered()">
   The onElementRendered() function is triggered when an element is fully displayed in the page
   Example below is an anchor referenced by ID create_ticket.
 
-  ```javascript lines
-  // Load with an action on a page using el (a jquery element collection)
-  onElementRendered ('a[href=#create_ticket]', function (el) {
+```javascript lines
+// Load with an action on a page using el (a jquery element collection)
+onElementRendered('a[href=#create_ticket]', function (el) {
   // loadPria()
-  } )
-  ```
+});
+```
 
   </Accordion>
 </AccordionGroup>
-
-
 
 ## The ENV variable
 
@@ -374,7 +433,6 @@ Here is an example of such variable:
 
 ```
 
-
 The Instance makes use of the
 
 - `current_user` property
@@ -388,9 +446,7 @@ The Instance makes use of the
     id: "110"
   ```
 
-
 - `current_user_roles` property:
-
 
   ```
   current_user_roles: Array(5)
@@ -401,8 +457,6 @@ The Instance makes use of the
     4: "root_admin"
   ```
 
-
-
 - `current_context` property:
   ```
   current_context: id: "213"
@@ -411,14 +465,9 @@ The Instance makes use of the
   url: "https://praxis-ai.instructure.com/courses/213'
   ```
 
-
-
-
-
 ## Install the Instance SDK into Theme
 
 Once you have customized your SDK Javascript file and added the logic to load the Instance when the proper conditions are met, you are ready to add it to your current Theme
-
 
     <Steps>
         <Step title="Upload JavaScript SDK">
@@ -427,7 +476,7 @@ Once you have customized your SDK Javascript file and added the logic to load th
 Step H: Select the pria-sdk-canvas.js that you just customized from your download folder, then click OK
 
 Step I: The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme.
-        
+
         </Step>
         <Step title="Preview Changes">
         Click on the Preview Your Changes button
@@ -439,31 +488,27 @@ Step J: Verify that the Instance is running properly in Preview mode
 2- The Instance UI should open and connect upon click on the icon
 
 Step K: If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector.
-        
+
         </Step>
         <Step title="Confirm Praxis Loads">
-        
+
         The Instance Icon should display properly
 
 Step L: Congratulations, the Instance is now installed in your theme.
 
 To verify, login using a standard User account, and navigate to the section of Canvas where you are loading the Instance, example below in a course
 
-        
         </Step>
     </Steps>
 
-
-
 ## Subaccounts
 
-Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses.
+Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Praxis AI in a Theme for specific user population/courses.
 
 <Note>
-It is best practice to add Pria only to sub accounts, because scripts are added from Parent to Child domains.
+  It is best practice to add Praxis AI only to sub accounts, because scripts are
+  added from Parent to Child domains.
 </Note>
-
-
 
 ## Teacher Onboarding
 
@@ -494,7 +539,11 @@ Click Let's GO to finish the creation of your new instance.
 You are now in your Instance instance:
 
 Congratulations, you just created your very first Instance.
-Note: Anytime you or your students will click on Pria in this page, you will access this instance directly.
+
+<Note>
+  Anytime you or your students will click on Pria in this page, you will access
+  this instance directly.
+</Note>
 
 When you place Pria in another course, it is considered a new placement. You will have to go through this wizard again and create a different instance or reuse one of your existing instances like the example below
 
@@ -505,7 +554,6 @@ Selecting an existing instance will associate this placement to the instance. Th
 <Card title="Personalization" href="/guides/admin/personalization">
   More information on Admin functions is available in this documentation.
 </Card>
-
 
 Once connected to your instance, click on the GPT and Personalization Tab. This page is where you can update any personalizations for your Instance.
 
@@ -520,10 +568,9 @@ Once connected to your instance, click on the GPT and Personalization Tab. This 
 
 ## Whitelisting
 
-In order for Pria and associated services to run without connectivity issues, the following domains must be Whitelisted by your institution:
+In order for Pria and associated services to run without connectivity issues, the following domains **must** be Whitelisted by your institution:
 
 ```
 pria.praxislxp.com
 prialti.praxislxp.com
 ```
-
