@@ -419,13 +419,18 @@ The Instance makes use of the
 
 Once you have customized your SDK Javascript file and added the logic to load the Instance when the proper conditions are met, you are ready to add it to your current Theme
 
-Step G: In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button
+
+    <Steps>
+        <Step title="Upload JavaScript SDK">
+        Step G: In the Theme Editor, Upload Tab, under the JavaScript File section, click on the Select button
 
 Step H: Select the pria-sdk-canvas.js that you just customized from your download folder, then click OK
 
 Step I: The theme Editor will download the Javascript onto Canvas content delivery network so it becomes available to the theme.
-
-Click on the Preview Your Changes button
+        
+        </Step>
+        <Step title="Preview Changes">
+        Click on the Preview Your Changes button
 
 Step J: Verify that the Instance is running properly in Preview mode
 
@@ -434,12 +439,25 @@ Step J: Verify that the Instance is running properly in Preview mode
 2- The Instance UI should open and connect upon click on the icon
 
 Step K: If the Instance appears properly in Preview mode, click the Save to apply the changes in the Theme and return to the Theme selector.
-
-The Instance Icon should display properly
+        
+        </Step>
+        <Step title="Confirm Praxis Loads">
+        
+        The Instance Icon should display properly
 
 Step L: Congratulations, the Instance is now installed in your theme.
 
 To verify, login using a standard User account, and navigate to the section of Canvas where you are loading the Instance, example below in a course
+
+        
+        </Step>
+    </Steps>
+
+
+
+
+
+
 
 ## Teacher Onboarding
 
@@ -470,11 +488,12 @@ When you place Pria in another course, it is considered a new placement. You wil
 
 Selecting an existing instance will associate this placement to the instance. This can not be changed later, unless you remove the placement URL from the list of configured URLs for this instance.
 
-## More Personalisation Options
+## More Personalization Options
 
-More information on Admin functions is available in the Faculty Guide to your Instance at
+<Card title="Personalization" href="/guides/admin/personalization">
+  More information on Admin functions is available in this documentation.
+</Card>
 
-https://learning.praxislxp.com/praxis/faculty-guide-to-your-digital-twin-2/#GPT_and_Personalization
 
 Once connected to your instance, click on the GPT and Personalization Tab. This page is where you can update any personalizations for your Instance.
 
@@ -500,4 +519,6 @@ prialti.praxislxp.com
 
 Canvas allows administrators to set up themes for sub accounts. Use this technique to enable Pria in a Theme for specific user population/courses.
 
+<Info>
 It is best practice to add Pria only to sub accounts, because scripts are added from Parent to Child domains.
+</Info>
