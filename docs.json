@@ -143,8 +143,8 @@
             "pages": ["integrations/overview"]
           },
           {
-            "group": "Instracture Canvas",
-            "pages": ["integrations/canvas/overview","integrations/canvas/theme", "integrations/canvas/lti-1-3"]
+            "group": "Instructure Canvas",
+            "pages": ["integrations/canvas/overview","integrations/canvas/theme", "integrations/canvas/lti-1-3","integrations/canvas/smartsearch"]
           },
           {
             "group": "D2L Brightspace",
