@@ -4,7 +4,7 @@ description: "Learn how to manage your IP Vault effectively."
 icon: "lock"
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5Po99xJoe8Y?si=8E94vkrQ7KfvOyDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5Po99xJoe8Y?si=8E94vkrQ7KfvOyDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
 The IP Vault is your secure storage space for intellectual property and important files. It enables you to upload, manage, and retrieve documents that enhance your digital twin's knowledge base and response capabilities.
 
@@ -13,6 +13,7 @@ The IP Vault is your secure storage space for intellectual property and importan
 Retrieval Augmented Generation is a core functionality that allows your digital twin to search through your uploaded documents and incorporate relevant content into conversations. This technology ensures your digital twin can reference trusted materials you control, providing more accurate and contextual responses.
 
 RAG activates automatically when you:
+
 - Upload files to your private IP Vault
 - Select specific files to include in conversations
 - Ask questions that relate to your uploaded content
@@ -24,18 +25,23 @@ Understanding how your files are processed helps you optimize the relevance and 
 <Steps>
   <Step title="Document Chunking and Vector Embedding">
     When you upload a file, the system breaks it into manageable sections and converts each section into a vector embedding - a numerical representation that captures the semantic meaning of the content.
+
+    <img
+      src="/images/rag-example.webp"
+      alt="Rag Example Web"
+      title="Rag Example Web"
+      style={{ width:"66%" }}
+    />
   </Step>
-  
   <Step title="Question Analysis">
     Your questions are also converted into vector embeddings using the same process. This creates a common format that allows the system to compare your question against all uploaded content sections effectively.
   </Step>
-  
   <Step title="Relevance Matching">
     The system uses the Euclidean k-NN (k-nearest neighbors) algorithm to compare your question's embedding with file section embeddings. Content sections are ranked by relevance score, indicating how closely they match your question's intent and context.
   </Step>
-  
   <Step title="Threshold Configuration">
     You can adjust the relevance threshold to control which content sections are included in responses:
+
     - **Higher threshold**: Stricter selection criteria, only highly relevant content
     - **Lower threshold**: More inclusive selection, potentially less relevant but broader content coverage
   </Step>
@@ -44,11 +50,12 @@ Understanding how your files are processed helps you optimize the relevance and 
 ## Understanding the k-NN Vector Score
 
 The k-NN Vector Score percentage indicates how closely a file section matches your question:
+
 - **90-100%**: Highly relevant, directly addresses your question
 - **70-89%**: Moderately relevant, contains related information
 - **50-69%**: Somewhat relevant, may provide useful context
 - **Below 50%**: Low relevance, may not be directly useful
 
 <Note>
-**Administrator Control**: You can disable file uploads for users while retaining upload capabilities as an administrator. This allows you to maintain control over the knowledge base while preventing unauthorized content additions.
+  **Administrator Control**: You can disable file uploads for users while retaining upload capabilities as an administrator. This allows you to maintain control over the knowledge base while preventing unauthorized content additions.
 </Note>
