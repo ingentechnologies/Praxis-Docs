@@ -1,0 +1,218 @@
+---
+title: 'Smart Search'
+description: 'Retreive data from Canvas using the Smart Search APIs'
+icon: 'text-size'
+---
+
+Your Digital Twin contains an agent specialized in retrieving data from Canvas using the Smart Search APIs.
+Smart Search is a new and evolving AI Powered function that searches course content.
+
+More information available at:
+https://developerdocs.instructure.com/services/canvas/resources/smart_search#smart-search-api
+
+<Note>
+  The deploy notes at canvas community indicates that Smart Search is available
+  only for Beta and Prod releases. If you are are having issues even after
+  proper setup you may need to contact Instructure Support and verify that your
+  instance supports smart search.
+</Note>
+
+To allow your Digital twin to access your Canvas Instance, you will need to
+
+1- Setup a Developer Key for API Smart Search. This key is different from the LTI Key if you have installed Pria as an LTI Activity for students.
+
+2 Use the Key Client ID and Secret in each of your instances to allow your digital twins to use the API Key for Smart Search
+
+## Developer Key for Smart Search APIs
+
+In order to get the properties necessary to connect your digital twin to Canvas (Client ID and Secret), you need to use a Developer Key created specially to use the Smart Search APIS.
+
+Only 1 developer key is needed for your institution and can be used for multiple instances of Pria.
+
+To create a Developer Key for Smart Search APIS, follow the steps below:
+
+1. Sign in to Canvas, ex: https://praxis-ai.instructure.com/
+2. Once in the Canvas interface, click on `Admin` on the left tab, then select your account ex: 'Praxis AI'.
+3. In your account select `Developer Keys`.
+4. Click on the `+ Developer Key` button on the top right corner of the page.
+5. Select + API key to create a new API Key. The new Key Settings wizard opens.
+   Under `Key Name`, use `Pria Smart Search`. This name is visible in the oAuth Consent form _
+   Under `Owner email` enter the admin email of your institution
+   Under `Redirect URL` enter this URL: https://pria.praxislxp.com/api/auth/token_complete
+   Under `Icon URL` enter the Pria icon : https://pria.praxislxp.com/logo192.png This Icon is displayed to learners in the oAuth consent form _
+   Leave the rest empty like below.
+   \*: This is the consent form presented to students upon authorization
+
+6. Checkbox `Enforced Scope` located to the right of Key Name.
+7. After you check `Enforce Scope`, Type `smart` in the search box to locate the Smart Search API function
+8. Check the `Smart Search` box to grant access to the Smart Search function to your key.
+9. Click `Save` on bottom right corner of the page.
+10. Change the state of your developer key to enabled to enable this API Key
+    Under `Details`, copy the client ID (the top number) and client secret (Show Key) to your clipboard
+
+<Info>
+  Remember that only 1 key is needed for multiple instances of Pria. You will
+  need these properties for each instance of Pria you want to connect to Canvas
+</Info>
+
+## Canvas Scopes
+
+Canvas API scopes function as permission controls that define the specific actions an application can perform when accessing Canvas data through the API.
+
+Think of them as granular permission settings that follow the principle of least privilege – applications should only have access to what they absolutely need.
+
+Each scope corresponds to a specific set of API endpoints and actions.
+
+For example:
+
+<AccordionGroup>
+  <Accordion title="Assignments">
+    ```
+    Endpoint: /api/v1/courses/:course_id/assignments
+    Scope: url:GET|/api/v1/courses/:course_id/assignments
+    ```
+  </Accordion>
+  <Accordion title="Discussions">
+    ```
+    Endpoint: /api/v1/courses/:course_id/discussion_topics
+    Scope: url:GET|/api/v1/courses/:course_id/discussion_topics
+    ```
+  </Accordion>
+  <Accordion title="Grades">
+    ```
+    Endpoint: /api/v1/courses/:course_id/submissions
+    Scope: url:GET|/api/v1/courses/:course_id/submissions
+    ```
+  </Accordion>
+  <Accordion title="Quizzes">
+    ```
+    Endpoint: /api/v1/courses/:course_id/quizzes
+    Scope: url:GET|/api/v1/courses/:course_id/quizzes
+    ```
+  </Accordion>
+  <Accordion title="Announcements">
+    ```
+    Endpoint: /api/v1/courses/:course_id/announcements
+    Scope: url:GET|/api/v1/courses/:course_id/announcements
+    ```
+  </Accordion>
+    <Accordion title="Modules">
+    ```
+    Endpoint: /api/v1/courses/:course_id/modules
+    Scope: url:GET|/api/v1/courses/:course_id/modules
+    ```
+  </Accordion>
+    <Accordion title="Groups">
+    ```
+    Endpoint: /api/v1/courses/:course_id/groups
+    Scope: url:GET|/api/v1/courses/:course_id/groups
+    ```
+  </Accordion>
+    <Accordion title="Files">
+    ```
+    Endpoint: /api/v1/courses/:course_id/files
+    Scope: url:GET|/api/v1/courses/:course_id/files
+    ```
+  </Accordion>
+      <Accordion title="Rubrics">
+    ```
+    Endpoint: /api/v1/courses/:course_id/rubrics
+    Scope: url:GET|/api/v1/courses/:course_id/rubrics
+    ```
+  </Accordion>
+      <Accordion title="Files (for syllabus upload)">
+    ```
+    Endpoint: /api/v1/courses/:course_id/files
+    Scope: url:GET|/api/v1/courses/:course_id/files
+    ```
+  </Accordion>
+      <Accordion title="Users (for adding teaching assistants)">
+    ```
+    Endpoint: /api/v1/courses/:course_id/users
+    Scope: url:GET|/api/v1/courses/:course_id/users
+    ```
+  </Accordion>
+        <Accordion title="Assignment Groups">
+    ```
+    Endpoint: /api/v1/courses/:course_id/assignment_groups
+    Scope: url:GET|/api/v1/courses/:course_id/assignment_groups 
+    ```
+  </Accordion>
+
+
+
+
+
+
+  </AccordionGroup>
+
+
+
+
+
+When you enable scopes for Pria's API integration:
+
+- You can explicitly allow Pria to perform specific actions in Canvas on behalf of users.
+- You can define the boundaries of what the application can and cannot do within your Canvas instance.
+- You can ensure that Pria can only access the data it needs.
+
+## Praxis Instance Configuration
+
+Under general properties, add Canvas Client ID and Canvas Client Secret.
+
+1. It is now time to add these Client ID and Secret API keys into the digital twin instance you plan on using for Canvas. Click on the Admin (⌂) icon on the top.
+
+2. Locate your instance name, and click the green Edit pencil on the left.
+
+3. In the Edit Instance panel, scroll down to the API Keys section.
+4. Locate the canvas client id and canvas client secret fields (under the Integration section) and paste them as copied from the developer tools section like this:
+5. Click `Update` at the bottom, and Voila!
+
+## Testing your Canvas Integration
+
+Once the setup is complete, go to your Digital Twin an ask questions about your course in Canvas
+
+Example
+
+```
+What is my course syllabus in Canvas
+```
+
+When an attempt is made by your digital twin to connect to Canvas the first time, or that your token has expired (every 60 minutes), you will have to authorize your twin to access Canvas.
+
+<Note>
+  When an attempt is made by your digital twin to connect to Canvas the first
+  time, or that your token has expired (every 60 minutes), you will have to
+  authorize your twin to access Canvas.
+</Note>
+
+## Troubleshooting
+
+The properties necessary for the Smart Search Agent are not properly configured.
+
+Update your digital twin instance, and set the values of the Canvas Client ID and secret with the values of your API Key
+
+```json lines wrap
+{“success”:false,”message”:”unauthorized_client Client does not have access to the specified Canvas account.”}
+```
+
+This error occurs when the system is unable to determine the domain used by your institution, or there is a mismatch in the configuration.
+
+To correct this issue, make sure the first line of your public authorized URLS is the main domain authorized for your institution. Ex: https://praxis-ai.instructure.com
+
+<Warning>
+  It is recommended NOT to share a digital twin between a production instance
+  and a test instance of your institution, because this may result in the Smart
+  Search agent picking up the wrong institution domain URL to authenticate
+  users.
+</Warning>
+
+If you still chooses to do so, please note that the Smart Search agent uses the first domain in the list that contains instructure.com
+
+For example, if both ursl are present (and in this order) in the public authorized URLS field of your digital twin:
+
+https://school.instructure.com
+
+https://school.beta.instructure.com
+
+The smart search agent will use the first url https://school.instructure.com
