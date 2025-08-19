@@ -21,16 +21,15 @@ https://developerdocs.instructure.com/services/canvas/resources/smart_search#sma
 
 To allow your Digital twin to access your Canvas Instance, you will need to
 
-1. Setup a Developer Key for API Smart Search.
+1.  [Setup a Developer Key](#create-developer-keys) for API Smart Search.
+2. [Configure each of your Praxis instances](#praxis-instance-configuration) with the `Key Client ID` and `Secret` to allow your digital twins to use the API Key for Smart Search.
 
    <Note>
-     This key is different from the LTI Key if you have installed Pria as an LTI
+     The developer key you will create is different from the LTI Key if you have installed Pria as an LTI
      Activity for students.
    </Note>
 
-2. Use the `Key Client ID` and `Secret` in each of your instances to allow your digital twins to use the API Key for Smart Search
-
-## Developer Keys
+## Setup Developer Keys
 
 In order to get the properties necessary to connect your digital twin to Canvas (Client ID and Secret), you need to use a Developer Key created specially to use the Smart Search APIS.
 
@@ -110,6 +109,83 @@ To create a Developer Key for Smart Search APIS, follow the steps below:
   Remember that only 1 key is needed for multiple instances of Pria. You will
   need these properties for each instance of Pria you want to connect to Canvas
 </Info>
+
+
+
+When you enable scopes for Pria's API integration:
+
+- You can explicitly allow Pria to perform specific actions in Canvas on behalf of users.
+- You can define the boundaries of what the application can and cannot do within your Canvas instance.
+- You can ensure that Pria can only access the data it needs.
+
+Read more about [Canvas Scopes](#canvas-scopes) to understand the available scopes and their implications.
+
+
+## Praxis Instance Configuration
+
+Under general properties, add Canvas Client ID and Canvas Client Secret.
+
+1. It is now time to add these Client ID and Secret API keys into the digital twin instance you plan on using for Canvas. Click on the Admin (⌂) icon on the top.
+
+2. Locate your instance name, and click the green Edit pencil on the left.
+
+![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance.webp)
+
+3. In the Edit Instance panel, scroll down to the API Keys section.
+
+4. Locate the `Canvas Client Id` and `Canvas Client Secret` fields (under the Integration section) and paste them as copied from the developer tools section like this:
+   ![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance-integrations.webp)
+
+5. Click `Update` at the bottom.
+
+## Testing your Canvas Integration
+
+Once the setup is complete, go to your Digital Twin an ask questions about your course in Canvas
+
+    ```text Prompt icon=comment wrap
+    What is my course syllabus in Canvas
+    ```
+
+When an attempt is made by your digital twin to connect to Canvas the first time, or that your token has expired (every 60 minutes), you will have to authorize your twin to access Canvas.
+
+<Note>
+  When an attempt is made by your digital twin to connect to Canvas the first
+  time, or that your token has expired (every 60 minutes), you will have to
+  authorize your twin to access Canvas.
+</Note>
+
+## Troubleshooting
+
+The properties necessary for the Smart Search Agent are not properly configured.
+
+Update your digital twin instance, and set the values of the Canvas Client ID and secret with the values of your API Key
+
+```json lines wrap
+{“success”:false,”message”:”unauthorized_client Client does not have access to the specified Canvas account.”}
+```
+
+This error occurs when the system is unable to determine the domain used by your institution, or there is a mismatch in the configuration.
+
+To correct this issue, make sure the first line of your public authorized URLS is the main domain authorized for your institution. Ex: https://praxis-ai.instructure.com
+
+<Warning>
+  It is recommended NOT to share a digital twin between a production instance
+  and a test instance of your institution, because this may result in the Smart
+  Search agent picking up the wrong institution domain URL to authenticate
+  users.
+</Warning>
+
+If you still chooses to do so, please note that the Smart Search agent uses the first domain in the list that contains instructure.com
+
+For example, if both ursl are present (and in this order) in the public authorized URLS field of your digital twin:
+
+https://school.instructure.com
+
+https://school.beta.instructure.com
+
+The smart search agent will use the first url https://school.instructure.com
+
+
 
 ## Canvas Scopes
 
@@ -201,73 +277,3 @@ For example:
   </Accordion>
 
   </AccordionGroup>
-
-When you enable scopes for Pria's API integration:
-
-- You can explicitly allow Pria to perform specific actions in Canvas on behalf of users.
-- You can define the boundaries of what the application can and cannot do within your Canvas instance.
-- You can ensure that Pria can only access the data it needs.
-
-## Praxis Instance Configuration
-
-Under general properties, add Canvas Client ID and Canvas Client Secret.
-
-1. It is now time to add these Client ID and Secret API keys into the digital twin instance you plan on using for Canvas. Click on the Admin (⌂) icon on the top.
-
-2. Locate your instance name, and click the green Edit pencil on the left.
-
-![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance.webp)
-
-3. In the Edit Instance panel, scroll down to the API Keys section.
-
-4. Locate the `Canvas Client Id` and `Canvas Client Secret` fields (under the Integration section) and paste them as copied from the developer tools section like this:
-   ![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance-integrations.webp)
-
-5. Click `Update` at the bottom.
-
-## Testing your Canvas Integration
-
-Once the setup is complete, go to your Digital Twin an ask questions about your course in Canvas
-
-    ```text Prompt icon=comment wrap
-    What is my course syllabus in Canvas
-    ```
-
-When an attempt is made by your digital twin to connect to Canvas the first time, or that your token has expired (every 60 minutes), you will have to authorize your twin to access Canvas.
-
-<Note>
-  When an attempt is made by your digital twin to connect to Canvas the first
-  time, or that your token has expired (every 60 minutes), you will have to
-  authorize your twin to access Canvas.
-</Note>
-
-## Troubleshooting
-
-The properties necessary for the Smart Search Agent are not properly configured.
-
-Update your digital twin instance, and set the values of the Canvas Client ID and secret with the values of your API Key
-
-```json lines wrap
-{“success”:false,”message”:”unauthorized_client Client does not have access to the specified Canvas account.”}
-```
-
-This error occurs when the system is unable to determine the domain used by your institution, or there is a mismatch in the configuration.
-
-To correct this issue, make sure the first line of your public authorized URLS is the main domain authorized for your institution. Ex: https://praxis-ai.instructure.com
-
-<Warning>
-  It is recommended NOT to share a digital twin between a production instance
-  and a test instance of your institution, because this may result in the Smart
-  Search agent picking up the wrong institution domain URL to authenticate
-  users.
-</Warning>
-
-If you still chooses to do so, please note that the Smart Search agent uses the first domain in the list that contains instructure.com
-
-For example, if both ursl are present (and in this order) in the public authorized URLS field of your digital twin:
-
-https://school.instructure.com
-
-https://school.beta.instructure.com
-
-The smart search agent will use the first url https://school.instructure.com
