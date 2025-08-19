@@ -21,8 +21,12 @@ https://developerdocs.instructure.com/services/canvas/resources/smart_search#sma
 
 To allow your Digital twin to access your Canvas Instance, you will need to
 
-1. Setup a Developer Key for API Smart Search. 
-<Note>This key is different from the LTI Key if you have installed Pria as an LTI Activity for students.</Note>
+1. Setup a Developer Key for API Smart Search.
+
+   <Note>
+     This key is different from the LTI Key if you have installed Pria as an LTI
+     Activity for students.
+   </Note>
 
 2. Use the `Key Client ID` and `Secret` in each of your instances to allow your digital twins to use the API Key for Smart Search
 
@@ -36,18 +40,28 @@ To create a Developer Key for Smart Search APIS, follow the steps below:
 
 <Steps>
   <Step title="Sign in to Canvas">
-    
+
+![Sign into Canvas](/images/integrations/canvas/smartsearch/canvas-ss-signin.webp)
+
   </Step>
   <Step title="Select Account">
     Once in the Canvas interface, click on `Admin` on the left tab, then select your account ex: 'Praxis AI'.
+    ![Select Canvas Admin](/images/integrations/canvas/smartsearch/canvas-ss-select-account.webp)
+
   </Step>
   <Step title="Add Developer Key">
-    - In your account select `Developer Keys`.
-    - Click on the `+ Developer Key` button on the top right corner of the page.
-    - Select `+ API` key to create a new API Key. 
+    **a.** In your account select `Developer Keys`.
+        ![Select Developer Keys](/images/integrations/canvas/smartsearch/canvas-ss-add-dev-key.webp)
+
+    **b.** Click on the `+ Developer Key` button on the top right corner of the page.
+
+        ![Add Developer Keys](/images/integrations/canvas/smartsearch/canvas-ss-add-dev-keys.webp)
+
+    **c.** Select `+ API` key to create a new API Key.
+
   </Step>
 
-<Step title="Update Key Settings">
+<Step title="Update API Key Settings">
   Update the following fields in the settings form.
   - **Key Name:**  `Pria Smart Search`.
     This name is visible in the oAuth Consent form
@@ -57,19 +71,37 @@ To create a Developer Key for Smart Search APIS, follow the steps below:
   
     - This Icon is displayed to learners in the oAuth consent form
   - Leave the rest of the fields empty.
+
+    ![Update API Key Settings](/images/integrations/canvas/smartsearch/canvas-ss-api-key-settings.webp)
+
 </Step>
 
 <Step title="Authorize">
   This is the consent form presented to students upon authorization
+    ![Consent](/images/integrations/canvas/smartsearch/canvas-ss-consent.webp)
+
 </Step>
 
 <Step title="Enforce Scopes">
-    - Checkbox `Enforced Scope` located to the right of Key Name.
-    - After you check `Enforce Scope`, Type `smart` in the search box to locate the Smart Search API function
-    - Check the `Smart Search` box to grant access to the Smart Search function to your key.
-    - Click `Save` on bottom right corner of the page.
-    - Change the state of your developer key to enabled to enable this API Key
-        Under `Details`, copy the client ID (the top number) and client secret (Show Key) to your clipboard
+    **a.** Checkbox `Enforced Scope` located to the right of Key Name.
+
+        ![Consent](/images/integrations/canvas/smartsearch/canvas-ss-enforce-scopes.webp)
+
+
+            **b.** After you check `Enforce Scope`, Type `smart` in the search box to locate the Smart Search API function
+            **c.** Check the `Smart Search` box to grant access to the Smart Search function to your key.
+            **d.** Click `Save` on bottom right corner of the page.
+            ![Consent](/images/integrations/canvas/smartsearch/canvas-ss-grant-access.webp)
+
+    **e.** Change the state of your developer key to `enabled` to enable by selecting the `state` toggle button
+
+            ![Consent](/images/integrations/canvas/smartsearch/canvas-ss-enable-apikey.webp)
+
+</Step>
+
+<Step title="Copy Credentials">
+  Under `Details`, copy the client ID (the top number) and client secret (Show
+  Key) to your clipboard
 </Step>
 
 </Steps>
@@ -83,7 +115,11 @@ To create a Developer Key for Smart Search APIS, follow the steps below:
 
 Canvas API scopes function as permission controls that define the specific actions an application can perform when accessing Canvas data through the API.
 
-Think of them as granular permission settings that follow the principle of least privilege – applications should only have access to what they absolutely need.
+Think of them as granular permission settings that follow the principle of least privilege.
+
+<Warning>
+  Applications should only have access to what they absolutely need.
+</Warning>
 
 Each scope corresponds to a specific set of API endpoints and actions.
 
@@ -180,9 +216,14 @@ Under general properties, add Canvas Client ID and Canvas Client Secret.
 
 2. Locate your instance name, and click the green Edit pencil on the left.
 
+![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance.webp)
+
 3. In the Edit Instance panel, scroll down to the API Keys section.
-4. Locate the canvas client id and canvas client secret fields (under the Integration section) and paste them as copied from the developer tools section like this:
-5. Click `Update` at the bottom, and Voila!
+
+4. Locate the `Canvas Client Id` and `Canvas Client Secret` fields (under the Integration section) and paste them as copied from the developer tools section like this:
+   ![Edit Praxis Instance](/images/integrations/canvas/smartsearch/canvas-ss-edit-instance-integrations.webp)
+
+5. Click `Update` at the bottom.
 
 ## Testing your Canvas Integration
 
@@ -191,8 +232,6 @@ Once the setup is complete, go to your Digital Twin an ask questions about your 
     ```text Prompt icon=comment wrap
     What is my course syllabus in Canvas
     ```
-
-
 
 When an attempt is made by your digital twin to connect to Canvas the first time, or that your token has expired (every 60 minutes), you will have to authorize your twin to access Canvas.
 
