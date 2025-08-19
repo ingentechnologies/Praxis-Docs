@@ -143,7 +143,7 @@
             "pages": ["integrations/overview"]
           },
           {
-            "group": "Canvas",
+            "group": "Instracture Canvas",
             "pages": ["integrations/canvas/overview","integrations/canvas/theme", "integrations/canvas/lti-1-3"]
           },
           {
