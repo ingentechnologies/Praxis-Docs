@@ -1,53 +1,74 @@
 ---
-title: "LTI v1.3"
-description: "Integrate Praxis AI into your Canvas instance as an LTI Tool."
+title: 'LTI v1.3'
+description: 'Integrate Praxis AI into your Canvas instance as an LTI Tool.'
 icon: 'text-size'
 ---
 
-
+## Introduction
 
 Just recently Canvas added support for the Dynamic Registration of the LTI Advantage . This is a 1 step process for the registration of LTI Tools.
 
-It enables Praxis AI to offer a simplified onboarding process for our LTI solution. The process is described in this document. 
+It enables Praxis AI to offer a simplified onboarding process for our LTI solution. The process is described in this document.
 
-It allows: 
+It allows:
 
-Administrators to register Pria as an LTI tool in just 1 click and
-Faculty Staff to create a digital twin for every placement of Pria in their course
-Adding Pria to Canvas (Administration)
+- Administrators to register Pria as an LTI tool in just 1 click and
+- Faculty Staff to create a digital twin for every placement of Pria in their course
 
-This process needs to be done just once for your Canvas instance. 
+<Note>This process needs to be done just once for your Canvas instance. </Note>
 
-Developer Keys
+## Developer Keys
 
-Log into your canvas instance, then go to the Admin -> Developer Keys section 
+<Steps>
+    <Step title="Navigate to Developer Keys Section">
+        Log into your canvas instance, then go to the Admin -> Developer Keys section 
+    </Step>
+    <Step title="Add LTI Registration">
+        Under the Developer Key menu, select LTI Registration 
+    </Step>    
+    <Step title="Enter Registration URL">
+    ```
+    https://prialti.praxislxp.com/register
+    ``` 
+    </Step>
+    <Step title="Click Continue">
+        Click the Continue button to proceed with the registration. 
+    </Step>
 
-Under the Developer Key menu, select LTI Registration 
+  <Step title="Placement Selection (Optional)">
+    Update the name of the placement to “Pria, Praxis AI”. 
+    This is the name that teachers will see when placing Pria in their course.
 
-For URL, enter 
-https://prialti.praxislxp.com/register, then click Continue 
+    The placements offered by the dynamic registration process as follows:
+    - Page Menu
+    - Account Navigation
+    - Course Navigation
+    - Link Selection
+  </Step>
+
+  <Step title="Register & Enable">
+    In the Register App modal, click Enable and Close
+  </Step>
+
+  <Step title="Complete">
+    Your new Pria LTI instance has been created
+  </Step>
+
+</Steps>
 
 
-In the Register App modal, click Enable and Close to accept the default (or optionally, update the name of the placement to “Pria, Praxis AI”. This is the name that teachers will see when placing Pria in their course).
 
 
-These are all the placements offered by the dynamic registration process.
-
-
-Click Enabled and Close
-
-Your new Pria LTI instance has been created: 
 
 Copy the Client ID to your clipboard. The example here is: 243790000000000223
-Manual Registration
 
-As of July 2024, Canvas doesn’t offer to add or placements or edit the custom properties after the LTI component is installed through Dynamic registration.
+## Manual Registration
+
+As of July 2024, Canvas doesn't offer to add or placements or edit the custom properties after the LTI component is installed through Dynamic registration.
 
 Therefore, the manual process is possible if you want to use a specific instance of Pria (public institution id) or better control the placements, such as to take advantage of the new ‘top_navigation’ placement, that places Pria in a drawer, similar to the wiki_page,
 
 In the Developer Keys, create a new LTI Key, and setup the properties as below:
-
-
 
 In Key Name, write Pria LTI
 
@@ -65,71 +86,71 @@ Here is the JSON you can use to enter the configuration manually:
 
 ```json
 {
-    "title": "Pria LTI",
-    "scopes": [
-        "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem",
-        "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem.readonly",
-        "https://purl.imsglobal.org/spec/lti-ags/scope/result.readonly",
-        "https://purl.imsglobal.org/spec/lti-ags/scope/score",
-        "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly",
-        "https://canvas.instructure.com/lti/public_jwk/scope/update",
-        "https://canvas.instructure.com/lti/account_lookup/scope/show",
-        "https://canvas.instructure.com/lti-ags/progress/scope/show"
-    ],
-    "extensions": [
-        {
-            "domain": "praxislxp.com",
-            "platform": "canvas.instructure.com",
-            "settings": {
-                "text": "Pria LTI",
-                "icon_url": "https://pria.praxislxp.com/logo192.png",
-                "platform": "canvas.instructure.com",
-                "placements": [
-                    {
-                        "text": "Pria LTI",
-                        "icon_url": "https://pria.praxislxp.com/logo192.png",
-                        "placement": "account_navigation",
-                        "message_type": "LtiResourceLinkRequest",
-                        "target_link_uri": "https://prialti.praxislxp.com"
-                    },
-                    {
-                        "text": "Manual Pria LTI",
-                        "icon_url": "https://pria.praxislxp.com/logo192.png",
-                        "placement": "link_selection",
-                        "message_type": "LtiDeepLinkingRequest",
-                        "target_link_uri": "https://prialti.praxislxp.com"
-                    },
-                    {
-                        "text": "Manual Pria LTI",
-                        "icon_url": "https://pria.praxislxp.com/logo192.png",
-                        "placement": "wiki_page_menu",
-                        "message_type": "LtiResourceLinkRequest",
-                        "target_link_uri": "https://prialti.praxislxp.com"
-                    },
-                    {
-                        "text": "Manual Pria LTI",
-                        "icon_url": "https://pria.praxislxp.com/logo192.png",
-                        "placement": "top_navigation",
-                        "message_type": "LtiResourceLinkRequest",
-                        "target_link_uri": "https://prialti.praxislxp.com/launch"
-                    }
-                ]
-            },
-            "privacy_level": "public"
-        }
-    ],
-    "description": "Praxis AI, Pria LTI",
-    "custom_fields": {  
-	"priainstitutionid": "f831501f-b645-481a-9cbb-331509aa....",
-	"userid":"$Canvas.user.id",
-	"courseid":"$Canvas.course.id",
-	"coursename":"$Canvas.course.name",
-	"partnerid":"$Canvas.account.id",
-	"partnername":"$Canvas.account.name",
-    },
-    "public_jwk_url": "https://prialti.praxislxp.com/keys",
-    "target_link_uri": "https://prialti.praxislxp.com",
-    "oidc_initiation_url": "https://prialti.praxislxp.com/login"
+  "title": "Pria LTI",
+  "scopes": [
+    "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem",
+    "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem.readonly",
+    "https://purl.imsglobal.org/spec/lti-ags/scope/result.readonly",
+    "https://purl.imsglobal.org/spec/lti-ags/scope/score",
+    "https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly",
+    "https://canvas.instructure.com/lti/public_jwk/scope/update",
+    "https://canvas.instructure.com/lti/account_lookup/scope/show",
+    "https://canvas.instructure.com/lti-ags/progress/scope/show"
+  ],
+  "extensions": [
+    {
+      "domain": "praxislxp.com",
+      "platform": "canvas.instructure.com",
+      "settings": {
+        "text": "Pria LTI",
+        "icon_url": "https://pria.praxislxp.com/logo192.png",
+        "platform": "canvas.instructure.com",
+        "placements": [
+          {
+            "text": "Pria LTI",
+            "icon_url": "https://pria.praxislxp.com/logo192.png",
+            "placement": "account_navigation",
+            "message_type": "LtiResourceLinkRequest",
+            "target_link_uri": "https://prialti.praxislxp.com"
+          },
+          {
+            "text": "Manual Pria LTI",
+            "icon_url": "https://pria.praxislxp.com/logo192.png",
+            "placement": "link_selection",
+            "message_type": "LtiDeepLinkingRequest",
+            "target_link_uri": "https://prialti.praxislxp.com"
+          },
+          {
+            "text": "Manual Pria LTI",
+            "icon_url": "https://pria.praxislxp.com/logo192.png",
+            "placement": "wiki_page_menu",
+            "message_type": "LtiResourceLinkRequest",
+            "target_link_uri": "https://prialti.praxislxp.com"
+          },
+          {
+            "text": "Manual Pria LTI",
+            "icon_url": "https://pria.praxislxp.com/logo192.png",
+            "placement": "top_navigation",
+            "message_type": "LtiResourceLinkRequest",
+            "target_link_uri": "https://prialti.praxislxp.com/launch"
+          }
+        ]
+      },
+      "privacy_level": "public"
+    }
+  ],
+  "description": "Praxis AI, Pria LTI",
+  "custom_fields": {
+    "priainstitutionid": "f831501f-b645-481a-9cbb-331509aa....",
+    "userid": "$Canvas.user.id",
+    "courseid": "$Canvas.course.id",
+    "coursename": "$Canvas.course.name",
+    "partnerid": "$Canvas.account.id",
+    "partnername": "$Canvas.account.name"
+  },
+  "public_jwk_url": "https://prialti.praxislxp.com/keys",
+  "target_link_uri": "https://prialti.praxislxp.com",
+  "oidc_initiation_url": "https://prialti.praxislxp.com/login"
 }
 ```
 
@@ -137,92 +158,86 @@ Update your priainstitutionid custom property to a valid instance id or leave AS
 
 After pasting the JSON, and when you toggle back to Manual Entry, you will see that the placements include the new top_navigation
 
-
 A complete guide to the manual setup is available on a Google Doc at
 
 https://docs.google.com/document/d/1-HSJTOIjg9C5LFIVeO0bw_Ntnc0rOyKe9I-5djf8L3M/edit?usp=sharing
 
-Registering the App 
+## Registering the App
 
-Go to the Admin -> Settings -> Apps and click the View App Configuration to add the component to your instance. 
+Go to the Admin -> Settings -> Apps and click the View App Configuration to add the component to your instance.
 
 In the App List screen, click on + App to add an application
 
-In the Add App modal, select By Client ID 
+In the Add App modal, select By Client ID
 
-Paste the Client ID of Pria you copied in the clipboard in the step above, ex: 243790000000000223 
+Paste the Client ID of Pria you copied in the clipboard in the step above, ex: 243790000000000223
 
-Canvas will find the LTI Application corresponding to the client ID you entered. 
+Canvas will find the LTI Application corresponding to the client ID you entered.
 In the Add App modal, click Install
-
 
 Note: If you re-install Pria, you will see this dialog. You can click Yes to install the new instance. This instance is different from the previous one since this new instance supports the new onboarding Digital Twin workflow.
 
+Your Pria LTI application is now installed in your instance. It takes several minutes for Canvas to make this application available as a placement.
 
-Your Pria LTI application is now installed in your instance. It takes several minutes for Canvas to make this application available as a placement. 
-
-Create your new Digital Twin 
+Create your new Digital Twin
 
 This process is for Teachers, and expects that Pria has been registered as an LTI Application by your Administrator through the steps above.
 
 Placing Pria in your Course
 
-To start, go to your Dashboard then select your course. 
+To start, go to your Dashboard then select your course.
 
-In your course, click on the + button inside a module to Add Pria as an activity 
+In your course, click on the + button inside a module to Add Pria as an activity
 
-In the Add Item to Module modal dialog, select External Tool 
+In the Add Item to Module modal dialog, select External Tool
 
 Select Pria LTI from the list of LTI Tools
 
-In the Link Resource modal, select PRIA, Praxis AI, then click the Submit button 
+In the Link Resource modal, select PRIA, Praxis AI, then click the Submit button
 
-Back in the Add Item module, click the Add Item button 
+Back in the Add Item module, click the Add Item button
 
 Pria has been added to your module. Click on Pria to launch.
 
 Pria will open up unless it has been defined to launch in a separate window.
 
-Create your Digital Twin
+## Create your Digital Twin
 
 When Pria is launched for the first time by an administrator or teacher, click on the + Digital Twin button to create new and personalized instance or Pria
 
-In the New Digital Twin dialog, enter 
-a name for your twin, ex: Bob, 
-a picture URL that is accessible on the internet (without CORS issues), and 
+In the New Digital Twin dialog, enter
+a name for your twin, ex: Bob,
+a picture URL that is accessible on the internet (without CORS issues), and
 a picture to use for large backgrounds
 An A.I. prompt that personalizes your character (more information is available in the Faculty Guide )
-Click Let’s GO to finish the creation of your new instance.
+Click Let's GO to finish the creation of your new instance.
 
+You are now in your digital twin instance:
 
-You are now in your digital twin instance: 
+Congratulations, you just created your very first digital twin.
+Anytime you or your students will click on Pria, they will access this instance directly.
 
-Congratulations, you just created your very first digital twin. 
-Anytime you or your students will click on Pria, they will access this instance directly. 
+When you place Pria LTI in another course, or create a different instance, the onboarding wizard will offer to reuse one of your instances or create a new one for this placement.
 
-When you place Pria LTI in another course, or create a different instance, the onboarding wizard will offer to reuse one of your instances or create a new one for this placement. 
+Selecting an existing instance will associate this placement to the instance. This can not be changed later. To change it, remove the Pria activity, and create a new one.
 
-Selecting an existing instance will associate this placement to the instance. This can not be changed later. To change it, remove the Pria activity, and create a new one. 
+## More Personalization Options
 
-More Personalisation Options
-
-More information on Admin functions is available in the Faculty Guide to your Digital Twin at 
+More information on Admin functions is available in the Faculty Guide to your Digital Twin at
 
 https://learning.praxislxp.com/praxis/faculty-guide-to-your-digital-twin/#GPT_and_Personalization
 
-Click on the GPT and Personalization Tab. This page is where you can update any personalizations for your digital twin. 
-
+Click on the GPT and Personalization Tab. This page is where you can update any personalizations for your digital twin.
 
 Don’t forget to click the Update button to save your changes.
 
-Student Access
+## Student Access
 
- Students will automatically join your digital twin once you have placed Pria in your course, launched and completed the creation wizard the first time. 
-If your student attempt to access Pria, but your instance has not been created, they will receive this message 
+Students will automatically join your digital twin once you have placed Pria in your course, launched and completed the creation wizard the first time.
+If your student attempt to access Pria, but your instance has not been created, they will receive this message
 
 When the browser is running in Incognito mode, or Cookies are been blocked,due to recent updates in browsers and how they handle third party cookies, it may prevent LTI from launching properly.
 
 As a result you can receive an error similar to the one below:
 
-
-You may need to allow third party cookies and retry.
+<Note>You may need to allow third party cookies and retry.</Note>
