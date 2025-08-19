@@ -64,25 +64,36 @@ Copy the Client ID to your clipboard. The example here is: 243790000000000223
 
 ## Manual Registration
 
+<Warning>As of July 2024, Canvas doesn’t offer to add or placements or edit the custom properties after the LTI component is installed through Dynamic registration.</Warning>
 As of July 2024, Canvas doesn't offer to add or placements or edit the custom properties after the LTI component is installed through Dynamic registration.
 
 Therefore, the manual process is possible if you want to use a specific instance of Pria (public institution id) or better control the placements, such as to take advantage of the new ‘top_navigation’ placement, that places Pria in a drawer, similar to the wiki_page,
 
-In the Developer Keys, create a new LTI Key, and setup the properties as below:
 
-In Key Name, write Pria LTI
+<Steps>
+    <Step title="Navigate to Developer Keys Section">
+        Log into your canvas instance, then go to the Admin -> Developer Keys section 
+    </Step>
+    <Step title="Add LTI Key">
+        Under the Developer Key menu, select LTI Key 
+    </Step>    
+    <Step title="Configure Key Settings">
+    - In Key Name, enter 
+        ```
+        Pria LTI
+        ```
+    - In Owner Email, enter the admin email
+    - In Redirect URLs, add the following URLs:
 
-In Owner Email, write the admin email
+        ```
+        https://prialti.praxislxp.com
+        https://prialti.praxislxp.com/resources
+        https://prialti.praxislxp.com/launch
+        ```
 
-In Redirect URLs, add these:
 
-https://prialti.praxislxp.com
-https://prialti.praxislxp.com/resources
-https://prialti.praxislxp.com/launch
-
-In the Method, select Paste Json.
-
-Here is the JSON you can use to enter the configuration manually:
+    - In the Method dropdown, select `Paste Json`.
+    Copy the JSON below and paste into the `LTI 1.3 Configuration` field.
 
 ```json
 {
@@ -153,10 +164,17 @@ Here is the JSON you can use to enter the configuration manually:
   "oidc_initiation_url": "https://prialti.praxislxp.com/login"
 }
 ```
+    </Step>
 
-Update your priainstitutionid custom property to a valid instance id or leave AS IS to use the Digital Twin
+<Step>
+After pasting the JSON, and when you toggle back to Manual Entry, you will see that the placements include the new `top_navigation`
+</Step>
 
-After pasting the JSON, and when you toggle back to Manual Entry, you will see that the placements include the new top_navigation
+</Steps>
+
+<Note>Update your priainstitutionid custom property to a valid instance id or leave AS IS to use the Digital Twin</Note>
+
+
 
 A complete guide to the manual setup is available on a Google Doc at
 
@@ -164,7 +182,16 @@ https://docs.google.com/document/d/1-HSJTOIjg9C5LFIVeO0bw_Ntnc0rOyKe9I-5djf8L3M/
 
 ## Registering the App
 
-Go to the Admin -> Settings -> Apps and click the View App Configuration to add the component to your instance.
+<Steps>
+    <Step title="View App Configuration">
+        - Navigate to the `Admin` -> `Settings` -> `Apps`
+        - Click the View App Configuration to add the component to your instance.
+    </Step>
+
+</Steps>
+
+
+
 
 In the App List screen, click on + App to add an application
 
