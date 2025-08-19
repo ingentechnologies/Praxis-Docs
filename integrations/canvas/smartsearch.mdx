@@ -17,13 +17,16 @@ https://developerdocs.instructure.com/services/canvas/resources/smart_search#sma
   instance supports smart search.
 </Note>
 
+## Getting Started
+
 To allow your Digital twin to access your Canvas Instance, you will need to
 
-1- Setup a Developer Key for API Smart Search. This key is different from the LTI Key if you have installed Pria as an LTI Activity for students.
+1. Setup a Developer Key for API Smart Search. 
+<Note>This key is different from the LTI Key if you have installed Pria as an LTI Activity for students.</Note>
 
-2 Use the Key Client ID and Secret in each of your instances to allow your digital twins to use the API Key for Smart Search
+2. Use the `Key Client ID` and `Secret` in each of your instances to allow your digital twins to use the API Key for Smart Search
 
-## Developer Key for Smart Search APIs
+## Developer Keys
 
 In order to get the properties necessary to connect your digital twin to Canvas (Client ID and Secret), you need to use a Developer Key created specially to use the Smart Search APIS.
 
@@ -31,24 +34,45 @@ Only 1 developer key is needed for your institution and can be used for multiple
 
 To create a Developer Key for Smart Search APIS, follow the steps below:
 
-1. Sign in to Canvas, ex: https://praxis-ai.instructure.com/
-2. Once in the Canvas interface, click on `Admin` on the left tab, then select your account ex: 'Praxis AI'.
-3. In your account select `Developer Keys`.
-4. Click on the `+ Developer Key` button on the top right corner of the page.
-5. Select + API key to create a new API Key. The new Key Settings wizard opens.
-   Under `Key Name`, use `Pria Smart Search`. This name is visible in the oAuth Consent form _
-   Under `Owner email` enter the admin email of your institution
-   Under `Redirect URL` enter this URL: https://pria.praxislxp.com/api/auth/token_complete
-   Under `Icon URL` enter the Pria icon : https://pria.praxislxp.com/logo192.png This Icon is displayed to learners in the oAuth consent form _
-   Leave the rest empty like below.
-   \*: This is the consent form presented to students upon authorization
+<Steps>
+  <Step title="Sign in to Canvas">
+    
+  </Step>
+  <Step title="Select Account">
+    Once in the Canvas interface, click on `Admin` on the left tab, then select your account ex: 'Praxis AI'.
+  </Step>
+  <Step title="Add Developer Key">
+    - In your account select `Developer Keys`.
+    - Click on the `+ Developer Key` button on the top right corner of the page.
+    - Select `+ API` key to create a new API Key. 
+  </Step>
 
-6. Checkbox `Enforced Scope` located to the right of Key Name.
-7. After you check `Enforce Scope`, Type `smart` in the search box to locate the Smart Search API function
-8. Check the `Smart Search` box to grant access to the Smart Search function to your key.
-9. Click `Save` on bottom right corner of the page.
-10. Change the state of your developer key to enabled to enable this API Key
-    Under `Details`, copy the client ID (the top number) and client secret (Show Key) to your clipboard
+<Step title="Update Key Settings">
+  Update the following fields in the settings form.
+  - **Key Name:**  `Pria Smart Search`.
+    This name is visible in the oAuth Consent form
+  - **Owner email:** The admin email of your institution
+  - **Redirect URL:** https://pria.praxislxp.com/api/auth/token_complete
+  - **Icon URL:** https://pria.praxislxp.com/logo192.png 
+  
+    - This Icon is displayed to learners in the oAuth consent form
+  - Leave the rest of the fields empty.
+</Step>
+
+<Step title="Authorize">
+  This is the consent form presented to students upon authorization
+</Step>
+
+<Step title="Enforce Scopes">
+    - Checkbox `Enforced Scope` located to the right of Key Name.
+    - After you check `Enforce Scope`, Type `smart` in the search box to locate the Smart Search API function
+    - Check the `Smart Search` box to grant access to the Smart Search function to your key.
+    - Click `Save` on bottom right corner of the page.
+    - Change the state of your developer key to enabled to enable this API Key
+        Under `Details`, copy the client ID (the top number) and client secret (Show Key) to your clipboard
+</Step>
+
+</Steps>
 
 <Info>
   Remember that only 1 key is needed for multiple instances of Pria. You will
@@ -71,6 +95,7 @@ For example:
     Endpoint: /api/v1/courses/:course_id/assignments
     Scope: url:GET|/api/v1/courses/:course_id/assignments
     ```
+
   </Accordion>
   <Accordion title="Discussions">
     ```
@@ -139,16 +164,7 @@ For example:
     ```
   </Accordion>
 
-
-
-
-
-
   </AccordionGroup>
-
-
-
-
 
 When you enable scopes for Pria's API integration:
 
@@ -172,11 +188,11 @@ Under general properties, add Canvas Client ID and Canvas Client Secret.
 
 Once the setup is complete, go to your Digital Twin an ask questions about your course in Canvas
 
-Example
+    ```text Prompt icon=comment wrap
+    What is my course syllabus in Canvas
+    ```
 
-```
-What is my course syllabus in Canvas
-```
+
 
 When an attempt is made by your digital twin to connect to Canvas the first time, or that your token has expired (every 60 minutes), you will have to authorize your twin to access Canvas.
 
