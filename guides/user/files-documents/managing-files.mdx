@@ -1,18 +1,23 @@
 ---
 title: "Managing Files"
 icon: "files"
+description: "Transform your digital twin into a personalized knowledge expert by uploading files to your secure IP Vault. Your digital twin can then reference this content to provide informed, contextual responses tailored to your organization and needs."
 ---
 
-Files serve as a powerful knowledge source for your digital twin, allowing it to understand your organization's context and your specific needs. All uploaded content is stored in your IP Vault, which provides enterprise-grade security and ensures your proprietary information remains isolated to your digital twin instance. Follow this guide to upload files to your IP Vault.
+<Info>
+  Your IP Vault provides enterprise-grade security, ensuring your proprietary information remains completely isolated to your digital twin instance.
+</Info>
 
-## Uploading Files
+## Adding Files to Your IP Vault
 
 <Steps>
-  <Step title="Click Files on the Text Input Bar">
+  <Step title="Access Your File Manager">
+    Click the **Files** button on the text input bar to open your IP Vault.
+
     ![Files Main Ui Location Web](/images/files-main-ui-location.webp)
   </Step>
-  <Step title="Add File(s)">
-    You will be brought to your IP Vault. From here, you can click \+ Add at the bottom of the page.
+  <Step title="Start Adding Content">
+    In your IP Vault dashboard, click the **\+ Add** button at the bottom of the page.
 
     <img
       src="/images/files-ip-vault-landing.webp"
@@ -21,71 +26,92 @@ Files serve as a powerful knowledge source for your digital twin, allowing it to
       style={{ width:"64%" }}
     />
   </Step>
-  <Step title="Choose File(s)">
+  <Step title="Choose Your Upload Method">
     ![Files Add Options Web](/images/files-add-options.webp)
 
-    You have the option to:
+    Select from three convenient options:
 
-    1.  Upload files from your computer
-    2. Upload a file using a URL
-    3. Copy and paste a file from your clipboard
+    1. **Device Upload** - Browse and select files from your computer
+    2. **URL Import** - Import content directly from a web page
+    3. **Clipboard Paste** - Copy and paste content directly
   </Step>
-  <Step title="Upload File(s)">
-    Use your device’s file manager to choose the desired file.
+  <Step title="Complete the Upload">
+    After selecting your files, click **Upload** to begin the process.
 
-    Click **Upload** to begin the upload process, then click **Done **in the lower-left corner.
+    ![Files Upload Button Example Web](/images/files-upload-button-example.webp)
 
-    A progress indicator will appear below. Once the files are uploaded, ingestion will begin and may take several minutes to complete.
+    <Note>
+      A progress indicator will show upload status. File processing (ingestion) may take several minutes depending on file size and type.
+    </Note>
+    ![Files Upload Processing Bar Web](/images/files-upload-processing-bar.webp)
 
-    ![Upload Status](/images/guides/files-documents/files-upload-status.webp)
+    When complete, your file status will display as **"Success"** and be ready for use. Click **Done** in the lower-left corner to go back to your IP Vault.
 
-    ![Upload Success](/images/guides/files-documents/files-upload-success.webp)
-
-    When ingestion is complete, the file status will display as “Success.”
+    ![Files Upload Success Web](/images/files-upload-success.webp)
   </Step>
-  <Step title="Files are Available in IP Vault">
+  <Step title="Verify Files in Your Vault">
+    Your uploaded files now appear in your IP Vault, ready for your digital twin to reference.
+
     ![Files In Ip Vault Web](/images/files-in-ip-vault.webp)
   </Step>
 </Steps>
 
-### Supported File Types
+## Supported File Formats
 
-A wide variety of file types are supported, including:
+Your IP Vault accepts a comprehensive range of file types:
 
-| **Category**             | **Supported Formats**              |
-| ------------------------ | ---------------------------------- |
-| Images                   | PNG, WEBP, JPEG, JPG               |
-| Audio                    | M4A, MP3, WAV, WEBM                |
-| Video                    | MP4, WEBM, MPEG                    |
-| Portable Document Format | PDF                                |
-| Text                     | HTML, HTM, MHTML, XHTML, TXT, JSON |
-| Data Files               | CSV, TSV                           |
-| MS Office Documents      | DOC, DOCX, XLS, XLSX, PPT, PPTX    |
-| Apache Open Office       | ODT, ODS, ODP                      |
-| Extended Markup Language | XML                                |
-| Jupyter Notebooks        | IPYNB                              |
-| IMS Common Cartridge     | IMSCC                              |
-| Archives                 | ZIP                                |
+| **Content Type**     | **Supported Formats**        |
+| -------------------- | ---------------------------- |
+| **Images**           | PNG, WEBP, JPEG, JPG         |
+| **Audio**            | M4A, MP3, WAV, WEBM          |
+| **Video**            | MP4, WEBM, MPEG              |
+| **Documents**        | PDF, DOC, DOCX, ODT          |
+| **Spreadsheets**     | XLS, XLSX, ODS, CSV, TSV     |
+| **Presentations**    | PPT, PPTX, ODP               |
+| **Web Content**      | HTML, HTM, MHTML, XHTML      |
+| **Text & Data**      | TXT, JSON, XML               |
+| **Development**      | IPYNB (Jupyter Notebooks)    |
+| **Learning Content** | IMSCC (IMS Common Cartridge) |
+| **Archives**         | ZIP                          |
 
-<Note>
-  You may add multiple files, up to a total of 500MB.
-</Note>
+<Warning>
+  Maximum upload limit: 500MB total across all files
+</Warning>
 
-## Uploading Web Pages (via URL)
+### File Upload Types
 
-You can also import content from a web page by providing its URL. In the File Upload dialog, click the **URL** tab and enter the desired web page address, for example:
+<img
+  src="/images/files-upload-types.gif"
+  alt="Files Upload Types Gi"
+  title="Files Upload Types Gi"
+  style={{ width:"83%" }}
+/>
 
-![PDF Upload](/images/guides/files-documents/url-upload.webp)
+<CardGroup cols={2}>
+  <Card title="Import Web Content via URL" icon="link">
+    Easily import content from any web page:
 
-## Copying and Pasting Files from the Clipboard
+    - 1. In the upload dialogue, select the **URL** tab
 
-You can also copy and paste content from your clipboard to save as a file.
+    2. 2. Enter the complete web page address 
+    3. 3. Click **Import** to add the content to your vault
+  </Card>
+  <Card title="Paste Content from Clipboard" icon="command">
+    For quick content addition:
 
-After uploading files to your IP Vault, your digital twin can immediately access and reference this content to provide more informed and contextual responses
+    1. 1. Copy any text content to your clipboard 
+    2. 2. Select the **Clipboard** option in the upload dialogue
+    3. 3. Paste and save your content as a new file
+  </Card>
+</CardGroup>
 
-![PDF Upload](/images/guides/files-documents/files-myfiles.webp)
+<Tip>
+  This feature is perfect for importing articles, documentation, or any web-based content your digital twin should reference.
+</Tip>
 
-### File Actions
+## Managing Your Files
+
+Each file in your IP Vault comes with powerful management options:
 
 <img
   src="/images/files-actions-list.webp"
@@ -94,20 +120,35 @@ After uploading files to your IP Vault, your digital twin can immediately access
   style={{ width:"71%" }}
 />
 
-- <Icon icon="pencil" color="#0e84e4" /> Edit: Customize your file's name and description to improve organization and searchability.
-- <Icon icon="trash-can" color="#df1010" /> Delete: Permanently remove this file from your IP Vault.
-- <Icon icon="arrows-rotate" color="#f07704" /> Refresh: Reload the file to fix display issues or update dynamic content from external sources.
-- <Icon icon="copy" color="#262525" /> Copy: Quickly copy the file name to your clipboard for easy reference.
-- <Icon icon="link" color="#48a62e" /> Share: Generate a shareable URL to give others access to this file.
-- <Icon icon="arrow-down-to-bracket" /> Download: Save a copy of this file directly to your device.
-- <Icon icon="toggle-large-on" color="#122ae1" /> Include: Enable your digital twin to reference this file when answering questions and generating content.
-- <Icon icon="toggle-large-on" color="#122ae1" /> Confidential: Keep this file private - your digital twin can use it internally but won't cite it as a source in responses.
-- <Icon icon="eye" color="#f88820" /> Details: Access comprehensive file information, including metadata, processing status, and content summary.
+### File Actions Explained
 
-<Tip>
-  **Pro Tip**: Use descriptive file names and add detailed descriptions to make your content easier to find through AI-powered search\!
-</Tip>
+- <Icon icon="pencil" color="#0e84e4" /> **Edit** - Update file names and descriptions for better organization
+- <Icon icon="eye" color="#f88820" /> **Details** - View comprehensive file information and processing status
+- <Icon icon="toggle-large-on" color="#122ae1" /> **Include** - Enable/disable your digital twin's access to this file
+- <Icon icon="toggle-large-on" color="#122ae1" /> **Confidential** - Mark files as private (usable internally but not cited publicly)
+- <Icon icon="link" color="#48a62e" /> **Share** - Generate shareable URLs for collaboration
+- <Icon icon="copy" color="#262525" /> **Copy** - Copy file names to clipboard
+- <Icon icon="arrow-down-to-bracket" /> **Download** - Save copies to your device
+- <Icon icon="arrows-rotate" color="#f07704" /> **Refresh** - Reload files to update dynamic content
+- <Icon icon="trash-can" color="#df1010" /> **Delete** - Permanently remove files from your vault
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Organize Effectively" icon="tags">
+    Use descriptive file names and detailed descriptions to improve AI-powered search and retrieval
+  </Card>
+  <Card title="Control Access" icon="shield-check">
+    Use the Include/Confidential toggles to control how your digital twin references different files
+  </Card>
+  <Card title="Build Comprehensively" icon="books">
+    Add diverse content types to create a rich knowledge base for more intelligent responses
+  </Card>
+  <Card title="Keep Current" icon="refresh">
+    Regularly update and refresh dynamic content to maintain accuracy
+  </Card>
+</CardGroup>
 
 <Info>
-  Your digital twin becomes smarter with every file you add\! Build a comprehensive knowledge base that enables quick and intelligent responses from your digital twin.
+  **Your digital twin becomes more intelligent with every file you add\!** Build a comprehensive knowledge base that enables quick, accurate, and contextually relevant responses.
 </Info>
