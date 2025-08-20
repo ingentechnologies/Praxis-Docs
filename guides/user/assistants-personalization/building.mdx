@@ -1,0 +1,279 @@
+---
+title: "Build Your Own"
+description: "How to build your own assistant with best practices in mind"
+icon: "wrench"
+---
+
+<Tip>
+  Before you start: Check if an assistant hasn't already been created on our community repository first 
+
+  [Gitlab](https://gitlab.com/praxis-ai/pria-client-sdk/-/tree/df69e667b4be55888c80ee4de6c40719e3768c40/canvas/assistants)
+
+  <Frame caption="Education-ready Community Assistants">
+    ![Gallery Create Digital Twin](/images/guides/assistants/assistants-community-gitlab.png)
+  </Frame>
+</Tip>
+
+
+## Building Your Assistant
+
+**Why building an assistant**: Increase the power of your digital twin by creating specialized AI assistants that enhance the capabilities by automating tasks in agentic workflow.
+
+**Use Case**: Creating an assistant is recommended when you find yorself needing to repeat a task that has a well define instruction, like create Swagger Annotations, JSON documents, Markdonw text blocks, or more sophisticated workflow, like write/read to files, convert data structures, interact with LLMs or other external sources, coordinate action between agents, like prepare an email and send it, etc.
+
+**Where do I start**: Use the **CRISPE methodology** a guide. The **CRISPE methodology** as a structured framework for designing AI assistants and prompts. Here's the general methodology:
+
+## CRISPE Methodology Framework
+
+**CRISPE** is an acronym that provides a systematic approach to creating comprehensive AI assistant instructions:
+
+### **C - Context** 🎯
+Establishes the **situational background** and **purpose** of the assistant. This section defines:
+- The problem domain or environment
+- Who the assistant serves
+- What systems or data sources are involved
+- The broader organizational or educational context
+
+### **R - Role** 👤
+Defines the **persona and responsibilities** of the assistant. This includes:
+- The specific character or professional identity the AI should adopt
+- Behavioral expectations and tone
+- Core competencies and areas of expertise
+- How the assistant should interact with users
+
+### **I - Input** 📥
+Specifies the **types of data and information** the assistant will receive:
+- Data sources and formats
+- User-provided parameters
+- Optional vs. required inputs
+- Contextual information from various systems
+
+### **S - Steps** 📋
+Outlines the **specific processes and workflows** the assistant must follow:
+- Sequential actions to take
+- Decision-making criteria
+- Analytical procedures
+- Output generation methods
+
+### **P - Parameters** ⚙️
+Establishes **operational constraints and guidelines**:
+- Communication style requirements
+- Output format specifications
+- Quality standards and limitations
+- Behavioral boundaries and restrictions
+
+### **E - End Goal** 🎯
+Clearly states the **ultimate objective and success metrics**:
+- Desired outcomes for users
+- Value proposition
+- Success indicators
+- Long-term impact expectations
+
+## Benefits of CRISPE Methodology
+
+The CRISPE framework ensures AI assistants are:
+- **Comprehensive**: All essential elements are addressed
+- **Structured**: Logical flow from context to outcome
+- **Actionable**: Clear steps and parameters for execution
+- **Goal-oriented**: Focused on specific, measurable outcomes
+- **User-centered**: Designed with end-user needs in mind
+
+This methodology can be applied to create any specialized AI assistant by systematically working through each component to ensure clarity, completeness, and effectiveness.
+
+## Class Health Check Example
+The Class Health Check assistant is built based of this methodology:
+
+### Core code
+```markdown Prompt wrap icon="comment" expandable
+You are the "Class Health Check" assistant, and your main goal is to follow the CRISPE instructions below to identify At-Risk Learner:
+
+C – Context
+You support instructors by identifying learners who may be at risk of falling behind in technical training courses. All relevant learner data—such as assignments, grades, and discussion activity—is stored in Canvas. Instructors use this assistant to make timely, informed interventions that support learner success and retention.
+
+R – Role
+Act as an instructor's intelligent assistant and data monitor. You scan Canvas data for early warning signs, flag patterns of disengagement or poor performance, and recommend appropriate actions. Your tone is professional, actionable, and supportive of instructors' goals.
+
+I – Input
+You will receive:
+
+Canvas data including assignment submissions, grades, and discussion participation
+Instructor-set time frames for monitoring engagement (e.g., 7 days, 2 weeks)
+Optional notes or insights from instructors about specific learners or cohorts
+
+S – Steps
+Your core responsibilities include:
+
+(AR-01) Identify learners with multiple missing or late assignments, focusing ONLY on current/past due assignments that have been submitted late or are missing. DO NOT include future assignments in risk reporting unless specifically requested by the instructor
+
+(AR-02) Flag learners with no engagement in discussions over a defined time period
+
+(AR-03) Cross-reference risk indicators (grades, engagement) to assign a "priority attention" status
+
+(AR-04) Recommend outreach strategies such as personalized messages, 1-on-1 meetings, or office hours invitations
+
+P – Parameters
+Use concise, instructor-friendly language
+Output clear summaries with suggested actions—avoid jargon or vague insights
+Prioritize actionability: focus on who needs support, why, and what to do next
+Tag learners with urgency levels (e.g., High Risk, Watch List) if multiple indicators align
+Keep summaries under 100 words per learner unless more detail is requested
+When generating grade reports, only include assignments that have been submitted (on time or late) or are currently missing/overdue. Never include future assignments in standard reports unless specifically requested by the instructor
+
+E – End Goal
+Equip instructors with timely, data-driven insights about learner risk to support early intervention and promote retention. This assistant helps ensure no learner falls through the cracks by surfacing issues before they become barriers to success.
+```
+
+### Guidelines for Tool Usage
+Additionaly, it is considered best practicies to provide additional instructions guiding the LLM on tool usage. Ex:
+
+```markdown Prompt wrap icon="comment" expandable
+## Data Collection Strategy
+Use targeted API call with faculty token:
+GET /api/v1/courses/:course_id/analytics/student_summaries (returns 404 when service is unavailable, else this single call provides engagement metrics, missing submissions, and participation data)
+GET /api/v1/courses/:course_id/analytics/users/:student_id/activity
+GET /api/v1/courses/:course_id/analytics/users/:student_id/assignments
+GET /api/v1/courses/:course_id/students
+GET /api/v1/courses/:course_id/students/submissions with student_ids[] and grouped=true parameters
+GET /api/v1/courses/:course_id/enrollments
+GET /api/v1/courses/:course_id/assignments
+GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions
+```
+
+### Framework separated from core instructions
+Include instructions to detail specific frameworks, threshold, formating guidelines towards the end, while your CRISPE instruction simply refers to them 
+
+```markdown Prompt wrap icon="comment" expandable
+## Priority Matrix Framework
+- Missing assignments (high weight)
+- Submission quality/grades (medium weight)
+- Engagement metrics (medium weight)
+- Discussion participation (low weight)
+
+## Risk Threshold Criteria
+- High Risk: >3 missing assignments, no activity for >7 days, or grade drop of 15%+
+- Medium Risk: 1-2 missing assignments, limited activity, or grade drop of 5-15%
+- Low Risk: All assignments submitted, regular activity
+
+## Key Assignment Identification
+- Select 2-3 assignments per unit as performance indicators
+- Monitor these closely for early intervention opportunities
+
+## Reporting Format
+- Use clear visual indicators (🔴 High, 🟠 Medium, 🟢 Low) 
+- Include trend indicators (↑ improving, → stable, ↓ worsening)
+- Focus on actionable recommendations per student
+
+## Recommended Execution Schedule
+- Weekly for comprehensive reports
+- Bi-weekly for trend analysis
+- After major assignment due dates
+```
+
+The complete code is available on [Gitlab](https://gitlab.com/praxis-ai/pria-client-sdk/-/blob/df69e667b4be55888c80ee4de6c40719e3768c40/canvas/assistants/class-healthcheck.gpt)
+
+## Use Variables 
+Externalize sensitive information or reusable instructions into variables.
+
+## Assistant Engineering Lifecycle
+
+This comprehensive lifecycle provides a structured approach for developing, testing, and deploying effective AI assistants:
+
+<Steps>
+  <Step title="Define Your Assistant's Purpose" icon="palette">
+    Clearly establish your assistant's primary function and target use case:
+    - **Subject Tutors** - Specialized instruction in specific academic disciplines
+    - **Study Coaches** - Learning strategy guidance, motivation, and study habit development
+    - **Research Assistants** - Project support, data analysis, and assignment assistance
+    - **Practice Partners** - Interactive skill development, review sessions, and knowledge reinforcement
+    - **Content Generators** - Automated creation of educational materials, assessments, and resources
+    - **Language Translators** - Multi-language content conversion and localization support
+    - **Content Summarizers** - Information distillation, synthesis, and clarity enhancement
+    - **Workflow Orchestrators** - Multi-agent coordination and complex task management
+    - **Assessment Evaluators** - Automated grading, feedback generation, and performance analysis
+    
+    *Consider your target audience, specific learning objectives, and integration requirements when selecting your focus area.*
+  </Step>
+
+  <Step title="Design Your Assistant Identity" icon="pencil">
+    Create a comprehensive assistant profile that ensures professional presentation and clear functionality:
+
+    - **Visual Branding** - Design a distinctive icon (optimal: 512x512 pixels, WebP format for performance)
+    - **Naming Convention** - Choose a memorable, descriptive name that reflects the assistant's purpose
+    - **Compelling Description** - Craft a comprehensive description including:
+      - **Catchphrase** - A memorable tagline that captures the assistant's value proposition
+      - **Functional Overview** - Clear explanation of capabilities and execution logic
+      - **User Benefits** - Specific advantages and learning outcomes
+      
+      *Example:*
+      ```markdown Description wrap icon="comment" expandable
+      Master Coding Through Interactive Learning: Your Personal Programming Tutor 🚀💻
+      
+      The 'Learn to Code' assistant delivers personalized, adaptive programming instruction tailored to your chosen language and proficiency level. Through hands-on exercises, real-time feedback, and interactive debugging sessions, it transforms complex coding concepts into digestible, practical lessons. This intelligent tutor provides step-by-step guidance, immediate code validation, and progressive skill building—enabling learners to develop robust programming foundations while maintaining engagement and building confidence at their optimal pace.
+      ```
+    
+    - **Instruction Architecture** - Implement the CRISPE methodology for structured, comprehensive instructions
+    - **Access Control** - Define user permissions (Admin-only vs. universal access) and sharing capabilities
+    - **Security Implementation** - Externalize sensitive data using variables and secure configuration
+    - **Modular Design** - Create reusable instruction components as variables for consistency across assistant families
+  </Step>
+
+  <Step title="Test, Debug, and Refine" icon="code">
+    Conduct comprehensive testing to ensure robust performance across all scenarios:
+
+    - **Instruction Analysis** - Request LLM evaluation of your assistant's instructions for clarity, completeness, and effectiveness
+    - **Performance Grading** - Obtain objective assessment scores and detailed improvement recommendations
+    
+    <Tip>
+      **Prompto Integration**: Leverage the 'Prompto' digital twin for advanced instruction optimization and production-readiness validation.
+    </Tip>
+    
+    - **Iterative Improvement** - Systematically address each recommendation and validate changes
+    - **Edge Case Testing** - Evaluate assistant behavior with:
+      - Off-topic user requests
+      - Ambiguous or incomplete inputs
+      - Boundary condition scenarios
+      - Invalid data formats
+    - **Error Handling Enhancement** - Implement graceful failure responses and user guidance
+    
+    <Tip>
+      **Negative Testing Protocol**: Proactively stress-test your instructions by deliberately introducing edge cases, invalid inputs, and failure scenarios to expose vulnerabilities and ensure robust error handling—because discovering system weaknesses during development is infinitely better than having users encounter them in production, where broken functionality can damage credibility and user trust.
+    </Tip>
+  </Step>
+
+  <Step title="User Acceptance Testing (UAT)" icon="flag">
+    Validate assistant performance through structured stakeholder testing:
+
+    - **Controlled Deployment** - Restrict access to administrator-level users only
+    - **Stakeholder Testing** - Engage multiple administrators in comprehensive evaluation sessions
+    - **Feedback Collection** - Document findings, usability issues, and performance gaps
+    - **Priority Assessment** - Categorize issues by severity and impact on user experience
+    - **Upgrade Strategy** - Develop systematic improvement plan with clear timelines
+    - **Validation Cycles** - Implement changes and conduct verification testing
+    - **Acceptance Criteria** - Establish clear benchmarks for production readiness
+  </Step>
+
+  <Step title="Production Deployment and Maintenance" icon="sparkles">
+    Launch your assistant with ongoing optimization and support:
+
+    - **Access Expansion** - Transition from admin-only to full user availability
+    - **Performance Monitoring** - Track usage patterns, user satisfaction, and system performance
+    - **Experience Analytics** - Analyze user interactions, success rates, and engagement metrics
+    - **Version Planning** - Develop roadmap for feature enhancements and capability expansion
+    - **Continuous Maintenance** - Establish regular review cycles for instruction updates
+    
+    <Tip>
+      **Proactive Monitoring Strategy**: Regularly audit your assistant's performance as LLMs evolve rapidly with improved reasoning capabilities and updated knowledge cutoffs that can alter how they interpret existing instructions—proactive monitoring ensures consistent execution quality, identifies drift in behavior patterns, and allows for timely adjustments to maintain optimal functionality as the underlying AI technology advances and potentially changes response patterns or instruction comprehension.
+    </Tip>
+    
+    - **Feedback Integration** - Implement user feedback loops for continuous improvement
+    - **Documentation Updates** - Maintain current user guides and troubleshooting resources
+  </Step>
+</Steps>
+
+## Version Control Integration
+ Implement a robust source control repository system such as GitHub, GitLab, Bitbucket, or Azure DevOps to manage assistant development lifecycles effectively—enabling version tracking, collaborative development, rollback capabilities, and change documentation that ensures systematic evolution of your assistant instructions while maintaining audit trails, facilitating team coordination, and preventing accidental overwrites or loss of critical configuration improvements during iterative development cycles.
+
+<Info>
+  Be involved: Share and contribute your assistant to our community repository\!
+  [Gitlab](https://gitlab.com/praxis-ai/pria-client-sdk/-/tree/df69e667b4be55888c80ee4de6c40719e3768c40/canvas/assistants)
+</Info>

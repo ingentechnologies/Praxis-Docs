@@ -42,13 +42,25 @@
             ]
           },
           {
+            "group": "Canvas Access",
+            "pages": [
+              "guides/user/lms/user-auth"
+            ]
+          },
+          {
             "group": "Assistants",
             "pages": [
               "guides/user/assistants-personalization/assistants",
-              "guides/user/assistants-personalization/memory",
-              "guides/user/assistants-personalization/variables",
-              "guides/user/assistants-personalization/lms-assessment",
-              "guides/user/assistants-personalization/examples"
+              "guides/user/assistants-personalization/education",
+              "guides/user/assistants-personalization/listing",
+              "guides/user/assistants-personalization/building",
+              "guides/user/assistants-personalization/variables"
+            ]
+          },
+          {
+            "group": "Memory",
+            "pages": [
+              "guides/user/memory/memory"
             ]
           },
           {
@@ -70,7 +82,7 @@
           {
             "group": "Files and Documents",
             "pages": [
-                                          "guides/user/files-documents/ipvault",
+              "guides/user/files-documents/ipvault",
               "guides/user/files-documents/managing-files",
               "guides/user/files-documents/retrieval-vectors"
             ]
