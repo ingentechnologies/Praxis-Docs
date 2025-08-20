@@ -7,10 +7,6 @@
     "light": "#5011FD",
     "dark": "#5011FD"
   },
-  "banner": {
-    "content": "🚀 **New** instances now receive **50** free credits to get started!  [Get Started](https://hiimpria.ai/login/signup)",
-    "dismissible": true
-  },
   "favicon": "/images/favicon.svg",
   "navigation": {
     "tabs": [
