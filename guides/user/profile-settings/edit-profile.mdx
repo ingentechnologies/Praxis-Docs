@@ -1,13 +1,72 @@
 ---
 title: "Edit Profile"
-description: "Learn how to edit your profile settings in Pria."
-icon: 'id-badge'
+description: "Your profile settings allow you to personalize and manage your profile settings in your digital twin. Access these settings to customize your display preferences and administrative options."
+icon: "id-badge"
 ---
 
+Locate your profile settings by clicking your profile icon on the top right of the main interface, and selecting **Your Profile** from the dropdown menu.
 
+![Edit Profile Main Interface](/images/edit-profile-main-ui.webp)
 
-Under your profile settings, you can change your name, enable location services for more accurate responses, or invert the colors to a dark or light theme.
+## Personal Settings
 
+<img
+  src="/images/edit-profile-page.webp"
+  alt="Edit Profile Page Web"
+  title="Edit Profile Page Web"
+  style={{ width:"78%" }}
+  className="mx-auto"
+/>
 
+<CardGroup cols={2}>
+  <Card title="1. Display Name" icon="User" iconType="regular">
+    Change how your name appears throughout the Praxis interface to match your preferences or professional requirements.
+  </Card>
+  <Card title="2. Profile Picture" icon="image">
+    Upload and customize your avatar image that represents you across the platform in conversations and collaborative spaces.
+  </Card>
+  <Card title="3. Remember History Count" icon="clock-rotate-left">
+    Set the number of previous conversation dialogues your digital twin can reference for context (recommended: 3-10).
+  </Card>
+  <Card title="4. Max Dialogues to Load" icon="list">
+    Control how many conversation threads load at once to optimize interface performance and loading times.
+  </Card>
+  <Card title="5. Location Services" icon="location-dot">
+    Enable location-based responses for relevant local information and timezone-appropriate assistance.
+  </Card>
+  <Card title="6. Theme Preferences" icon="palette">
+    Switch between dark and light themes to customize your visual experience and reduce eye strain.
+  </Card>
+</CardGroup>
 
-![Alt text describing the image](https://placeholdit.com/1000x600/fcefff/c0a1e6)
+Configure your Praxis experience with these six personal settings, numbered to match the interface shown above.
+
+## Course Management (Administrator Features)
+
+![Edit Profile Administrative Options](/images/edit-profile-page-bottom.webp)
+
+If you're an administrator, you'll see additional options for managing your digital twin's Learning Management System (LMS) connections:
+
+### Course Connection Status
+
+View which specific course your digital twin is currently linked to from your LMS integration.
+
+### Administrative Actions
+
+- **Unlink from Course**: Disconnect your digital twin from its current course assignment
+- **Refresh Canvas Token**: Update your Canvas authorization to maintain seamless integration
+- **Unlink Course**: Completely remove Canvas course connection from your digital twin if no longer needed
+
+<Warning>
+  Administrative changes to course connections may affect student access and functionality. Ensure you understand the impact before making modifications.
+</Warning>
+
+## Quick Tips
+
+<Tip>
+  **Theme Selection**: Dark themes can reduce eye strain in low-light environments, while light themes may be easier to read in bright conditions.
+</Tip>
+
+<Note>
+  Changes to your profile settings take effect immediately. You don't need to save or refresh the page.
+</Note>
