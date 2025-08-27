@@ -1,66 +1,102 @@
 ---
-title: 'Configuration'
-description: 'Learn how to manage instances effectively.'
-icon: 'users-gear'
+title: "Configuration"
+description: "Learn how to manage instances effectively."
+icon: "users-gear"
 ---
 
 ## Instance Management
-Instances are the core of your Praxis AI experience, allowing you to manage and interact with various digital twins. Here’s how you can effectively manage instances:
 
-The Instances TAB display all instances your user is entitled to manage and also allows you to create a new instance if you are entitled to do so.
-![Instances Interface](/images/guides/admin/instances.webp)
+Instances are the core of your Praxis AI experience, allowing you to manage and interact with various digital twins.
 
+<Note>
+  This feature is only available for **Digital Twin Instance Admins**
+</Note>
 
+Here’s how you can effectively manage instances:
+
+![Admin Configurations Main Ui Gi](/images/admin-configurations-main-ui.gif)
+
+Start by clicking the <Icon icon="house-chimney" /> Admin dashboard, located at the top of the main user interface.
+
+The **Instances** tab displays all instances your user is entitled to manage and also allows you to create a new instance if you are entitled to do so.
+
+![Configurations Instances Tab List Web](/images/configurations-instances-tab-list.webp)
 
 ### Viewing Instances
 
-- **List of Instances**: The Instances tab displays all instances you have access to. Each instance is listed with its name, status, and other relevant details.
-- **Instance Details**: Clicking on an instance will provide you with detailed information, including its configuration, members, and activity logs.
+<CardGroup cols={2}>
+  <Card title="List of Instances" icon="pencil" iconType="regular" color="#27b834">
+    The Instances tab displays all instances you have access to. Each instance is listed with its name, status, and other relevant details.
+  </Card>
+  <Card title="Instance Details" icon="gear">
+    Clicking on an instance will provide you with detailed information, including its configuration, members, and activity logs.
+  </Card>
+</CardGroup>
 
-
+<Warning>
+  Depending on your administrative rights, the admin dashboard might look different.
+</Warning>
 
 ## Configuration and Integrations
 
-
 ![Instances General Settings](/images/guides/admin/instance-general-settings.webp)
 
-
 ## Configuration
-The **Configuration** section allows you to manage the settings of your instance. Here are the key features you can configure:
 
+The **Configuration** section allows you to manage your instance settings. Configure these key features to optimize your digital twin's performance and accessibility.
 
+<AccordionGroup>
+  <Accordion title="Name">
+    Set your instance name using consistent naming conventions:
 
-- **Name:** The name of your instance. It is a good practice to stay consistent with the naming, for example:
+    ```
+    Canvas integration: instance_name.school_name.instructure.com
+    Praxis LXP integration: instance_name.praxislxp.com
+    ```
+  </Accordion>
+  <Accordion title="Credits">
+    New instances receive 50 starter credits. Purchase additional credits at https://pria.praxislxp.com/my-profile/pricing or contact your institution's IT administrator for enterprise options.
+  </Accordion>
+  <Accordion title="Status">
+    Controls instance availability:
 
-```
-For an instance in Canvas: instance_name.school_name.instructure.com
-
-For an instance in Praxis LXP: instance_name.learning.praxislxp.com
-```
-
-
-<Note>Credits: New instances get 50 credits to get started, you can purchase credits https://pria.praxislxp.com/my-profile/pricing or contact your Institution’s IT administrator.</Note>
-
-- **Status:** Active when the instance is available for you and users to use, Inactive otherwise.
-
-- **Public ID:** is automatically generated for your instance upon creation, and is used for integration purposes. Do not share with anyone. It is referred by public institution id, or simply instance id.
-
-- **Pool Credits:** Enable Pool Credits to share the credits of your instance with users. Each interaction consumes 1 or 2 credits (depending on the complexity). Depending on your contractual agreements, credits need to be replenished when depleted to allow learners to continue interacting with your instance.
-
-- **Grant Entitlements to New Admins:** When creating a new digital twin, select the Grant Entitlements feature to ensure that all admin who are added to your digital twin will be able to acces the admin dashboard. Entitlements not only control dashboard visibility but also determine which features the admin can customize and use. By enabling this feature, each new admin will automatically be granted all of the entitlements. If you have specific questions about entitlements, email darianne@praxis-ai.com
-
-- **Enable Moderation:** By enabling this feature, Pria will automatically monitor and flag inappropriate content in user interactions. Each time an inappropriate conversation is detected, an alert will be sent to the designated instance contact email.
-
-- **Don't prompt to Personalize:** Remove the initial popup that prompts administrators to personalize your instance (a.k.a digital twin). You can always personalize your instance by filling out the onboarding questions as explained in the following chapters.
-
-- **Use Location:** This feature allows for more accurate and relevant responses, particularly for location-dependent queries such as local services, weather updates, or campus-specific information. By granting access to your location data, you optimize Pria’s functionality, ensuring you receive the most up-to-date and location-appropriate assistance.
-
-- **Enable Convo:** This feature allows for real-time speech communication with the digital twin. When activated, this feature utilizes advanced speech recognition technology to accurately capture user voice input, process it through natural language understanding algorithms, and generate appropriate verbal responses through high-quality text-to-speech synthesis.
-
-- **Contact Email:** Add your email or if there are multiple owners, add them in the Owners Email. It is used to provide help and support when needed, and identifies YOU or a group of you as the owners of the instance.
-
+    - **Active**: Instance is operational for all users
+    - **Inactive**: Instance is temporarily disabled
+  </Accordion>
+  <Accordion title="Contact Emails">
+    Specify administrator email addresses for instance monitoring and notifications. Multiple emails can be added for redundancy.
+  </Accordion>
+  <Accordion title="Account">
+    Links your instance to your institutional account for centralized credit management and distribution across multiple digital twins.
+  </Accordion>
+  <Accordion title="Public ID">
+    Unique identifier automatically generated during instance creation. Used for API integrations and system connections. Keep this confidential and do not share publicly.
+  </Accordion>
+  <Accordion title="Pool Credits">
+    Enable credit sharing across all instance users. Each interaction consumes 1-2 credits based on complexity. When credits are depleted, users cannot interact until credits are replenished according to your service agreement.
+  </Accordion>
+  <Accordion title="Grant Entitlements to New Admins">
+    Automatically grants full [entitlements](https://docs.praxis-ai.com/guides/admin/entitlements) to new administrators, providing complete dashboard access and customization capabilities. For specific entitlement questions, contact [humans@praxis-ai.com](mailto:humans@praxis-ai.com).
+  </Accordion>
+  <Accordion title="Enable Moderation">
+    Activates automatic content monitoring to detect and flag inappropriate user interactions. Alerts are sent to designated contact emails when violations occur.
+  </Accordion>
+  <Accordion title="Don't Prompt to Personalize">
+    Disables the initial [personalization](https://docs.praxis-ai.com/guides/admin/personalization) popup for new administrators, allowing direct access to the dashboard.
+  </Accordion>
+  <Accordion title="Use Location">
+    Enables location-based responses for queries about local services, weather, campus information, and regional content. Improves response accuracy and relevance for location-dependent requests.
+  </Accordion>
+  <Accordion title="Enable Convo">
+    Activates voice communication capabilities using advanced speech recognition and text-to-speech technology. Users can speak directly to the digital twin and receive verbal responses in real-time.
+  </Accordion>
+  <Accordion title="Display Agent Details">
+    Shows detailed information about the tool calls made to respond to queries.
+  </Accordion>
+</AccordionGroup>
 
 ## Integrations
+
 The **Integrations** section allows you to connect your instance with various platforms and services. Here are the key integrations you can set up:
 
 The Public Authorized URLS: contains the list of URLS authorized to access your instance. If you integrate with canvas the URLs below are a good example:
