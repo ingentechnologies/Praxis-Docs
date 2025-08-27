@@ -1,0 +1,63 @@
+---
+title: 'Administrator Credit Management'
+description: 'Description of your new file.'
+---
+
+As an account administrator, you can purchase and manage credits for your organization's digital twin(s) by clicking on your profile icon and selecting **Add Credits**.
+
+![Credits Admin Instance Level Web](/images/credits-admin-instance-level.webp)
+
+### Adding Organizational Credits
+
+<Steps>
+  <Step title="Select Add Credits Option">
+    Choose the **Add Credits** option from your admin profile menu.
+  </Step>
+  <Step title="Choose Credit Package">
+    Select your preferred credit package and click **Add Credits**.
+  </Step>
+  <Step title="Complete Payment">
+    Finish the payment process by clicking **Pay**.
+  </Step>
+</Steps>
+
+Once payment is completed, your digital twin instance will be credited with the purchased amount. Your users (students, employees, or team members) can now use these credits when interacting with this digital twin.
+
+## Credit Pool Configuration
+
+You have two options for managing how users access credits:
+
+### Option 1: Pooled Credits (Default)
+
+Users draw from your organization's shared credit pool without needing individual purchases. Your organization's account administrator will purchase credits and distribute them equally to all digital twins who are a part of that account.
+
+<Warning>
+  Only the original creator of the digital twin can choose to enable or disable the credit pool when configuring the twin. See more in the instance configurations guide
+</Warning>
+
+### Option 2: Individual User Credits
+
+Require users to purchase their own credits for digital twin interactions.
+
+To configure this setting:
+
+1. From your digital twin interface, click the **Admin** button
+2. In the Admin interface, click the green **Edit** button for your instance
+3. Navigate to the **General** tab
+4. Toggle the **Pool Credits** option:
+   - **Enabled**: Users share organizational credits
+   - **Disabled**: Users must purchase individual credits
+
+<Note>
+  **Credits Awarded to Users**: When Pool Credits is disabled, you can grant a specific number of credits (debited from your instance) to users upon their first registration. Once users exhaust these initial credits, they'll need to purchase additional credits to continue using the digital twin.
+</Note>
+
+<Tip>
+  **For Educational Institutions**: Most schools prefer pooled credits to ensure uninterrupted learning experiences for students.
+
+  **For Enterprises**: Consider individual credits for departments with separate budgets or when tracking individual usage is important.
+</Tip>
+
+<Warning>
+  When Pool Credits is disabled and users run out of credits, they cannot interact with their digital twin until they purchase additional credits or you provide more through the admin interface.
+</Warning>

@@ -1,0 +1,237 @@
+---
+title: "Faculty Onboarding Guide"
+description: "This comprehensive onboarding guide will help university faculty quickly integrate their AI-powered digital twin into their Canvas ecosystem to enhance student engagement, streamline course management, and provide personalized learning support"
+---
+
+## Getting Started
+
+When your Canvas administrator places a generic digital twin in your course, you have two options:
+
+1. **Create a new digital twin instance** - Start fresh with course-specific customization
+2. **Reuse an existing digital twin instance** - Connect to a previously created digital twin that has been associated with your email 
+
+<img
+  src="/images/canvas-onboarding-page.webp"
+  alt="Canvas Onboarding Page Web"
+  title="Canvas Onboarding Page Web"
+  style={{ width:"77%" }}
+/>
+
+## Creating a Digital Twin
+
+### Initial Setup Process
+
+When you first access your digital twin through your LMS, you'll be welcomed by the Digital Twin wizard that guides you through the creation process.
+
+<Steps>
+  <Step title="Access the Digital Twin">
+    Navigate to your course in your Learning Management System (LMS) and click on the digital twin icon, typically located in the bottom-right corner of your course page.
+  </Step>
+  <Step title="Start the Creation Wizard">
+    Click the **\+ Digital Twin** button to create a personalized instance of your AI assistant.
+
+    <Info>
+      Digital Experts and Digital Twins use identical creation workflows but fulfill distinct roles. Digital Twins are personalized AI assistants that mirror your individual expertise, knowledge base, and teaching methodology, while Digital Experts offer specialized domain knowledge without personal customization. The key differentiator is the personalization prompt you provide during setup—this determines whether the AI reflects your unique perspective or maintains a more generalized expert persona.
+    </Info>
+    <img
+      src="/images/canvas-digital-expert-creation.webp"
+      alt="Canvas Digital Expert Creation Web"
+      title="Canvas Digital Expert Creation Web"
+      style={{ width:"77%" }}
+    />
+  </Step>
+  <Step title="Configure Your Digital Twin">
+    In the New Digital Twin dialog, enter:
+
+    - **Name**: Choose a name for your twin (e.g., "Professor Smith's Assistant")
+    - **Picture URL**: Provide a publicly accessible image URL (without CORS issues)
+    - **Animated Picture URL (GIF)**: Provide a publicly accessible animated GIF URL that will serve as your digital twin's animated avatar (without CORS issues)
+    - **UI Background URL**: Select a background image for the user interface
+  </Step>
+  <Step title="Complete Setup">
+    Click **Let's GO\!** to finish creating your new digital twin instance.
+  </Step>
+</Steps>
+
+<Note>
+  For detailed information on AI personalization and prompting, refer to the [Personalization Guide](https://docs.praxis-ai.com/guides/admin/personalization).
+</Note>
+
+<Warning>
+  Once you select an existing instance for a course, this association cannot be changed unless you first unlink the digital twin from that course.
+</Warning>
+
+## Unlinking a Digital Twin
+
+### When to Unlink
+
+You may need to unlink your digital twin from a course if you want to:
+
+- Associate a different digital twin instance with the course
+- Create a completely new digital twin for that course
+- Remove the digital twin entirely
+
+### Unlinking Process
+
+<Steps>
+  <Step title="Access Your Profile">
+    Navigate to your digital twin interface and go to your **Profile** page.
+  </Step>
+  <Step title="Locate LTI Section">
+    Scroll down to find the **LTI** section in your profile settings.
+  </Step>
+  <Step title="Unlink Instance">
+    Click the **Unlink from Current Instance** button to disconnect the digital twin from the current course.
+  </Step>
+  <Step title="Confirm Action">
+    Confirm the unlinking action when prompted. This will remove the association between your digital twin and the current course.
+  </Step>
+</Steps>
+
+<Note>
+  After unlinking, you'll need to go through the setup process again the next time you access the digital twin in that course.
+</Note>
+
+## Uploading Course Materials
+
+### Supported File Types
+
+Your digital twin can work with various types of course materials:
+
+- **Documents**: PDF, Word documents, text files
+- **Presentations**: PowerPoint, Google Slides
+- **Spreadsheets**: Excel, Google Sheets, CSV files
+- **Images**: JPEG, PNG, GIF files
+- **Audio/Video**: MP3, MP4, and other multimedia formats
+
+### Upload Methods
+
+#### Method 1: Direct Upload Interface
+
+<Steps>
+  <Step title="Access File Management">
+    In your digital twin interface, navigate to the file management section.
+  </Step>
+  <Step title="Select Files">
+    Click **Upload Files** and select the course materials from your computer.
+  </Step>
+  <Step title="Organize Content">
+    Add descriptions or tags to help your digital twin understand the context and purpose of each file.
+  </Step>
+  <Step title="Process Materials">
+    Allow the system to process and index your materials for AI integration.
+  </Step>
+</Steps>
+
+#### Method 2: LMS Integration
+
+If your institution has configured LMS integration, your digital twin can automatically access:
+
+- Course syllabi
+- Assignment descriptions
+- Discussion forums
+- Gradebook information
+- Course announcements
+
+<Note>
+  Contact your IT administrator to configure LMS integration for automatic course content access.
+</Note>
+
+### Best Practices for Course Materials
+
+<CardGroup cols={2}>
+  <Card title="Organize by Topic" icon="folder">
+    Group related materials together and use clear, descriptive file names.
+  </Card>
+  <Card title="Include Context" icon="info">
+    Add descriptions explaining how each material fits into your course structure.
+  </Card>
+  <Card title="Update Regularly" icon="refresh">
+    Keep materials current by uploading new content and removing outdated files.
+  </Card>
+  <Card title="Quality Content" icon="star">
+    Ensure uploaded materials are clear, well-formatted, and relevant to student needs.
+  </Card>
+</CardGroup>
+
+## Specialized Assistants
+
+Your digital twin platform includes access to various specialized AI assistants designed for specific educational tasks.
+
+### Available Assistants
+
+#### Academic Support Assistants
+
+<AccordionGroup>
+  <Accordion title="Conversational Assessment">
+    Conducts personalized learning assessments through natural dialogue to evaluate student understanding and identify knowledge gaps.
+  </Accordion>
+  <Accordion title="Learn to Code">
+    Provides interactive coding instruction with real-time feedback, debugging assistance, and project-based learning.
+  </Accordion>
+  <Accordion title="Research Assistant">
+    Helps with academic research, citation formatting, literature reviews, and scholarly writing support.
+  </Accordion>
+  <Accordion title="Math Tutor">
+    Offers step-by-step mathematical problem solving, concept explanations, and practice problem generation.
+  </Accordion>
+</AccordionGroup>
+
+#### Administrative Assistants
+
+<AccordionGroup>
+  <Accordion title="Class Health Check">
+    Analyzes student engagement patterns and identifies at-risk learners for early intervention.
+  </Accordion>
+  <Accordion title="Curriculum Designer">
+    Assists in creating course structures, learning objectives, and assessment strategies.
+  </Accordion>
+  <Accordion title="Grading Assistant">
+    Provides consistent grading support and feedback generation for assignments and assessments.
+  </Accordion>
+</AccordionGroup>
+
+### Accessing Specialized Assistants
+
+<Steps>
+  <Step title="Open Assistant Menu">
+    Click the **Assistant** button located at the bottom-right of your screen.
+  </Step>
+  <Step title="Browse Available Options">
+    Review the list of specialized assistants available for your institution.
+  </Step>
+  <Step title="Select Assistant">
+    Click on the assistant that best matches your current educational need.
+  </Step>
+  <Step title="Begin Interaction">
+    Follow the assistant's prompts to start your specialized educational task.
+  </Step>
+</Steps>
+
+### Integration with Course Materials
+
+Specialized assistants can access and utilize your uploaded course materials to provide:
+
+- **Contextual responses** based on your specific curriculum
+- **Personalized feedback** aligned with your teaching objectives
+- **Course-specific examples** drawn from your materials
+- **Consistent messaging** that matches your pedagogical approach
+
+### Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Start Small" icon="seedling">
+    Begin with one course and gradually expand your digital twin usage as you become comfortable.
+  </Card>
+  <Card title="Engage Students" icon="users">
+    Introduce your digital twin to students and explain how it can support their learning.
+  </Card>
+  <Card title="Monitor Performance" icon="chart-line">
+    Regularly review how your digital twin is being used and adjust settings as needed.
+  </Card>
+  <Card title="Stay Updated" icon="bell">
+    Keep informed about new features and capabilities as the platform evolves.
+  </Card>
+</CardGroup>
+
+---
