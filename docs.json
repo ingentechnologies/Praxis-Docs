@@ -97,6 +97,7 @@
             "pages": [
               "guides/admin/configuration",
               "guides/admin/personalization",
+                            "guides/admin/onboarding-questions",
                             "guides/admin/ui-customization",
               "guides/admin/ai-models",
               "guides/admin/mcp-and-agents",
