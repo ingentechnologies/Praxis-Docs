@@ -79,8 +79,7 @@
             "group": "Files and Documents",
             "pages": [
               "guides/user/files-documents/ipvault",
-              "guides/user/files-documents/managing-files",
-              "guides/user/files-documents/retrieval-vectors"
+              "guides/user/files-documents/managing-files"
             ]
           },
 
