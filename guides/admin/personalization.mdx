@@ -1,63 +1,205 @@
 ---
-title: 'Personalization'
-description: 'Learn how to manage instances effectively.'
-icon: 'text-size'
+title: "Personalization"
+description: "Learn how to manage instances effectively."
+icon: "text-size"
 ---
 
 Your instance can be personalized to better fit the needs of your users in the **Personalization and AI Models** tab. This includes customizing the AI models used for different tasks, as well as adjusting the parameters that govern their behavior.
 
+![Admin Personalization Main Gi](/images/admin-personalization-main.gif)
+
 <Steps>
-  <Step title="Click Admin"></Step>
-  <Step title="Click Instances"></Step>
-  <Step title="Click Edit"></Step>
-  <Step title="Click Personalization and AI Models"></Step>
+  <Step title="Click Admin">
+    Navigate to the Admin section of your dashboard.
+  </Step>
+  <Step title="Click Instances">
+    Select the Instances tab from the admin menu.
+  </Step>
+  <Step title="Click Edit">
+    Choose the instance you want to personalize and click Edit.
+  </Step>
+  <Step title="Click Personalization and AI Models">
+    Access the Personalization and AI Models configuration tab.
+  </Step>
 </Steps>
 
+![Admin Personalizations Main Ui Web](/images/admin-personalizations-main-ui.webp)
 
-## Expert Name
-The Expert Name is the name of your digital twin. This name will be used in conversations and interactions, making it a key part of your digital assistant's identity.
+<CardGroup cols={2}>
+  <Card title="A.I. Name (Default Pria)" icon="circle-1" iconType="regular">
+    The A.I. Name is the name of your digital twin. This name will be used in conversations and interactions, making it a key part of your digital assistant's identity.
+  </Card>
+  <Card title="A.I. Picture URL" icon="circle-2">
+    You can upload a picture to personalize your digital twin. This image will be used as the avatar for your digital assistant, making interactions more personal and engaging.
+  </Card>
+  <Card title="A.I.  Animated Picture URL" icon="circle-3">
+    ## 
 
+    You can upload a gif to personalize your digital twin. This image will be used as the avatar for your digital assistant, making interactions more personal and engaging.
+  </Card>
+  <Card title="Background Image" icon="circle-4">
+    You can upload a background image to further customize the environment in which your digital twin operates. This image will be used as the backdrop for your digital assistant, enhancing the overall aesthetic and making it feel more like your own.
+  </Card>
+  <Card title="About this Digital Twin" icon="circle-5">
+    This is a general summary of your digital twin that will be used as its description in the gallery. You can only generate this after you've updated the digital twin prompt instructions.
+  </Card>
+  <Card title="Use about for the Welcome Screen" icon="circle-6">
+    Enable this feature if you would like to use your digital twin summary and image on your login screen.
+  </Card>
+</CardGroup>
 
-## AI Picture
-You can upload a picture to personalize your digital twin. This image will be used as the avatar for your digital assistant, making interactions more personal and engaging.
+## Digital Twin Instructions
 
-## Background Image
-You can upload a background image to further customize the environment in which your digital twin operates. This image will be used as the backdrop for your digital assistant, enhancing the overall aesthetic and making it feel more like your own.
+Creating effective digital twin instructions is crucial for ensuring your AI assistant behaves authentically and provides valuable interactions. Follow these comprehensive guidelines:
 
-## Onboarding Questions
-The onboarding questions are designed to help you personalize your digital twin. These questions will guide the AI in understanding your preferences, communication style, and how you would respond in various situations. This personalization is key to creating a more authentic and effective digital assistant.
+#### 1. Framework-Based Approach
 
-By following these steps, your digital assistant will now function as your digital twin, responding and acting as if they were you. This personalization enhances the interaction experience, making it more authentic and aligned with your unique style.
+**Use CRISPE Framework:**
 
-The AI prompt should be entered in natural language, and should be clear, concise and unambiguous.
+- **C**ontext: Provide background information about your role, expertise, and environment
+- **R**ole: Define who the digital twin represents and their primary function
+- **I**nstructions: Give clear, specific directions on how to behave and respond
+- **S**pecifics: Include detailed preferences, communication style, and decision-making patterns
+- **P**arameters: Set boundaries and limitations for the digital twin's responses
+- **E**xamples: Provide sample responses or scenarios to illustrate expected behavior
 
-Check Praxis's course catalog for “Foundations of prompt Engineering” at https://praxis-ai.com/digital-education/#course-catalog for more information.
+**Apply ALERT Framework:**
 
+- **A**ction: Define what actions the digital twin should take
+- **L**imitations: Set clear boundaries on what it should not do
+- **E**xamples: Provide concrete examples of desired responses
+- **R**ole: Establish the digital twin's identity and expertise
+- **T**one: Specify the communication style and personality
 
-![Praxis AI Onboarding Questions](/images/guides/onboarding/onboard-questions.webp)
+#### 2. Specificity and Clarity
 
-In this section, you have the opportunity to personalize your GPT to behave as you would. This customization allows your digital assistant to act as your digital twin, mirroring your responses and actions.
+<Tip>
+  The more specific you are, the better your digital twin will perform. Vague instructions lead to inconsistent responses.
+</Tip>
 
-Follow the steps below to personalize your digital twin:
+**Be Explicit About:**
 
-Answer each question, and use the **Previous** and **Next** buttons to move between questions. Be sure to answer these questions truthfully and honestly.
+- **Communication Style**: Formal vs. casual, technical vs. accessible, brief vs. detailed
+- **Expertise Areas**: List specific domains where the digital twin should demonstrate knowledge
+- **Decision-Making Process**: How the digital twin should approach problems and make recommendations
+- **Personality Traits**: Professional demeanor, humor level, empathy, assertiveness
+- **Response Structure**: Preferred formats for different types of questions
 
-Once done with an answer, press **I'm Done.** Be sure to answer all of the questions for the most accurate results.
+**Example of Specific Instructions:**
 
-These questions are designed to capture your unique preferences, style, and approach.
+```
+When answering technical questions, always:
+1. Start with a brief, direct answer
+2. Provide detailed explanation with examples
+3. Include relevant best practices
+4. Suggest next steps or related resources
+5. Use bullet points for complex information
+```
 
-Once you have completed the onboarding questions, press the **Generate Prompt** button.
+#### 3. Content Source Prioritization
 
-![Generated Prompt](/images/guides/onboarding/onboard-questions-gen-prompt.webp)
+**Establish Clear Hierarchy:**
 
+```
+Priority Order for Information Sources:
+1. User's uploaded documents and files (RAG material)
+2. Specific expertise knowledge relevant to your role
+3. General knowledge base
+4. External research (when explicitly requested)
+```
 
-After the prompt is generated, press **Use Prompt.** This will automatically copy it into the AI Prompt field found in the previous section, "GPT and Personalization."
+<Note>
+  Always reference RAG material first when available. This ensures responses are based on your specific knowledge and documents rather than generic information.
+</Note>
 
-![Use Prompt](/images/guides/onboarding/onboard-questions-use-prompt.webp)
+#### 4. Behavioral Guidelines
 
+**Define Response Patterns:**
 
-The generated prompt is copied onto the AI Prompt field of your instance.
+- **Question Handling**: How to approach different types of inquiries
+- **Uncertainty Management**: What to do when information is unclear or unavailable
+- **Escalation Procedures**: When to suggest human intervention or additional resources
+- **Follow-up Actions**: How to continue conversations and build on previous interactions
 
-Save your updates to finalize the personalization process. This step is crucial to activate your customized settings.
+**Example Behavioral Instructions:**
+
+```
+When faced with ambiguous questions:
+- Ask clarifying questions before providing answers
+- Offer multiple interpretations if appropriate
+- Suggest the most likely intended meaning
+- Always confirm understanding before proceeding
+```
+
+#### 5. Domain-Specific Expertise
+
+**Include Relevant Specializations:**
+
+- **Industry Knowledge**: Specific sectors, regulations, best practices
+- **Technical Skills**: Software, methodologies, frameworks you're familiar with
+- **Soft Skills**: Leadership style, communication preferences, problem-solving approach
+- **Experience Context**: Years of experience, notable projects, key achievements
+
+#### 6. Interaction Preferences
+
+**Specify How to Engage:**
+
+- **Question Types**: Preferred formats for receiving information
+- **Response Length**: When to be concise vs. comprehensive
+- **Visual Elements**: Use of charts, diagrams, examples
+- **Follow-up Style**: Proactive suggestions vs. reactive responses
+
+#### 7. Ethical and Professional Boundaries
+
+**Establish Clear Limits:**
+
+- **Confidentiality**: What information should never be shared
+- **Professional Standards**: Industry-specific ethical guidelines
+- **Personal Boundaries**: Topics or approaches to avoid
+- **Accuracy Requirements**: When to verify information vs. provide general guidance
+
+#### 8. Continuous Improvement Instructions
+
+**Include Adaptation Guidelines:**
+
+```
+Learning and Adaptation:
+- Pay attention to user feedback and adjust responses accordingly
+- Note frequently asked questions and improve standard responses
+- Identify knowledge gaps and suggest areas for additional training
+- Maintain consistency while allowing for natural conversation flow
+```
+
+#### 9. Example Template Structure
+
+```markdown
+## Role Definition
+I am [Your Name], a [Your Title] with [X years] of experience in [Industry/Field].
+
+## Core Expertise
+- [Expertise Area 1]: [Specific skills and knowledge]
+- [Expertise Area 2]: [Specific skills and knowledge]
+- [Expertise Area 3]: [Specific skills and knowledge]
+
+## Communication Style
+- Tone: [Professional/Casual/Friendly]
+- Detail Level: [Comprehensive/Concise/Adaptive]
+- Technical Language: [Industry-appropriate/Accessible/Mixed]
+
+## Response Priorities
+1. Always check user documents first (RAG material)
+2. Apply [specific methodology/framework] to problem-solving
+3. Provide actionable recommendations
+4. Include relevant examples from experience
+
+## Behavioral Guidelines
+- When uncertain: [specific action]
+- For complex topics: [specific approach]
+- For urgent matters: [specific protocol]
+```
+
+<Tip>
+  Test your prompt instructions by asking yourself: "If someone else read these instructions, could they respond as I would in most situations?"
+</Tip>
 
 
