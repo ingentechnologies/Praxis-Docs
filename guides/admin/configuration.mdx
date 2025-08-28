@@ -97,9 +97,17 @@ The **Configuration** section allows you to manage your instance settings. Confi
 
 ## Integrations
 
-The **Integrations** section allows you to connect your instance with various platforms and services. Here are the key integrations you can set up:
+![Configurations Integrations Main Web](/images/configurations-integrations-main.webp)
 
-The Public Authorized URLS: contains the list of URLS authorized to access your instance. If you integrate with canvas the URLs below are a good example:
+## Integrations
+
+The **Integrations** section enables you to connect your digital twin instance with various platforms and services to extend functionality and streamline workflows.
+
+### **Public Authorized URLs**
+
+Configure the URLs authorized to access your instance for secure integration with external platforms.
+
+**Example for Canvas Integration:**
 
 ```
 https://<your_school>.instructure.com
@@ -107,12 +115,52 @@ https://<your_school>.beta.instructure.com
 https://canvas.instructure.com
 ```
 
-Any inbound request is authorized if the origin comes from one of these URLS.
+All inbound requests are validated against this authorized URL list. Only requests originating from these URLs will be permitted to access your instance.
 
-The Canvas Client ID and Secret are used to connect your instance to Canvas.
+### **LTI Contexts**
+
+LTI (Learning Tools Interoperability) contexts are automatically populated when you connect an LTI placement to your digital twin instance.
+
+**Key Features:**
+
+- **Automatic Population**: Contexts are created when LTI placements are established
+- **Instance Memory**: The system remembers which instance to launch when accessing your digital twin through LTI or Canvas theme-based integration
+- **Easy Management**: Remove placements directly from this list or through your profile page
+
+**To disconnect an LTI integration:**
+
+1. Remove the placement from the LTI Contexts list, or
+2. Navigate to your profile page for additional management options
+
+### Canvas
+
+The Canvas Client ID and Secret are used to connect your digital twin instance to Canvas. If these keys are not configured, your digital twin will not be able to search through Canvas as reference material.
+
+<Info>
+  These keys will be configured by your Canvas Administrator. If you are a Canvas administrator and would like guidance, refer to this [guide](https://docs.praxis-ai.com/integrations/canvas/smartsearch).
+</Info>
+
+### Kaltura
 
 Similarly, the Kaltura Partner ID, Secret, Admin or User and User ID fields are used to connect your instance to the Kaltura Video Platform.
 
-LTI Contexts are automatically populated when you decide to connect an LTI Placement to a digital twin instance. This place is remembered so that next time the system knows what instance to launch when you click on Pria through LTI or the Theme based integration for Canvas.
+### Amazon Web Services (AWS)
 
-If you want to remove the placement, a.k.a. disconnect the LTI from the digital twin, you may remove the placement from this list, or simply go to your profile page
+Connect AWS services to extend your digital twin's capabilities.
+
+### API Keys
+
+    Configure Large Language Model (LLM) API keys to use your own credits and customize AI behavior.
+    
+    **Supported Providers:**
+    - OpenAI GPT models
+    - Anthropic Claude
+    - Google Gemini
+    - Other compatible LLM services
+    
+### Security Considerations
+
+- **URL Validation**: Only authorized URLs can access your instance
+- **Credential Management**: All API keys and secrets are encrypted and stored securely
+- **Access Control**: Integration permissions are tied to your user entitlements
+- **Audit Trail**: All integration activities are logged for security monitoring
