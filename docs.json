@@ -40,7 +40,8 @@
           {
             "group": "Canvas Access",
             "pages": [
-              "guides/user/lms/user-auth"
+              "guides/user/lms/user-auth",
+              "guides/user/lms/faculty-onboarding"
             ]
           },
           {
