@@ -3,7 +3,6 @@
   "customHead":[
     "<div style='position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:red;z-index:1000;'>TEST</div>"
   ],
-}
   "theme": "mint",
   "name": "Praxis AI",
   "colors": {
