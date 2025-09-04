@@ -1,218 +1,314 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing Software Development Kits'
+title: "Pria JavaScript SDK"
+description: "The Pria JavaScript SDK allows you to integrate AI digital twin capabilities directly into your website or Learning Management System (LMS) like Canvas. This guide covers both embedded integration and programmatic API usage."
 ---
 
-Once you have installed Pria onto your web site (or LMS such as Canvas) you can communicate to Pria through Javascript. This document describes how to make requests to Pria and receive responses from Pria, without requiring the Pria UI
+## Integration Methods
 
-There are two ways to integrate Praxis: 
-- [Embed](https://mintlify.com/docs/api-playground/openapi/setup) 
-- [SDK](https://mintlify.com/docs/api-playground/mdx/configuration). 
+There are two primary ways to integrate Pria into your application:
 
-
-<Columns cols={2}>
-  <Card title="Embed" icon="pen-to-square" href="https://www.canva.com/design/DAGvVkyaSJY/qMHI8e4n3_cm0Gv45p7PuA/watch?utm_content=DAGvVkyaSJY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he80f2f6101">
-    Learn how to communicate with your AI digital twin.
+<CardGroup cols={2}>
+  <Card title="Embed Integration" icon="code" href="#embed-integration">
+    Install Pria directly on your website with customizable UI options
   </Card>
-  <Card title="JavaScript SDK" icon="waveform-lines" href="https://www.canva.com/design/DAGvbzNRJ3k/0qd_jIvfAyFqLTnmOis91w/watch?utm_content=DAGvbzNRJ3k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7a33588f3b">
-    Engage with your AI using real-time conversation features.
+  <Card title="JavaScript API" icon="terminal" href="#javascript-api">
+    Programmatically interact with Pria without the default UI
   </Card>
-</Columns>
+</CardGroup>
 
+## Embed Integration
 
+### Installation
 
+Install Pria on your website using the custom SDK:
 
-
-## Embed
-
-Install Pria on your Website using the custom SDK https://pria.praxislxp.com/pria-sdk-web.js
-
-<Note>To install Pria as a Theme into Canvas https://learning.praxislxp.com/praxis/pria-custom-theme-canvas-install-guide</Note>
-
-Once your instance is configured, and to hide the pria UI, set the display options of the priasdk to noUI=true value
-
-
-[SDK Playground](https://pria.praxislxp.com/test_sdk.html)
-
-Once your instance is configured, and to hide the pria UI, set the display options of the priasdk to `noUI=true` value
-
-```javascript
-    var displayOptions = {
-        fullScreen: false, // True for expanded in full screen
-        openOnLoad: false, // True to open Pria immediately when loaded 
-        buttonWidth: '80px', // Size of the button containing the Pria Logo
-        buttonPosition: 'fixed', // Determine the position of the button (fixed, relative, sticky)
-        buttonPositionRight: '20px', // Position of the button relative to the right edge of the screen
-        buttonPositionBottom: '20px', // Position of the button relative to the bottom edge of the screen
-        buttonNoBounce: true,  // Determine wether the button will not bounce when Pria is closed
-        priaContainerId: '', // Id of the container receiving pria window (default empty uses BODY)
-        buttonContainerId: '', // Id of the container receiving the button (default empty uses BODY)
-        allowPop: false, // true to show the button and pop Pria out the containing iFrame 
-        noUI: false // true to disable the UI. Pria is still accessible through the Javascript SDK
-    }
-
+```html
+<script src="https://pria.praxislxp.com/pria-sdk-web.js"></script>
 ```
 
+<Note>
+  For Canvas LMS integration, follow the [Pria Custom Theme Canvas Install Guide](https://docs.praxis-ai.com/integrations/canvas/theme)
+</Note>
+
+### Configuration Options
+
+Configure Pria's display behavior using the `displayOptions` object:
+
+```javascript
+var displayOptions = {
+    fullScreen: false,              // Expand in full screen mode
+    openOnLoad: false,              // Open Pria immediately when loaded
+    buttonWidth: '80px',            // Size of the Pria logo button
+    buttonPosition: 'fixed',        // Button position type (fixed, relative, sticky)
+    buttonPositionRight: '20px',    // Distance from right edge
+    buttonPositionBottom: '20px',   // Distance from bottom edge
+    buttonNoBounce: true,           // Disable button bounce animation
+    priaContainerId: '',            // Container ID for Pria window (default: BODY)
+    buttonContainerId: '',          // Container ID for button (default: BODY)
+    allowPop: false,                // Allow popping out of containing iframe
+    noUI: false                     // Disable UI for headless operation
+}
+```
+
+<Tip>
+  Set `noUI: true` to use Pria programmatically without the visual interface
+</Tip>
+
+### SDK Playground
+
+Test your integration using the [SDK Playground](https://pria.praxislxp.com/test_sdk.html).
+
+## JavaScript API
+
 ### Global Window Object
-Pria SDK is available as a window global object and contains the following functions:
+
+Once loaded, Pria is available as a global window object with the following methods:
 
 ```javascript
 const pria = {
-    load: priasdk,
-    send: priaSend,
-    subscribe: priaSubscribe,
-    unsubscribe: priaUnsubscribe,
-    setVisible: priaSetVisible,
-    version: 1
+    load: priasdk,              // Initialize Pria SDK
+    send: priaSend,             // Send requests to Pria
+    subscribe: priaSubscribe,   // Subscribe to responses
+    unsubscribe: priaUnsubscribe, // Unsubscribe from responses
+    setVisible: priaSetVisible, // Control UI visibility
+    version: 1                  // SDK version
 }
-
-// support for the browser and nodejs
-if (isNode) {
-    module.exports = { priasdk, pria }
-} else {
-    window.priasdk = priasdk;
-    window.pria = pria;
-}
-
 ```
 
+### Available Commands
 
-### Make a simple request
-To send a request to Pria, ise the send(0 function.
+| Command           | Description                         | Parameters       |
+| ----------------- | ----------------------------------- | ---------------- |
+| `post.message`    | Send text message to Pria           | Array of strings |
+| `convo.start`     | Start speech-to-speech conversation | None             |
+| `convo.stop`      | Stop speech-to-speech conversation  | None             |
+| `assistants.list` | Get available assistants            | None             |
 
-When Pria is installed and running, Pria will be available in your page like the example below:
+## Sending Requests
 
+### Basic Message Request
 
-n this example features Pria named as ‘Scarlet’ which is a custom Digital Twin.
-
-At the time of this writing, Pria send() API function SDK supports the following commands:
-
-post.message : Sends a text message to Pria
-
-convo.start: Sends a request to start the Conversational feature Speech to Speech
-
-convo.stop: Sends a request to stop the Conversational feature Speech to Speech
-
-
-
-
-
-Anywhere in the DOM of your web page, you can send requests to Pria using a simple Javascript code like this:
+Send a text message to your digital twin:
 
 ```javascript
 const request = {
-	command: 'post.message',
-	inputs: ['How are you?','Today is my birthday !'],
+    command: 'post.message',
+    inputs: ['How are you?', 'Today is my birthday!']
 }
 
 pria.send(request)
 ```
 
-### Convo Mode Request
+### Conversation Mode
 
-To start the Convo feature, you can use the following code:
+Start speech-to-speech conversation:
+
 ```javascript
 const request = {
     command: 'convo.start'
 }
+
 pria.send(request)
 ```
 
-The function pria.send may throw errors such as: “Connect Pria first, then retry”, and “Function requires valid JSON.”
-
-The SDK uses the identity of the user currently connected to the digital twin.
-
-Pria will only respond when the digital is properly configured and fully connected.
-
-
-### Receive responses
-
-To receive a response from Pria, you must subscribe first.
-
-This is done using the pria.subscribe function like the following example:
+Stop conversation mode:
 
 ```javascript
-const gotResponseFromPria = (response) => {
-    ....
+const request = {
+    command: 'convo.stop'
 }
-pria.subscribe(gotResponseFromPria)
+
+pria.send(request)
 ```
 
-### Example Response
+### Error Handling
 
-When you send a request to Pria, you will receive a response in the following format:
+The `pria.send()` function may throw these errors:
+
+<Warning>
+  - "Connect Pria first, then retry" - Pria is not properly initialized
+  - "Function requires valid JSON" - Invalid request format
+</Warning>
+
+## Receiving Responses
+
+### Subscribe to Responses
+
+To receive responses from Pria, you must first subscribe:
+
+```javascript
+const handlePriaResponse = (response) => {
+    console.log('Received from Pria:', response)
+    // Process the response here
+}
+
+pria.subscribe(handlePriaResponse)
+```
+
+### Response Format
+
+All responses follow this structure:
 
 ```json
 {
-   "type": "pria-response",
-   "response": {
-      "command": "post.message",
-      "content": {
-         "success": true,
-         "outputs": [
-            "I am doing great ! Happy birthday by the way.."
-         ],
-         "usage": 12048,
-         "query_duration_ms": 9404,
-         "model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"
-      },
-      "isError": false,
-      "type": "object"
-   },
-   "version": 1
-}
-
-{
     "type": "pria-response",
     "response": {
-        "content": "Unauthorized",
-        "command": "convo.start",
-        "type": "string",
-        "isError": true
+        "command": "post.message",
+        "content": {
+            "success": true,
+            "outputs": ["Response text here"],
+            "usage": 12048,
+            "query_duration_ms": 9404,
+            "model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"
+        },
+        "isError": false,
+        "type": "object"
     },
     "version": 1
 }
+```
 
-{
-   "type": "pria-response",
-   "response": {
-      "content": "Convo stopped (STS)",
-      "command": "convo.stop",
-      "type": "string",
-      "isError": false
-   },
-   "version": 1
-}
+### Response Examples
 
-{
-   "type": "pria-response",
-   "response": {
-      "content": [
-         {
-            "_id": "67568474f66f51c8dc860c1f",
-            "name": " New Conversation",
-            "description": "Start a new conversation! This assistant is designed to initiate and facilitate fresh, engaging dialogues on a wide range of topics, adapting to the user's interests and needs.✏️📝 It employs a dynamic approach, utilizing available tools and user memory to personalize interactions, while maintaining a focus on the current conversation's context and goals. The primary benefit of this assistant is its ability to provide tailored, informative, and thought-provoking exchanges that encourage learning, exploration, and meaningful interaction, all while adhering to strict guidelines for accuracy, citation, and ethical communication.",
-            "picture_url": "/assistant_new_conversation.webp",
-            "status": "active",
-            "liked_count": 3,
-            "admin_only": false,
-            "created": "2024-12-09T05:47:32.361Z",
+<Tabs>
+  <Tab title="Successful Message">
+    ```json
+    {
+        "type": "pria-response",
+        "response": {
+            "command": "post.message",
+            "content": {
+                "success": true,
+                "outputs": ["I am doing great! Happy birthday by the way.."],
+                "usage": 12048,
+                "query_duration_ms": 9404,
+                "model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"
+            },
+            "isError": false,
+            "type": "object"
+        },
+        "version": 1
+    }
+    ```
+  </Tab>
+  <Tab title="Error Response">
+    ```json
+    {
+        "type": "pria-response",
+        "response": {
+            "content": "Unauthorized",
+            "command": "convo.start",
+            "type": "string",
+            "isError": true
+        },
+        "version": 1
+    }
+    ```
+  </Tab>
+  <Tab title="Conversation Control">
+    ```json
+    {
+        "type": "pria-response",
+        "response": {
+            "content": "Convo stopped (STS)",
+            "command": "convo.stop",
+            "type": "string",
+            "isError": false
+        },
+        "version": 1
+    }
+    ```
+  </Tab>
+</Tabs>
 
-            "institution_shared": false,
-            "remember_history": 3,
-            "argument_5": null,
-            "editable_others": false
-         },
-         ...
-      ],
-      "command": "assistants.list",
-      "type": "object",
-      "isError": false
-   },
-   "version": 1
+## Authentication & Security
+
+<Info>
+  The SDK uses the identity of the user currently connected to the digital twin. Ensure proper authentication is in place before making requests.
+</Info>
+
+### Requirements
+
+- Pria must be properly configured and fully connected
+- User must be authenticated with appropriate permissions
+- Valid session must be established
+
+## Content Format
+
+<Note>
+  Pria outputs content in [Markdown format](https://en.wikipedia.org/wiki/Markdown). Parse responses accordingly in your application.
+</Note>
+
+## Usage Metrics
+
+The `usage` property in responses indicates the total number of tokens consumed (input \+ output) for billing and monitoring purposes.
+
+## Best Practices
+
+### Error Handling
+
+```javascript
+const sendMessage = async (message) => {
+    try {
+        const request = {
+            command: 'post.message',
+            inputs: [message]
+        }
+        
+        pria.send(request)
+    } catch (error) {
+        console.error('Failed to send message:', error)
+        // Handle error appropriately
+    }
 }
 ```
 
-Pria outputs content in Markdown format. See more at https://en.wikipedia.org/wiki/Markdown
+### Response Processing
 
-Note: The value of the usage property indicates the total number of tokens used by this query (input + output)
+```javascript
+const handleResponse = (response) => {
+    if (response.response.isError) {
+        console.error('Pria error:', response.response.content)
+        return
+    }
+    
+    // Process successful response
+    const outputs = response.response.content.outputs
+    outputs.forEach(output => {
+        // Display or process each output
+        console.log(output)
+    })
+}
+```
+
+### Cleanup
+
+```javascript
+// Unsubscribe when component unmounts or page unloads
+window.addEventListener('beforeunload', () => {
+    pria.unsubscribe(handleResponse)
+})
+```
+
+## Troubleshooting
+
+### Common Issues
+
+| Issue                      | Solution                                   |
+| -------------------------- | ------------------------------------------ |
+| "Connect Pria first" error | Ensure SDK is loaded and initialized       |
+| No responses received      | Check if you've subscribed to responses    |
+| Unauthorized errors        | Verify user authentication and permissions |
+| Invalid JSON errors        | Validate request format and structure      |
+
+### Debug Mode
+
+Enable debug logging to troubleshoot integration issues:
+
+```javascript
+// Add to your configuration
+var displayOptions = {
+    // ... other options
+    debug: true  // Enable debug logging
+}
+```
